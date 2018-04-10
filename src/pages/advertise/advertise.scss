@@ -1,0 +1,46 @@
+page-advertise {
+    //不要头部,加上此段;
+    .fixed-content {
+        margin-top: 0px!important;
+    }
+    .scroll-content {
+        margin-top: 0px!important;
+    }
+    .advertise {
+        height: 100%;
+        width: 100%;
+        filter: opacity(100%);
+    }
+    .content {
+        position: absolute;
+        top: 25%;
+        height: 100%;
+        width: 100%;
+    }
+    .content-ios {
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .iconfont {
+        font-size: 2rem;
+        position: absolute;
+        color: #ededed;
+        top: 6.9rem;
+        left: 4rem;
+    }
+    .picture {
+        height: r(380px);
+        filter: brightness(2.3);
+        display: block;
+        width: 100%;
+    }
+    img {
+        width: 90%;
+        height: 100%;
+        -webkit-filter: brightness(2.3);
+        filter: brightness(2.3);
+        display: block;
+        margin-left: 5%;
+    }
+}

@@ -1,0 +1,73 @@
+page-more {
+    .more{
+        background:#EDEDED;
+        ul{
+            width:100%;
+            padding:0 5% 0 5%;
+            background:#ffffff;
+        }
+        ul li{
+            width:100%;
+            height:r(96px);
+            line-height:r(96px);
+            font-size:r(26px);
+            border-bottom:1px solid #ededed;
+            span{
+                float:left;
+                display:block;
+                font-size:r(26px);
+                color:#323232;
+            }
+            i{
+                float:right;
+                display:block;
+                color:#909090;
+                height:r(96px);
+                line-height:r(96px);
+                font-size:r(26px);
+            }
+            p{
+                float:right;
+                font-size:r(24px);
+                color: blue;
+                margin-right:r(16px);
+            }
+            .dangqian_detail{
+                margin-right:r(46px);
+            }
+        }
+        ul li:nth-child(1){
+            margin-top:r(20px);
+        }
+
+        button{
+            width:90%;
+            margin:0 auto;
+            display:block;
+            height:r(88px);
+            line-height:r(88px);
+            text-align:center;
+            font-size:r(34px);
+            color:#ffffff;
+            border-radius:r(8px);
+            margin-top:r(60px);
+            margin-bottom:r(336px);
+            background:#ff6f00;
+        }
+        button:active{
+            background:#909090;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    .clear{
+        clear:both;
+    }
+}

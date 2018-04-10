@@ -1,0 +1,76 @@
+<!--
+  Generated template for the RecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <button navPop>
+      <i class="icon iconfont icon-fanhui"></i>
+    </button>
+    <ion-title>交易记录</ion-title>
+    <button class="choose" [ngStyle]="{'color':choose?'#ff6f00':'#333'}" (click)='showChoose()'>筛选</button>
+  </ion-navbar>
+
+   <!-- <div class="trem2" *ngIf='choose'> -->
+      <div class="trem2" [ngStyle]="{'display':choose?'block':'none'}" (click)='recode_hide()'>
+        <div class="chooseBox" id="chooseBox">
+          <ul class="u1">
+            <li (click)='getLists(0,"l1")' class="done" id="l1">全 部</li>
+            <li (click)='getLists(2,"l8")' id="l8">其 它</li>
+          </ul>
+          <p class="til">收入</p>
+          <ul class="u2">
+            <li (click)='getLists(1001,"l2")' id="l2">充 值</li>
+            <li (click)='getLists(7002,"l3")' id="l3">回收利息</li>
+            <li (click)='getLists(7001,"l4")' id="l4">回收本金</li>
+            <li (click)='getLists(1,"l5")' id="l5">奖 励</li>
+          </ul>
+          <p class="til">支出</p>
+          <ul class="u3">
+            <li (click)='getLists(2001,"l6")' id="l6">提 现</li>
+            <li (click)='getLists(3001,"l7")' id="l7">投 资</li>
+          </ul>
+        </div>
+      </div>
+
+</ion-header>
+
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)='doRefresh($event)'>
+    <ion-refresher-content pullingText="下拉刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div>
+      <div class="trem1" id="topest">
+        <ul>
+          <li class="li" *ngFor='let tran of tranLists'>
+            <div class="box1">
+              <div class="til">{{tran.tranType}}</div>
+              <div class="money" *ngIf='tran.revAmount < 0'>{{tran.revAmount}}</div>
+              <div class="money2" *ngIf='tran.revAmount >= 0'>+{{tran.revAmount}}</div>
+            </div>
+            <div class="box2">
+              <p class="time">{{tran.tranTime}}</p>
+              <p class="text">{{tran.remark}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+
+  <div class="bottom" *ngIf='noMore'>没有更多数据了</div>
+  
+  <!-- 下拉刷新 -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='isInfinite'>
+      <ion-infinite-scroll-content>
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

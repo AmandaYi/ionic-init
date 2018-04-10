@@ -1,0 +1,125 @@
+<!--
+  Generated template for the TaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>任务中心</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='task'>
+     <div class="task_title">投资任务</div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucitouzi iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>投资任务</div>
+                <div class='mission_title2'>手动投标成功获得投标<span style="color:#ff6f00;">应收利息*1</span>的成长值</div>
+            </div>
+            <button class="mission_btn" (click)='miss_dian0()'>去投资</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-zidongtoubiaorenwu iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>自动投标任务</div>
+                <div class='mission_title2'>自动投标成功即可获得投标<span style="color:#ff6f00;">应收利息*1.2</span>的成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]='miss_btn10' (click)='miss_dian10()'>{{miss_title10}}</button>
+        </div>
+
+        <div class="bank"></div>
+
+
+        <!--新手任务-->
+
+        <div class="task_title">新手任务{{miss_title1}}</div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-kaitongyinhangcunguan iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>开通银行存管</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn1" (click)="miss_dian1()">{{miss_title1}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucibangdingyinhangqia iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次绑定银行卡</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn2" (click)="miss_dian2()">{{miss_title2}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucicanjiafengxianceping iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次参加风险测评</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn3" (click)="miss_dian3()">{{miss_title3}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shiyongtiyanjin iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>使用体验金</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn4" (click)="miss_dian4()">{{miss_title4}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucichongzhi iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次充值</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">15</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn5" (click)="miss_dian5()">{{miss_title5}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucitouzi iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次投资</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">15</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn6" (click)="miss_dian6()">{{miss_title6}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shouciyaoqinghaoyouzhucebingtouzi iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次邀友注册并投资</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">40</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn7" (click)="miss_dian7()">{{miss_title7}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-zidongtoubiaorenwu iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>首次开启自动投标</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn8" (click)="miss_dian8()">{{miss_title8}}</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-bangdingyouxiang iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>绑定邮箱</div>
+                <div class='mission_title2'>获得<span style="color:#ff6f00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]="miss_btn9" (click)="miss_dian9()">{{miss_title9}}</button>
+        </div>
+</ion-content>

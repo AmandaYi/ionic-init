@@ -1,0 +1,266 @@
+page-recharge-modal {
+    .modal{
+        background:rgba(0,0,0,0.5);
+        /*充值短信模态框*/
+
+        #pay_modal {
+            background: #ffffff;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            border: 1px solid #ccc;
+        }
+
+        #pay_modal .pay_del {
+            width:r(90px);
+            font-size:r(30px);
+            padding:5% 12% 2% 5%;
+
+        }
+
+        #pay_modal .pay_future {
+            font-size: r(44px);
+            margin-top: 0px;
+            margin-bottom: r(50px);
+            padding: 0 5% 0 5%;
+        }
+
+        #pay_modal .pay_future span {
+            font-size: r(50px);
+            color: red;
+        }
+
+        #pay_modal .pay_sms {
+            font-size: r(12px);
+            margin-top: r(30px);
+            padding: 0 5% 0 5%;
+            height: r(60px);
+            line-height: r(60px);
+        }
+
+        #pay_modal .pay_sms .sms_title {
+            float: left;
+            width: 75%;
+            text-align: left;
+            font-size:r(22px);
+        }
+
+        #pay_modal .pay_sms .sms_time {
+            display: block;
+            float: right;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+            border-radius: 8px;
+            color: #ffffff;
+            background: #F4581A;
+            border: none;
+             font-size:r(22px);
+        }
+
+        /*@media screen and (max-width: 380px) {
+            #pay_modal .pay_sms .sms_title {
+                width: 75%;
+                font-size: r(12px);
+            }
+            #pay_modal .pay_sms .sms_time {
+                width: 22%;
+                font-size: r(12px);
+            }
+        }*/
+
+        #pay_modal .pay_number {
+            width: 90%;
+            height: r(150px);
+            margin: 10px auto 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: r(25px) 0 r(25px) 0;
+        }
+
+        #pay_modal .pay_number li {
+            float: left;
+            width: 16.6%;
+            height: r(100px);
+            line-height: r(100px);
+            font-size: r(60px);
+            color: #000000;
+            border-right: 1px solid #ccc;
+        }
+
+        #pay_modal .pay_number li:nth-child(6) {
+            border-right: 0;
+        }
+
+        #pay_modal .clear {
+            clear: both;
+        }
+
+        #pay_modal .number {
+            width: 100%;
+            height: r(360px);
+        }
+
+        #pay_modal .number button {
+            background: #ffffff;
+            color: #000000;
+            border: 0;
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+
+        #pay_modal .number .number_top {
+            height: 25%;
+        }
+
+        #pay_modal .number .number_top button {
+            width: 33.3%;
+            height: 100%;
+            float: left;
+            border-bottom: 1px solid #ccc;
+            font-size:r(40px);
+        }
+
+        #pay_modal .number .number_center1 {
+            height: 25%;
+        }
+
+        #pay_modal .number .number_center1 button {
+            width: 33.3%;
+            height: 100%;
+            float: left;
+            border-bottom: 1px solid #ccc;
+             font-size:r(40px);
+        }
+
+        #pay_modal .number .number_center2 {
+            height: 25%;
+        }
+
+        #pay_modal .number .number_center2 button {
+            width: 33.3%;
+            height: 100%;
+            float: left;
+            border-bottom: 1px solid #ccc;
+             font-size:r(40px);
+        }
+
+        #pay_modal .number .number_bottom {
+            height: 25%;
+        }
+
+        #pay_modal .number .number_bottom button {
+            width: 33.3%;
+            height: 100%;
+            float: left;
+            font-size:r(40px);
+        }
+
+        #pay_modal .number .clear {
+            clear: both;
+        }
+
+
+        /*短信正在处理*/
+
+        #pay_modal .pay_apply {
+            height: r(360px);
+            /*padding: 50px 0 50px 0;*/
+        }
+
+        #pay_modal .pay_apply .pay_loading {
+            padding-top: r(30px);
+        }
+
+        #pay_modal .pay_apply .pay_loading img {
+            width: 8%;
+        }
+
+        #pay_modal .pay_apply .pay_info {
+            font-size: r(24px);
+            color: #000000;
+            margin-top: r(20px);
+        }
+
+
+        /*获取短信失败*/
+
+        #pay_modal .pay_applyfalse {
+            width: 90%;
+            margin: 0 auto;
+            height: 180px;
+        }
+
+        #pay_modal .pay_applyfalse .pay_code {
+            text-align: left;
+            color: red;
+            font-size: r(24px);
+            margin-bottom: r(100px);
+        }
+
+        #pay_modal .pay_applyfalse .pay_reload {
+            width: 90%;
+            margin: 0 auto;
+            height: r(100px);
+            line-height: r(100px);
+            margin-bottom:r(20px);
+        }
+
+        #pay_modal .pay_applyfalse .pay_reload button {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: r(10px);
+            background: #ff6600;
+            color: #ffffff;
+        }
+
+
+        /*获取短信成功*/
+
+        #pay_modal .pay_applytrue {
+            height: r(730px);
+            padding: r(60px) 0 r(60px) 0;
+        }
+
+        #pay_modal .pay_applytrue .pay_chenggong {
+            font-size: r(160px);
+            color: lightgreen;
+            height: r(164px);
+            line-height: r(164px);
+        }
+
+        #pay_modal .pay_applytrue .pay_chenggonghead {
+            font-size: r(32px);
+            margin-top: r(10px);
+        }
+
+        #pay_modal .pay_applytrue .pay_chenggongtitle {
+            font-size: r(24px);
+            margin-top: r(20px);
+            margin-bottom: r(70px);
+            color: #909090;
+        }
+
+        #pay_modal .pay_applytrue .pay_reload {
+            width: 90%;
+            margin: 0 auto r(20px);
+            height: r(100px);
+            line-height: r(100px);
+            /*border:1px solid #ff6600;*/
+        }
+
+        #pay_modal .pay_applytrue .pay_reload button {
+            display:block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: r(10px);
+            background: #ff6600;
+            color: #ffffff;
+            font-size:r(34px);
+            border:1px solid #ff6600;
+        }
+    }
+}

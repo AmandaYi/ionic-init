@@ -1,0 +1,40 @@
+network-show {
+  .main {
+    background: #ededed;
+    height: 100%;
+
+    .img {
+      text-align: center;
+        padding-top: r(100px);
+      img {
+        width: r(130px);
+        height: r(130px);
+      }
+    }
+
+    .text {
+        font-size: r(24px);
+        color: #909090;
+        text-align: center;
+      }
+
+      .false_btn {
+        width: 100%;
+        float: left;
+        text-align: center;
+  
+        a {
+          display: inline-block;
+          width: r(301px);
+          height: r(81px);
+          color: #ff9700;
+          font-size: r(34px);
+          background-color: #fff;
+          border: solid 1px #cccccc;
+          border-radius: r(50px);
+          line-height: r(81px);
+        }
+      }
+  }
+
+}

@@ -1,0 +1,112 @@
+<ion-header>
+
+    <ion-navbar [ngSwitch]='value_type'>
+        <ion-title *ngSwitchCase='"0"'>投资金额</ion-title>
+        <ion-title *ngSwitchCase='"1"'>投资金额</ion-title>
+        <ion-title *ngSwitchCase='"2"'>购买金额</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class='faherColor'>
+        <div [ngSwitch]='status'>
+            <div class="end" *ngSwitchCase="'YLB'"> </div>
+            <div class="end" *ngSwitchCase="'DFK'"> </div>
+            <div class="end" *ngSwitchCase="'HKZ'"> </div>
+            <div class="end" *ngSwitchCase="'YJQ'"> </div>
+            <div class='end' *ngSwitchDefault>
+                剩余筹款时间：<span>{{TimeLeft}}</span>
+            </div>
+        </div>
+
+        <div class='details_top'>
+            <ion-grid>
+                <ion-row [ngSwitch]="bidtype">
+                    <ion-col *ngSwitchCase="'0'" class='yearGains'>
+                        <div class='staticGains'>预期年化收益</div>
+                        <div class='dynamicGains'>{{ rate*100|rydNum:'2'}}<i>%</i></div>
+                    </ion-col>
+                    <ion-col *ngSwitchCase="'1'" class='yearGains'>
+                        <div class='staticGains'>预期年化收益</div>
+                        <div class='dynamicGains'>{{ rate*100|rydNum:'2'}}<i>%</i></div>
+                    </ion-col>
+                    <ion-col *ngSwitchDefault class='yearGains'>
+                        <div class='staticGains'>认购后年化收益</div>
+                        <div class='dynamicGains'>{{ rate*100|rydNum:'2'}}<i>%</i></div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row [ngSwitch]="bidtype" class='remain'>
+                    <ion-col *ngSwitchCase="'0'">
+                        <div class='allLength'>
+                            <div class='finished' [ngStyle]="{'width':bar}"></div>
+                        </div>
+                        <div class='finished_rate'>{{(amount-remainAmount)/amount*100|rydNum:'0' }}%</div>
+                    </ion-col>
+
+                    <ion-col *ngSwitchCase="'1'">
+                        <div class='allLength'>
+                            <div class='finished' [ngStyle]="{'width':bar}"></div>
+                        </div>
+                        <div class='finished_rate'>{{(amount-remainAmount)/amount*100|rydNum:'0' }}%</div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='trisomic' *ngIf="bidtype==0">
+                    <ion-col class='trisomic_first' [ngSwitch]='isDay' col-3>
+                        <span>期限</span>
+                        <p *ngSwitchCase="'F'">{{cycle}}个月</p>
+                        <p *ngSwitchCase="'S'">{{cycle}}天</p>
+                        <p *ngSwitchDefault>{{cycle}}个月</p>
+                    </ion-col>
+                    <ion-col class='trisomic_second' col-5>
+                        <div>万元预期收益 <i class="icon-wenhao iconfont" tappable (click)='on_window()' [ngStyle]="{'color': '#ff6f00'}"></i></div>
+                        <p>{{tenthousand |rydNum:'2'}}元</p>
+                    </ion-col>
+                    <ion-col class='trisomic_third' col-4>
+                        <span>可投金额</span>
+                        <p>{{remainAmount*1 |rydNum:'2'}}元</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='trisomic' *ngIf="bidtype==1">
+                    <ion-col class='trisomic_first' [ngSwitch]='isDay' col-3>
+                        <span>期限</span>
+                        <p *ngSwitchCase="'F'">{{cycle}}个月</p>
+                        <p *ngSwitchCase="'S'">{{cycle}}天</p>
+                        <p *ngSwitchDefault>{{cycle}}个月</p>
+                    </ion-col>
+                    <ion-col class='trisomic_second' col-5>
+                        <div>万元预期收益 <i class="icon-wenhao iconfont" tappable (click)='on_window()' [ngStyle]="{'color': '#ff6f00'}"></i></div>
+
+                        <p>{{tenthousand |rydNum:'2'}}元</p>
+                    </ion-col>
+                    <ion-col class='trisomic_third' col-4>
+                        <span>可投金额</span>
+                        <p>{{remainAmount*1 |rydNum:'2'}}元</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='trisomic' *ngIf="bidtype==null">
+                    <ion-col class='trisomic_first' col-3>
+                        <span>期限</span>
+                        <p>{{syqx}}天</p>
+                    </ion-col>
+                    <ion-col class='trisomic_second' col-5>
+                        <div>万元预期收益 <i class="icon-wenhao iconfont" tappable (click)='on_window()' [ngStyle]="{'color': '#ff6f00'}"></i></div>
+
+                        <p>{{profit}}元</p>
+                    </ion-col>
+                    <ion-col class='trisomic_third' col-4>
+                        <span>可投金额</span>
+                        <p>{{salePrice*1 |rydNum:'2'}}元</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+    <insade-foot [insade_Cid]='value_cid' [insade_Id]='value_id' [Exper]='exp' [inside_UseAccount]='Use' [getType]='value_type' [inside_Bank]='Bank' [inside_realName]='user_realName' [inside_project]='project' (search)="return($event)"></insade-foot>
+
+</ion-content>

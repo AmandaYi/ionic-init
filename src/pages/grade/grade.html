@@ -1,0 +1,171 @@
+<!--
+  Generated template for the GradePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>等级说明</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grade">
+            <div class="gra_title">会员体系</div>
+        <table class="biaoge1">
+            <thead>
+                <tr>
+                    <td>会员等级</td>
+                    <td>成长值要求</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SVIP1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>SVIP2</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>SVIP3</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>SVIP4</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>SVIP5</td>
+                    <td>100000</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bank"></div>
+
+        <div class="rule">
+            <div class="title">规则说明</div>
+            <ul>
+                <li>1、融裕贷会员包含5个等级，会员等级由用户的成长值决定。成长值越高，会员等级越高；</li>
+                <li>2、会员通过完成会员任务（详见下方成长值获取渠道）获取成长值，当成长值达到等级要求时，会员将晋升到相应等级并获得相应的会员特权；</li>
+                <li>3、连续90天无在投项目，会员特权将被冻结（详见下方特权冻结规则）;</li>
+                <li>4、投资任务需等满标放款才记为投资成功；</li>
+                <li>5、成长值整点更新，完成任务后请耐心等待。</li>
+            </ul>
+        </div>
+
+        <div class="bank"></div>
+
+        <div class="channel">
+            <h3>成长值获取渠道</h3>
+            <div class="qianwang" (click)='go_renwu()'>
+              <i class="icon iconfont icon-gengduo"></i>
+              <span>前往任务中心</span> 
+            </div>
+
+            <table class="biaoge2">
+                <thead>
+                    <tr>
+                        <td>任务种类</td>
+                        <td>任务说明</td>
+                        <td>获得成长值</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="9" style="color:#909090;">新手任务</td>
+                        <td>开通银行存管</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>首次绑定银行卡</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>首次参加风险测评</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>使用体验金</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>首次充值</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>首次投资</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>首次邀友注册投资</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>首次开启自动投资</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>绑定邮箱</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="color:#909090;">投资任务</td>
+                        <td>投资（手动投标）</td>
+                        <td>成长值=应收利息*1</td>
+                    </tr>
+                    <tr>
+                        <td>投资（自动投标）</td>
+                        <td>成长值=应收利息*1.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bank"></div>
+
+        <div class="freezing">
+            <h3>特权冻结规则</h3>
+            <table class="biaoge3">
+                <tr>
+                    <td rowspan="2" style="color:#909090;">冻结特权</td>
+                    <td rowspan="2" colspan="2">SVIP2及以上特权会员连续90天无在投项目，特权将会被冻结</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="color:#909090;">减分行为</td>
+                    <td colspan="2">无</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="4" style="color:#909090;">重新激活条件</td>
+                    <td>SVIP2</td>
+                    <td>成功投资1000元</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SVIP3</td>
+                    <td>成功投资5000元</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SVIP4</td>
+                    <td>成功投资10000元</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>SVIP5</td>
+                    <td>成功投资20000元</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+</ion-content>

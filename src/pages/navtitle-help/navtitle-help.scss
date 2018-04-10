@@ -1,0 +1,98 @@
+page-navtitle-help {
+    ion-content {
+        //问题分类
+        .classify {
+            border-top: r(20px) solid #ededed;
+            padding: r(20px) r(20px) r(20px) r(20px);
+            .title {
+                font-size: r(30px);
+                color: #323232;
+            }
+            p {
+                font-size: r(24px);
+                color: #323232;
+            }
+            .classify_row{
+                padding-top:r(30px);
+                padding-bottom:r(30px);
+            }
+            .classify_col{
+                text-align:center;
+            }
+             
+            .nav_icon{
+                font-size:r(60px);                  
+                color:#ff6f00;
+            }
+        }
+        //热门问题
+        .hot {
+            border-top: r(20px) solid #ededed;
+            padding: r(20px) r(20px) r(20px) r(20px);
+        }
+        .line {
+            padding-bottom: r(20px);
+        }
+        //标题
+        .title {
+            font-size: r(30px);
+            color: #323232;
+            padding-bottom: r(24px);
+            border-bottom: r(1px) solid #cccccc;
+        }
+        //list循环标题icon
+        .hot_list {
+            padding: 0 0 r(30px) 0;
+        }
+        .grid {
+            padding: 0;
+        }
+        .col {
+            padding: 0;
+        }
+        .hot_icon {
+            font-size: r(24px);
+            color: #ff6f00;
+        }
+        .icon-sanjiaoxing-copy:before {
+            font-size: r(32px);
+        }
+        .hot_title {
+            font-size: r(24px);
+            color: #323232;
+        }
+        //list循环内容
+        .hot_content {
+            text-align: justify;
+            font-size: r(22px);
+            color: #646464;
+        }
+        .hot_block:first-child {
+            padding-top: r(20px);
+        }
+    }
+    ion-footer {
+        // 底部
+        .footer {
+            width: 100%;
+            height: r(98px);
+            background: #ff6f00;
+            bottom: 0;
+            a {
+                dispaly: block;
+            }
+            .call {
+                font-size: r(32px);
+                color: #ffffff;
+                width: 100%;
+                text-align: center;
+                padding-top: r(15px);
+            }
+            .small_icon {
+                color: #ffffff;
+                display: inline-block;
+                font-size: r(40px);
+            }
+        }
+    }
+}

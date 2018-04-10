@@ -1,0 +1,110 @@
+page-recharge {
+    .recharge{
+        background:#ffffff;
+        ul{
+            width:100%;
+            padding:0 5% 0 5%;
+            li{
+                width:100%;
+                height:r(96px);
+                line-height:r(90px);
+                font-size:r(26px);
+                color:#323232;
+                span{
+                    display:block;
+                    font-size:r(26px);
+                    color:#323232;
+                    float:left;
+                }
+                p{
+                    float:right;
+                    font-size:r(26px);
+                    color:#323232;
+                }
+                input{
+                    border:0;
+                    display:block;
+                    float:left;
+                    width:70%;
+                    padding-left:5%;
+                }
+            }
+            li:nth-child(1){
+                margin-top:r(50px);
+            }
+        }
+
+         button{
+            width:90%;
+            margin:0 auto;
+            display:block;
+            height:r(88px);
+            line-height:r(88px);
+            text-align:center;
+            font-size:r(34px);
+            color:#ffffff;
+            border-radius:r(8px);
+            margin-top:r(30px);
+            background:#ff6f00;
+        }
+        .pay_limit{
+            width:90%;
+            margin:5% auto 0;
+            text-align:right;
+            font-size:r(24px);
+            color:#5a66ff;
+        }
+
+        .clear{
+            clear:both;
+        }
+    }
+}
+
+//支付状态
+.zhifu_container{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    z-index:99999;
+    .zhifu_content{
+        position:absolute;
+        width:80%;
+        top:40%;
+        left:10%;
+        padding:8% 5%; 
+        text-align:center;
+        background:#fff;
+        border-radius:r(32px);
+         .zhifu_mima{
+            width:100%;
+            font-size:r(24px);
+        }
+        .zhifu_tixian{
+            width:45%;
+            height:r(80px);
+            line-height:r(80px);
+            float:left;
+            margin-top:8%;
+            background: #F1F3F7;
+            border-radius:8px;
+            margin-right:5%;
+            font-size:r(22px);
+            color:#323232;
+        }
+        .zhifu_xiugai{
+            width:45%;
+            height:r(80px);
+            line-height:r(80px);
+            float:left;
+            margin-top:8%;
+            background:#ff6f00;
+            border-radius:8px;
+            margin-left:5%;
+            font-size:r(22px);
+            color:#fff;
+        }
+    }
+
+}

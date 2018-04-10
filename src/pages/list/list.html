@@ -1,0 +1,106 @@
+<ion-header nobody>
+
+
+    <ion-navbar>
+        <ion-title toptitle>投资</ion-title>
+    </ion-navbar>
+
+    <!-- 网络连接失败 -->
+    <network-fail *ngIf='!net'></network-fail>
+
+    <ion-toolbar class='topframe'>
+        <ion-segment [(ngModel)]="icons" class="index">
+            <ion-segment-button value="2" class='topbuttom' (click)='onclick()'>
+                理财项目
+            </ion-segment-button>
+            <ion-segment-button value="3" class='topbuttom' (click)='onclick()'>
+                债权转让
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Loading..." refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
+
+    <div class='nav'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="navtitle" col-3>
+                    <ion-icon class='icon'>
+                        <img src='assets/image/icon11.png' />
+                    </ion-icon>
+                    <p class='navtitle-left'>银行托管</p>
+                </ion-col>
+                <ion-col class="navtitle" col-3>
+                    <ion-icon class='icon'>
+                        <img src='assets/image/icon8.png' />
+                    </ion-icon>
+                    <p>100元起投</p>
+                </ion-col>
+                <ion-col class="navtitle" col-3>
+                    <ion-icon class='icon'>
+                        <img src='assets/image/icon9.png' />
+                    </ion-icon>
+                    <p>本息垫付</p>
+                </ion-col>
+                <ion-col class="navtitle" col-3>
+                    <ion-icon class='icon'>
+                        <img src='assets/image/icon10.png' />
+                    </ion-icon>
+                    <p class='navtitle-right'>持90天可转</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+
+    <!-- 网络连接失败 -->
+    <network-show *ngIf='!net' (click)='willEnt()'></network-show>
+
+
+    <hr class='cut' />
+    <div [ngStyle]="{'display':net?'block':'none'}">
+        <invest-list [datas]="icons" [page]="type" (search)="return($event)"></invest-list>
+
+        <div *ngIf="!view_Judges" class='foot'>
+            <p>没有更多数据...</p>
+        </div>
+
+    </div>
+</ion-content>
+<!-- 底部跳转栏 -->
+<ion-footer>
+    <div id='ion-foot'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="nav" col-3 tappable (click)='home_click()'>
+                    <ion-icon class='icon iconfont icon-home_default'></ion-icon>
+                    <p>首页</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='list_click()'>
+                    <ion-icon class='icon iconfont icon-invest_check'></ion-icon>
+                    <p>投资</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='concat_click()'>
+                    <ion-icon class='icon iconfont icon-find_default'></ion-icon>
+                    <p>发现</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='me_click()'>
+                    <ion-icon class='icon iconfont icon-my_default'></ion-icon>
+                    <p>我</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-footer>

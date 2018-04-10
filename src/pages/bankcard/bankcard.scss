@@ -1,0 +1,41 @@
+page-bankcard {
+    .bankLists{
+        background:#ededed;
+
+        .bankcard_title {
+            color: #909090;
+            font-size:r(30px);
+            width: 90%;
+            margin: 0 5%;
+            height: r(96px);
+            line-height: r(96px);
+        }
+
+        .bankcard_content{
+            width: 100%;
+            /*margin: 0 5%;*/
+            padding:0 5%;
+            height: r(96px);
+            line-height: r(96px);
+            background:#fff;
+            span{
+                display:block;
+                float:left;
+                font-size:r(34px);
+                height: r(96px);
+                line-height: r(96px);
+                color:#323232;
+            }
+            i{
+                float:right;
+                font-size:r(50px);
+                height: r(96px);
+                line-height: r(96px);
+                color:rgb(74, 225, 4);
+            }
+        }
+        .clear{
+            clear:both;
+        }
+    }
+}

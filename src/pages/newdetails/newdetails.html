@@ -1,0 +1,35 @@
+<ion-header>
+
+    <ion-navbar>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>项目详情</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div>
+        <new-details-foot [Pagetype]='value_type' [Pageid]='value_id' [details_enterprise]='enterprise' [details_project]='newproject' [details_conpany]='detailspicture' [details_record]='record' [loadingJudge]='sizeJudge'></new-details-foot>
+    </div>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉返回" refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>
+
+<ion-footer [ngSwitch]='value_status'>
+    <P class=" brown " *ngSwitchCase=" 'SQZ' " [ngStyle]="{ 'background-color': '#cccccc'} ">申请中 </P>
+    <P class=" blue " *ngSwitchCase=" 'DSH' " [ngStyle]="{ 'background-color': 'rgb(79,195,247)'} ">待审核 </P>
+    <P class=" blue " *ngSwitchCase=" 'DFB' " [ngStyle]="{ 'background-color': 'rgb(79,195,247)'} ">待发布 </P>
+    <P class=" blue " *ngSwitchCase=" 'YFB' " [ngStyle]="{ 'background-color': 'rgb(79,195,247)'} ">预发布 </P>
+    <P class=" orange " *ngSwitchCase=" 'TBZ' " tappable (click)='on_inner()' [ngStyle]="{ 'background-color': '#ff6f00'} ">立即投资 </P>
+    <P class=" brown " *ngSwitchCase=" 'DFK' " [ngStyle]="{ 'background-color': '#cccccc'} ">待放款 </P>
+    <P class=" brown " *ngSwitchCase=" 'HKZ' " [ngStyle]="{ 'background-color': '#cccccc'} ">还款中 </P>
+    <P class=" brown " *ngSwitchCase=" 'YJQ' " [ngStyle]="{ 'background-color': '#cccccc'} ">已结清 </P>
+    <P class=" brown " *ngSwitchCase=" 'YLB' " [ngStyle]="{ 'background-color': '#cccccc'} ">已流标 </P>
+    <P class=" brown " *ngSwitchCase=" 'YDF' " [ngStyle]="{ 'background-color': '#cccccc'} ">已垫付 </P>
+    <!-- 转让中-->
+    <P class=" orange " *ngSwitchCase=" 'ZRZ' " tappable (click)='on_inner()' [ngStyle]="{ 'background-color': '#ff6f00'} ">立即投资 </P>
+    <P class=" brown " *ngSwitchCase=" 'YZF' " [ngStyle]="{ 'background-color': '#cccccc'} ">已作废 </P>
+</ion-footer>

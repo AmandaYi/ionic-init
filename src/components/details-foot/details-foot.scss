@@ -1,0 +1,220 @@
+details-foot {
+    //切换装置的样式
+    .frame {
+        padding: 0;
+        height: r(95px);
+        border-top: r(20px) solid #ededed;
+        .index {
+            border-bottom: r(1px) solid #ededed;
+            .pagination {
+                border: 0;
+                font-size: r(24px);
+                max-width: r(999px);
+            }
+        }
+    }
+    /* 点击颜色字体颜色变化 */
+    .segment-ios .segment-button {
+        color: #909090;
+        background-color: rgb(255, 255, 255);
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: rgb(255, 111, 0);
+        background-color: rgb(255, 255, 255);
+        border-bottom: r(47px) solid rgb(255, 111, 0);
+    }
+    //全局的grid和col去掉边框
+    .grid {
+        padding: 0;
+    }
+    .col {
+        padding: 0;
+    }
+    //项目简介
+    .change_first {
+        padding: r(30px) r(30px) r(30px) r(30px);
+        .existence:last-child {
+            text-align: right;
+        }
+        .existence {
+            font-size: r(18px);
+            padding-bottom: r(30px);
+            .special {
+                margin-right: r(1px);
+            }
+            span {
+                color: #909090;
+                letter-spacing: r(1px);
+            }
+            i {
+                margin-right: r(7px);
+                padding: r(3px);
+                border-radius: r(6px);
+                background-color: rgb(255, 111, 0);
+                color: #fff;
+                font-size: r(20px);
+                letter-spacing: r(1px);
+            }
+        }
+        .title {
+            font-size: r(22px);
+            color: #909090;
+            padding-bottom: r(20px);
+            letter-spacing: r(1px);
+        }
+        .anwser {
+            // padding-left: r(40px);
+            font-size: r(22px);
+            color: #323232;
+            letter-spacing: r(1px);
+            text-align: justify;
+        }
+    }
+    //更多详情
+    .change_second {
+        //项目详情
+        .description {
+            padding: r(30px) r(30px) r(30px) r(30px);
+            padding-bottom: r(40px);
+            .icon-xiangmumiaoshu:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+        }
+        .moreTitle {
+            font-size: r(24px);
+            color: #666666;
+        }
+        .moreDetails {
+            font-size: r(20px);
+            color: #909090;
+            padding-bottom: r(32px);
+            text-align: justify;
+            .moreP {
+                padding-bottom: r(15px);
+            }
+        }
+        //企业信息
+        .message {
+            border-top: r(20px) solid #ededed;
+            padding: r(30px) r(30px) r(30px) r(30px);
+            //调节小图标的大小。。
+            .icon-qiyexinxihua:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+            .icon-ya:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+            .icon-zhuanyefengkong:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+            .messageTitle {
+                font-size: r(24px);
+                color: #666666;
+                padding-bottom: r(40px);
+            }
+            .subtitle {
+                font-size: r(22px);
+                color: #909090;
+                padding-bottom: r(20px);
+                letter-spacing: r(1px);
+            }
+            .messageContent {
+                padding-left: r(20px);
+                font-size: r(22px);
+                color: #323232;
+                letter-spacing: r(1px);
+                text-align: justify;
+            }
+        }
+        // 身份证和营业
+        .detailsPicture {
+            border-top: r(20px) solid #ededed;
+            padding: r(30px) r(30px) r(30px) r(30px);
+            .icon-wenjian:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+            .picTitle {
+                font-size: r(24px);
+                color: #666666;
+                padding-bottom: r(40px);
+            }
+            .picPicture {
+                padding-right: r(20px);
+                img {
+                    height: r(100px);
+                    width: 100%;
+                }
+                p {
+                    font-size: r(18px);
+                    color: #323232;
+                }
+            }
+        }
+        // 合同文件
+        .Last_detailsPicture {
+            border-top: r(20px) solid #ededed;
+            padding: r(30px) r(30px) r(30px) r(30px);
+            padding-bottom: r(70px);
+            .icon-wenjian:before {
+                font-size: r(24px);
+                position: absolute;
+                top: 0px;
+            }
+            .picTitle {
+                font-size: r(24px);
+                color: #666666;
+                padding-bottom: r(40px);
+            }
+            .picPicture {
+                padding-left: r(20px);
+                img {
+                    height: r(100px);
+                    width: 100%;
+                }
+                p {
+                    font-size: r(18px);
+                    color: #323232;
+                }
+            }
+            .picPicture:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+    //投资记录
+    .change_third {
+        .thirdRecord {
+            padding: r(30px) r(30px) r(30px) r(30px);
+            margin-bottom: r(100px);
+        }
+        .recordTittle {
+            font-weight: bold;
+            font-size: r(24px);
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding-bottom: r(20px);
+            border-bottom: r(2px) solid #ededed;
+        }
+        .recordMain {
+            padding-top: r(20px);
+            text-align: center;
+            font-size: r(20px);
+            color: rgb(102, 102, 102);
+            letter-spacing: r(1px);
+        }
+    }
+    //上啦加载..
+    ion-infinite-scroll {
+        font-size: 20px!important;
+    }
+}

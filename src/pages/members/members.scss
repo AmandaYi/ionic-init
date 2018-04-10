@@ -1,0 +1,259 @@
+page-members {
+    .members{
+         background: #ededed;
+         .big_box {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            height:r(345px);
+            margin-top:r(26px);
+        }
+
+        .swiper-wrapper{
+             width: 100%;
+            height:r(300px);
+            margin-bottom: 10px;
+        }
+
+        .swiper-pagination{
+            bottom:-5%;
+        }
+        .swiper-pagination-bullet{
+            width:r(16px);
+            height:r(16px);
+            background:rgba(255, 111, 0, 1)!important;
+        }
+        .swiper-pagination-bullet-active{
+            background:rgba(255, 111, 0, 1)!important;
+        }
+
+
+
+         .big_box .dongjie {
+            position: absolute;
+            bottom: 35%;
+            left: 63%;
+            font-size:r(12px);
+            color:#fff;
+        }
+
+         .big_box .chengzhang {
+            position: absolute;
+            bottom: 22%;
+            left: 50%;
+            width: 90%;
+            margin-left: -45%;
+            text-align: center;
+            color: #fff;
+            font-size:r(12px);
+        }
+
+         .big_box .jindu {
+            position: absolute;
+            bottom: 4%;
+            left: 50%;
+            width: 90%;
+            margin-left: -45%;
+            height: r(54px);
+            line-height: r(54px);
+        }
+
+         .big_box .jindu .jindu_start {
+            float: left;
+            width: 25%;
+            text-align: center;
+            color: #fff;
+            font-size:r(16px);
+        }
+
+         .big_box .jindu .jindu_process {
+            float: left;
+            width: 50%;
+            background: #fff;
+            margin-top:r(20px);
+            border-radius:r(8px);
+            height: r(14px);
+            position: relative;
+        }
+
+         .big_box .jindu .jindu_process span {
+            position: absolute;
+            height: 100%;
+            z-index: 9999;
+            border-radius: r(8px);
+            display:block;
+            background-image:linear-gradient(to right,#cccccc,#909090);
+        }
+
+         .big_box .jindu .jindu_end {
+            float: right;
+            width: 25%;
+            text-align: center;
+            color: #fff;
+            font-size:r(16px);
+        }
+
+         .privilege {
+            border-bottom: 1px solid #ccc;
+            width: 90%;
+            margin: 0 auto;
+            height:r(100px);
+            line-height: r(100px);
+            font-size: r(28px);
+        }
+
+         .privilege .menber {
+            float: right;
+        }
+
+         .privilege .menber i:nth-child(1) {
+            float: left;
+             height:r(100px);
+            line-height: r(100px);
+            font-size: r(28px);
+        }
+
+         .privilege .menber i:nth-child(2) {
+            float: right;
+             height:r(100px);
+            line-height: r(100px);
+            font-size: r(28px);
+        }
+
+         .privilege .title {
+             float: left;
+        }
+
+         .privilege .content {
+          float: right;
+        }
+
+         .privilege_content {
+            width: 100%;
+            padding: 0 5% 0 5%;
+            /*margin:0 auto;*/
+            float: left;
+            background: #fff;
+        }
+
+         .privilege_content li {
+            width: 50%;
+            float: left;
+            /*margin-top:25px;*/
+            height:r(135px);
+        }
+
+         .privilege_content li:nth-child(1) {
+             margin-top: r(26px);
+        }
+
+         .privilege_content li:nth-child(2) {
+            margin-top: r(26px);
+        }
+
+         .privilege_content li .img {
+            float: left;
+            width: r(90px);
+            /*width:50px;*/
+        }
+
+         .privilege_content li .img i {
+            display: block;
+            font-size: r(100px);
+            color: rgba(255, 111, 0, 1);
+            line-height: r(90px);
+            float: right;
+        }
+
+         .privilege_content li .img img {
+            width: 100%;
+            display: block;
+        }
+
+         .privilege_content li .title {
+            float: left;
+            margin-left: 5%;
+            width: 55%;
+        }
+
+         .privilege_content li .title h3 {
+            font-size: r(20px);
+            margin: 0;
+            font-weight: bold;
+        }
+
+         .privilege_content li .title p {
+            font-size: r(16px);
+            margin: r(8px) 0 0 0;
+            line-height: r(32px);
+        }
+
+         .privilege_content li .title p span {
+            color: #ff6f00;
+        }
+
+        .bank{
+            width:100%;height:r(20px);background:#ededed;float:left;
+        }
+
+         .mission {
+
+            float: left;
+            width: 100%;
+            padding: 0 5% 0 5%;
+            background: #fff;
+            /*height:r(120px);*/
+        }
+
+         .mission:last-child {
+            /*margin-bottom: 20px;*/
+            padding-bottom:r(40px);
+        }
+
+         .mission .mission_img {
+            float: left;
+            width: r(90px);
+            margin-top: r(26px);
+        }
+         .mission .mission_img i{
+            display: block;
+            font-size:r(90px);
+            color: rgba(255, 111, 0, 1);
+            line-height: r(90px);
+            font-weight:bold;
+        }
+
+
+         .mission .mission_title {
+            float: left;
+            margin-left:r(15px);
+            margin-top:r(15px);
+            width: 50%;
+            height:100%;
+        }
+        .mission .mission_title1{
+            font-size:r(20px);margin-top:r(5px);
+        }
+
+        .mission .mission_title2{
+            font-size:r(18px);margin-top:r(5px);line-height:r(32px);
+        }
+
+         .mission .mission_btn {
+            float: right;
+            display: block;
+            background: #FF6600;
+            border-radius:r(16px);
+            width: r(140px);
+            height: r(70px);
+            line-height: r(70px);
+            font-size: r(28px);
+            color: #fff;
+            margin-top:r(40px);
+            border: none;
+        }
+
+
+
+    }
+}

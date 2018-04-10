@@ -1,0 +1,55 @@
+page-bulletin {
+    .header .toolbar-content button {
+        margin-top: -3%;
+    }
+    ion-header {
+        .more {
+            text-align: right;
+            padding-right: r(30px);
+            font-size: r(26px);
+        }
+    }
+    ion-content {
+        .bulletin {
+            padding: r(30px) r(30px) r(50px) r(30px);
+            .bulletin_title {
+                text-align: center;
+                color: #323232;
+                font-size: r(32px);
+                font-weight: bold;
+            }
+            .bulletin_time {
+                padding-top: r(20px);
+                padding-bottom: r(20px);
+                font-size: r(20px);
+                color: #909090;
+                text-align: center;
+            }
+            .bulletins_list {
+                font-size: r(24px);
+                color: #323232;
+                text-align: justify;
+            }
+            .MsoNormal {
+                padding-top: r(20px);
+                text-align: center;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            strong,
+            span,
+            p {
+                padding-top: r(20px);
+                margin: 0;
+                font-size: r(24px);
+            }
+            a {
+                color: rgb(50, 50, 50);
+            }
+        }
+    }
+}

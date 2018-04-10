@@ -1,0 +1,49 @@
+<ion-header>
+
+    <ion-navbar [ngSwitch]="type">
+        <ion-title *ngSwitchCase='"GSDT"'>公司动态</ion-title>
+        <ion-title *ngSwitchCase='"MTBD"'>媒体报道</ion-title>
+        <ion-title *ngSwitchDefault>报道</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf='list_all!=null&&list_all!=undefined'>
+        <div class='list' *ngFor='let items of list_all' tappable (click)='on_list_content(items.id)'>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-4 class='list_picture'>
+                        <img src={{items.picUrl}} />
+                    </ion-col>
+                    <ion-col col-8 class="list_text">
+                        <p class='list_title'>{{items.title}}</p>
+                        <span class='list_time'>{{items.releaseTime}}</span>
+                        <span class='list_address'>{{items.from}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+
+    <div class='false' *ngIf="size_jugde==false">
+        已无更多数据...
+    </div>
+    <div class='false' *ngIf="jugde==false">
+        <p>{{wrong}}</p>
+    </div>
+    <div *ngIf="size_jugde==true">
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading..." class='logo'>
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+
+
+</ion-content>

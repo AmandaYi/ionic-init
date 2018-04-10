@@ -1,0 +1,125 @@
+<!--
+  Generated template for the MyInvesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>我的投资</ion-title>
+    </ion-navbar>
+
+    <div class="inves">
+         <div class='inves_all'>
+         <ion-segment [(ngModel)]="change">
+            <ion-segment-button value="huikuan" class='topbuttom' (click)='go_huikuan()'>
+                回款中
+            </ion-segment-button>
+
+            <ion-segment-button value="jieqing" class='topbuttom' (click)='go_jieqing()'>
+                已结清
+            </ion-segment-button> 
+             <ion-segment-button value="toubiao" class='topbuttom' (click)='go_toubiao()'>
+                投标中
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    </div>
+
+</ion-header>
+
+
+<ion-content class='inves'>
+
+     <div class="list_all" [ngSwitch]="change">
+            <ion-refresher (ionRefresh)="doRefresh1($event)" *ngSwitchCase="'huikuan'">
+                <ion-refresher-content></ion-refresher-content>
+            </ion-refresher>
+            <div *ngSwitchCase="'huikuan'">
+                <div *ngIf='isdata_1'>
+                    <div class="item" (click)='toMyInvesDetail(d.bidId,d.zqid)' *ngFor='let d of huikuan_list;let i=index'>
+                        <div class="item1">
+                            {{d.bidName}}<span>剩余{{d.backTerm}}期</span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item2">
+                            <div><i>投资金额</i><span>{{d.totalAmount|number:'1.2-2'}}元</span></div>
+                            <div><i>待收本息</i>{{d.revInterest|number:'1.2-2'}}元</div>
+                            <div><i>年化收益</i>{{d.rate*100|number:'1.2-2'}}%</div>
+                            <div><i>投资期限</i>{{d.totalTerm}}<i *ngIf="d.isDay=='S'">天</i> <i *ngIf="d.isDay=='F'">个月</i></div>
+                            <div><i>投资时间</i>{{d.tbTime}}</div>
+                            <div><i>到期时间</i>{{d.backTime}}</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-item" *ngIf='!isdata_1'>
+                     无回款中项目
+                </div>
+                <ion-infinite-scroll (ionInfinite)="doInfinite1($event)" *ngIf="scroll_first">
+                    <ion-infinite-scroll-content>
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+                <div class="nodata" *ngIf='!scroll_first'>无更多的数据了</div>
+            </div>
+
+            <ion-refresher (ionRefresh)="doRefresh2($event)" *ngSwitchCase="'jieqing'">
+                <ion-refresher-content></ion-refresher-content>
+            </ion-refresher>
+            <div *ngSwitchCase="'jieqing'">
+                <div *ngIf='isdata_2'>
+                    <div class="item" (click)='toMyInvesDetail(d.bidId,d.zqid)' *ngFor='let d of jieqing_list;let i=index'>
+                        <div class="item1">
+                            {{d.bidName}}
+                        </div>
+                        <div class="item2">
+                            <div><i>投资金额</i><span>{{d.invAmount|number:'1.2-2'}}元</span></div>
+                            <div><i>待收本息</i>{{d.revInterest|number:'1.2-2'}}元</div>
+                            <div><i>年化收益</i>{{d.rate*100|number:'1.2-2'}}%</div>
+                            <div><i>投资期限</i>{{d.totalTerm}}<i *ngIf="d.isDay=='S'">天</i> <i *ngIf="d.isDay=='F'">个月</i></div>
+                            <div><i>投资时间</i>{{d.tbTime}}</div>
+                            <div><i>到期时间</i>{{d.endTime}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-item" *ngIf='!isdata_2'>
+                    无已结清项目
+                </div>
+                 <ion-infinite-scroll (ionInfinite)="doInfinite2($event)" *ngIf="scroll_two">
+                    <ion-infinite-scroll-content>
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+                <div class="nodata" *ngIf='!scroll_two'>无更多的数据了</div>
+            </div>
+
+
+           <ion-refresher (ionRefresh)="doRefresh3($event)" *ngSwitchCase="'toubiao'">
+                <ion-refresher-content></ion-refresher-content>
+           </ion-refresher>
+           <div *ngSwitchCase="'toubiao'">
+               <div *ngIf='isdata_3'>
+                    <div class="item"  *ngFor='let d of toubiao_list;let i=index'>
+                     <div class="item1">{{d.bidName}}</div>
+                     <div class="item2">
+                        <div><i>投资金额</i><span>{{d.invAmount|number:'1.2-2'}}元</span></div>
+                        <div><i>年化收益</i>{{d.rate*100|number:'1.2-2'}}%</div>
+                        <div><i>投资期限</i>{{d.totalTerm}}<i *ngIf="d.isDay=='S'">天</i> <i *ngIf="d.isDay=='F'">个月</i></div>
+                        <div><i>投资时间</i>{{d.tbTime}}</div>
+                     </div>
+                </div>
+               </div>
+               <div class="my-item" *ngIf='!isdata_3'>
+                   无投标中项目
+               </div>
+               <ion-infinite-scroll (ionInfinite)="doInfinite3($event)" *ngIf="scroll_three">
+                    <ion-infinite-scroll-content>
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+                <div class="nodata" *ngIf='!scroll_three'>无更多的数据了</div>
+          </div>
+    </div>
+
+
+</ion-content>

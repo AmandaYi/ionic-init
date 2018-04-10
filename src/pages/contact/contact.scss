@@ -1,0 +1,299 @@
+    page-contact {
+        ion-content {
+            //nav-图标。。
+            .nav {
+                padding: r(10px) 0 r(30px) 0;
+                border-bottom: r(1px) solid #ededed;
+                .nav-grid {
+                    padding: 0;
+                    padding-top: r(20px);
+                    ion-col {
+                        text-align: center;
+                        padding: 0;
+                        .icon {
+                            color: #ff6f00;
+                            font-size: r(90px);
+                        }
+                        p {
+                            font-size: r(24px);
+                            color: #323232;
+                        }
+                    }
+                    .navtitle_help {
+                        border-right: r(1px) solid #ededed;
+                    }
+                    .navtitle_report {
+                        border-left: r(1px) solid #ededed;
+                    }
+                }
+            }
+            // 活动公告
+            .Bulletin {
+                border-bottom: r(20px) solid #ededed;
+                ion-grid {
+                    padding: 0;
+                    font-size: 0.34438rem;
+                    color: #323232;
+                    .Bulletin-word-first {
+                        text-align: left;
+                        color: #ff6f00;
+                        padding: r(8px) r(5px) r(10px) r(30px);
+                        .iconfont {
+                            font-size: r(24px) !important;
+                        }
+                    }
+                    .Bulletin-word-second {
+                        text-align: left;
+                        padding: r(10px) 0 r(10px) r(5px);
+                    }
+                    .Bulletin-word-third {
+                        text-align: left;
+                        padding: r(10px) 0 r(10px) 0;
+                    }
+                }
+            }
+            //热门活动
+            .activity {
+                padding: r(30px) r(30px) 0 r(30px);
+                .cut {
+                    margin-bottom: r(25px);
+                    border-bottom: r(1px) solid #ededed;
+                }
+                .activity_title {
+                    margin: 0;
+                    padding-bottom: r(20px);
+                    font-size: r(30px);
+                    color: rgb(50, 50, 50);
+                }
+                .activity_pic {
+                    margin-left: 0;
+                    margin-right: 0;
+                    .hot_pic {
+                        img {
+                            width: 100%;
+                            height: r(380px);
+                        }
+                    }
+                }
+            }
+            //分割线
+            .cut {
+                border-bottom: r(20px) solid #ededed;
+            }
+            //媒体报道
+            .media {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                ion-grid {
+                    padding: 0;
+                    padding-bottom: r(20px);
+                }
+                .row {
+                    padding-bottom: r(10px);
+                    border-bottom: r(1px) solid #ededed;
+                }
+                ion-col {
+                    padding: 0;
+                }
+                .media_title {
+                    margin: 0;
+                    font-size: r(30px);
+                }
+                .media_icon {
+                    text-align: right;
+                    font-size: r(36px);
+                }
+                .meida_picture {
+                    img {
+                        width: 100%;
+                        height: r(380px);
+                    }
+                    p {
+                        bottom: 0;
+                        color: #ffffff;
+                        padding-left: r(10px);
+                        font-size: r(20px);
+                        width: 73%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        /*文字溢出的部分隐藏并用省略号代替*/
+                        white-space: nowrap;
+                        /*文本不自动换行*/
+                    }
+                }
+                /* 轮播的字边 */
+                .round_title {
+                    bottom: 0;
+                    width: 100%;
+                    height: r(60px);
+                    z-index: 9999;
+                    position: absolute;
+                    line-height: 30px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                //点点的位置。。封装方法
+                .swiper-pagination-fraction,
+                .swiper-pagination-custom,
+                .swiper-container-horizontal>.swiper-pagination-bullets {
+                    left: r(222px);
+                    bottom: -0.17rem;
+                }
+                // 下面两个是字体封装方法；只能更改封装才能让字体居左;
+                .slide-zoom {
+                    text-align: left;
+                }
+                .swiper-slide {
+                    text-align: left;
+                }
+            }
+            //分割线
+            .cut {
+                border-bottom: r(20px) solid #ededed;
+            }
+            //公司动态
+            .company {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                ion-grid {
+                    padding: 0;
+                    padding-bottom: r(20px);
+                }
+                .row {
+                    padding-bottom: r(10px);
+                    border-bottom: r(1px) solid #ededed;
+                }
+                ion-col {
+                    padding: 0;
+                }
+                .company_title {
+                    margin: 0;
+                    font-size: r(30px);
+                }
+                .company_icon {
+                    text-align: right;
+                    font-size: r(36px);
+                }
+                .company_picture {
+                    height: r(350px);
+                    img {
+                        width: 100%;
+                        height: r(380px);
+                    }
+                    p {
+                        bottom: 0;
+                        color: #ffffff;
+                        padding-left: r(10px);
+                        font-size: r(20px);
+                        width: 73%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        /*文字溢出的部分隐藏并用省略号代替*/
+                        white-space: nowrap;
+                        /*文本不自动换行*/
+                    }
+                }
+                /* 轮播的字边 */
+                .company_round_title {
+                    bottom: 0;
+                    width: 100%;
+                    height: r(60px);
+                    z-index: 9999;
+                    position: absolute;
+                    line-height: 30px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+                //点点的位置。。封装方法
+                .swiper-pagination-fraction,
+                .swiper-pagination-custom,
+                .swiper-container-horizontal>.swiper-pagination-bullets {
+                    left: r(222px);
+                    bottom: -0.17rem;
+                }
+                // 下面两个是字体封装方法；只能更改封装才能让字体居左;
+                .slide-zoom {
+                    text-align: left;
+                }
+                .swiper-slide {
+                    text-align: left;
+                }
+            }
+            .media .meida_picture img {
+                display: block;
+            }
+            .swiper-pagination-bullet {
+                opacity: 0.5;
+            }
+            .swiper-pagination-bullet-active {
+                background: white;
+            }
+        }
+        // 底部栏的设置
+        ion-footer {
+            #ion-foot {
+                border-top: #ededed 1px solid;
+                min-height: 1.5625rem !important;
+                background: #f8f8f8 !important;
+                text-align: center;
+                .nav {
+                    margin: 0;
+                    text-align: center;
+                    border-radius: 0;
+                    position: relative;
+                    z-index: 0;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    overflow: hidden;
+                    -webkit-box-flex: 1;
+                    -webkit-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-align-self: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                    -webkit-box-pack: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    border: 0;
+                    text-decoration: none;
+                    background: none;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                .nav:nth-child(3) {
+                    color: #ff6f00;
+                }
+                .iconfont {
+                    font-size: 0.8125rem !important;
+                }
+                ion-grid {
+                    padding: 0;
+                }
+                ion-col {
+                    padding: 0;
+                    border: 0;
+                    padding-top: r(12px);
+                    padding-bottom: r(5px);
+                }
+                p {
+                    padding-top: r(5px);
+                    font-size: 0.3125rem !important;
+                }
+            }
+        }
+        .back-button.show-back-button {
+            display: none;
+        }
+    }

@@ -1,0 +1,106 @@
+page-addbank-modal {
+        .city_box{
+            background:#ededed;
+            .search{
+                width: 100%;
+                float: left;
+                background-color: #fff;
+                height: r(96px);
+                line-height: r(96px);
+                span{
+                    float: left;
+                    color: #909090;
+                    font-size: r(34px);
+                    width: 34%;
+                    margin-left: 5%;
+                    display:block; 
+                }
+                input{
+                    float: left;
+                    width:50%;
+                    font-size:r(30px);
+                    color:#909090;
+                    border:none;
+                    height: r(96px);
+                    line-height: r(96px);
+                    display:block;   
+                }
+            }
+
+            .city_news{
+                width: 100%;
+                 float: left;
+                 h3{
+                    width: 90%;
+                    float: left;
+                    margin: 0 5%;
+                    color: #323232;
+                    font-size: 13px;
+                    height: r(96px);
+                    line-height: r(96px);
+                 }
+                 ul{
+                     float:left;
+                     width:100%;
+                     li{
+                        float: left;
+                        width: 27%;
+                        margin: 0 3% 3% 3%;
+                        span{
+                            width: 100%;
+                            float: left;
+                            border: solid 1px #cccccc;
+                            border-radius: r(8px);
+                            text-align: center;
+                            height: r(70px);
+                            line-height: r(70px);
+                            color: #666666;
+                            font-size: r(26px);
+                        }
+                        .white{
+                            background:#fff;
+                        }
+                     }
+                 }
+            }
+
+            .city_news_two{
+                 width: 100%;
+                 float: left;
+                h3{
+                        width: 90%;
+                        float: left;
+                        margin: 0 5%;
+                        color: #323232;
+                        font-size: r(26px);
+                        height: r(96px);
+                        line-height: r(96px);
+                }
+                ul{
+                    width: 100%;
+                    float: left;
+                    background-color: #fff;
+                    li{
+                        width: 100%;
+                        float: left;
+                        border-bottom: solid 1px #ededed;
+                        height: r(96px);
+                        line-height: r(96px);
+                        color: #323232;
+                        font-size: r(34px);
+                        text-indent: 5%;
+                
+                    }
+                }
+                 p{
+                    width: 100%;
+                    float: left;
+                    color: #323232;
+                    font-size: r(34px);
+                    text-align: center;
+                    margin:0;
+                }
+            }
+        }
+
+}

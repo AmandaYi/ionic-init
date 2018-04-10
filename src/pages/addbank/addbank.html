@@ -1,0 +1,82 @@
+<!--
+  Generated template for the AddbankPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>添加银行卡</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='addbank'>
+   <div class="title">您只能绑定与实名认证信息一致的银行卡</div>
+
+   <ul>
+     <li>
+       <span>持卡人</span>
+       <u style='color:#909090;'>{{person}}</u>
+       <div class="clear"></div>
+     </li>
+      <li>
+       <span>卡号</span>
+       <input [disabled]='sms_data' type="text" placeholder="输入银行卡号"  [(ngModel)]="cardNumber" name='cardNumber' required>
+        <div class="clear"></div>
+     </li>
+     <li>
+       <span>银行</span>
+       <i class="icon-gengduo iconfont"> </i>
+       <select [disabled]='sms_data'  [(ngModel)]="selectedBankId"  name="selectedBankId" required>
+          <option value="{{item.code}}" *ngFor='let item of bankList;'>{{item.bankName}}</option>
+       </select>
+
+       <div class="clear"></div>
+     </li>
+     <li>
+       <span>开户城市</span>
+       <i class="icon-gengduo iconfont"> </i>
+       <small *ngIf='!sms_data' (click)='city()'>{{cityName}}</small>
+       <small *ngIf='sms_data'>{{cityName}}</small>
+       <div class="clear"></div>
+     </li>
+      <li>
+       <span>开户分行</span>
+       <input [disabled]='sms_data' type="text" placeholder="输入分行"  [(ngModel)]="subbranch" name='subbranch' required>
+        <div class="clear"></div>
+     </li>
+      <li>
+       <span>开户支行</span>
+       <input [disabled]='sms_data' type="text" placeholder="输入支行"  [(ngModel)]="subbranch1" name='subbranch1' required>
+        <div class="clear"></div>
+     </li>
+     <li>
+       <span>预留手机号</span>
+       <input [disabled]='sms_data' type="tel" placeholder="输入预留手机号"  [(ngModel)]="phone_code" name='phone_code' maxlength="11" required>
+        <div class="clear"></div>
+     </li>
+     <li>
+       <span>验证码</span>
+       <input type="tel" placeholder="输入验证码"  [(ngModel)]="verifyCode" name='verifyCode' required style='width:35%;'>
+       <img [src]="verBase64" alt="" (click)='refreshCode()'>
+        <div class="clear"></div>
+     </li>
+      <li>
+       <span>手机验证码</span>
+       <input type="tel" placeholder="输入验证码"  [(ngModel)]="phone_code1" name='phone_code1' required style='width:35%;'>
+       <button [disabled]='huoqu_btn' (click)='add_gettime()'>{{code_title}}</button>
+        <div class="clear"></div>
+     </li>
+
+   </ul>
+
+
+
+   <button class='addbank_btn' [disabled]='tijiao_btn' (click)='submit()'>提交</button>
+
+
+</ion-content>

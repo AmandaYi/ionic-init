@@ -1,0 +1,40 @@
+<ion-row (change)="radioChange()">
+    <ion-col *ngFor="let item of JXdatas,let i = index " col-12 #jx>
+        <label col-12 class="JX" tappable (click)="getOutID(i)" [ngClass]="{true:' ',false:'checkedout'}[isuser_JX]">
+          <div  class="left">
+                <p>加息券</p>
+                <p> {{item.F04*100 | rydNum:'2'}} <span>%</span> </p>
+                <p>{{item.F06}}到期</p>
+            </div>
+            <div   class="right">
+                <p>使用规则：<br> 每满{{item.F05}} 元可使用1张.</p>
+                <span class="iconfont "
+                [ngClass]="{true:'icon-xuanzhong1',false:'icon-xuanzhong'}[radio.checked]"   
+                [ngStyle]="{'color':radio.checked? '#4ae104':'#fff'}">
+              </span>
+            </div> 
+          <input class="radio"  type="radio" (change)="item.checked" [checked]="radio.checked" name="jx" [value]="item.checked"  #radio/>
+        </label>
+
+    </ion-col>
+</ion-row>
+
+<ion-row (change)="checkboxChange()">
+
+    <ion-col *ngFor="let item of TRdatas,let i = index " col-12 #se>
+        <label class="TR" [for]="i" col-12 tappable (click)="getOutID(i)" [ngClass]="{true:' ',false:'checkedout'}[isuser_TR]">
+          <div  class="left">
+                <p>现金券</p>
+                <p> {{item.F04}} <span>元</span> </p> 
+                <p>{{item.F06}}到期</p>
+            </div>
+            <div   class="right">
+                <p>使用规则：<br> 每满{{item.F05}} 元可使用1张.</p>
+                <span class="iconfont "
+                [ngClass]="{true:'icon-xuanzhong1',false:'icon-xuanzhong'}[checkbox.checked]"   
+                [ngStyle]="{'color':checkbox.checked? '#4ae104':'#fff'}">
+              </span>
+            </div> </label>
+        <input class="checkbox" type="checkbox" [(ngModel)]="item.checked" [checked]="checkbox.checked" [value]="item.F05" [id]="i" #checkbox/>
+    </ion-col>
+</ion-row>

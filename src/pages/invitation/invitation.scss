@@ -1,0 +1,253 @@
+page-invitation {
+    .invitation{
+        width:100%;
+        height:100%;
+        background:#ededed;
+        padding-bottom:r(10px);
+    }
+    /*.invitation h2{
+        font-size:r(26px);
+        color:#323232;
+        text-align:center;
+        font-weight:bold;
+        height:r(80px);
+        line-height:r(80px);
+    }*/
+    .invitation .inv_box1{
+        background:#fff;
+        padding:r(40px) 0;
+        margin-bottom:r(20px);
+        float:left;
+        width:100%
+    }
+    .invitation .inv_box1 div{
+        float:left;
+        width:33.33333%;
+        text-align:center;
+    }
+    .invitation .inv_box1 div p{
+        color:#909090;
+        font-size:r(24px);
+        margin-bottom:r(20px);
+    }
+    .invitation .inv_box1 div span{
+        color:#ff6f00;
+        font-size:r(28px);
+        display:block;
+    }
+    .invitation .inv_box2{
+        margin-bottom:r(20px);
+        position:relative;
+        float:left
+        ;width:100%;
+        background:#fff
+    }
+     .invitation .inv_box2 h2{
+       font-size:r(26px);
+        color:#323232;
+        text-align:center;
+        font-weight:bold;
+        height:r(80px);
+        line-height:r(80px);
+        margin:0;
+    }
+    .invitation .inv_box2 .box2_1{
+        margin-bottom:r(20px);
+    }
+    .invitation .inv_box2 .box2_2{
+        padding-bottom:r(20px);
+        width:100%;
+        float:left;
+        margin-bottom:r(20px);
+    }
+    .invitation .inv_box2 .box2_1 i{
+        color:#039be5;
+        position:absolute;
+        font-weight:100;
+        right:r(10px);
+        top:r(20px);
+         font-size:r(26px);
+    }
+    .invitation .inv_box2 .box2_1 i:active{
+        color:#909090;
+    }
+    .invitation .inv_box2 .box2_2 span{
+        color:#ff6f00
+    }
+    .invitation .inv_box2 .box2_2 div{
+        position:relative;
+        min-height:1px;
+        float:left;
+        width:50%;
+        font-size:r(24px);
+        color:#323232;
+        line-height:r(34px);
+        padding:0 r(30px)
+    }
+    .invitation .inv_box2 .box2_2 i{
+        font-size:r(32px);
+    }
+    .invitation .inv_box2 .box2_2 div p{
+        font-size:11px;
+        color:#909090;
+        margin-top:r(16px);
+        padding-left:r(30px)
+    }
+
+
+
+
+
+
+
+    .invitation .inv_box3{
+        position:relative;
+        float:left;
+        width:100%;
+        background:#fff
+    }
+    .invitation .inv_box3 h2{
+        font-size:r(26px);
+        color:#323232;
+        text-align:center;
+        font-weight:bold;
+        height:r(80px);
+        line-height:r(80px);
+        margin:0;
+        i{
+            color:#039be5;
+            position:absolute;
+            font-weight:100;
+            right:r(10px);
+            top:r(20px);
+            font-size:r(26px);
+        }
+        i:active{
+            color:#909090;
+        }
+    }
+
+    .invitation{
+        .topbuttom{
+            font-size:r(26px);
+            border:0;
+            color:#323232;
+            height:r(100px);
+            line-height:r(100px);
+        }
+        .segment-ios .segment-button.segment-activated{
+            background:none;
+            color:#ff6f00;
+            border-bottom:1px solid #ff6f00;
+        }
+        .segment-ios .segment-button.segment-activated:active{
+              background:#ededed;
+        }
+        .ul_top1{
+            width:100%;
+            float:left;
+            margin-bottom:r(30px);
+            margin-top:r(20px);
+            li{
+                font-size:r(20px);
+                width:25%;
+                color:#909090;
+                text-align:center;
+                 float:left;
+            }
+        }
+        .ul1{
+            width:100%;
+            float:left;
+            li{
+                color:#323232;
+                font-size:r(20px);
+                width:25%;
+                text-align:center;
+                float:left;
+                height:r(50px);
+                 line-height:r(50px);
+            }
+        }
+         .ul_top2{
+             width:100%;
+             float:left;
+             margin-bottom:r(30px);
+             margin-top:r(20px);
+            li{
+                font-size:r(20px);
+                width:33.3%;
+                color:#909090;
+                text-align:center;
+                 float:left;
+            }
+        }
+        .ul2{
+            width:100%;
+            float:left;
+            li{
+                color:#323232;
+                font-size:r(20px);
+                width:33.3%;
+                text-align:center;
+                 float:left;
+                 height:r(50px);
+                 line-height:r(50px);
+            }
+        }
+        .jilu{
+            width: 100%;
+            float: left;
+            text-align: center;
+             margin:32% 0;
+            color:#909090; 
+            font-size:r(20px);
+        }
+        .nodata{
+            width:100%;
+            float:left;
+            text-align:center;
+            color:#909090;
+            font-size:r(20px);
+            padding-bottom:r(20px);
+            padding-top:r(20px);
+        }
+    }
+    .bank{
+        width:100%;
+        float:left;
+        height:r(88px);
+    }
+
+    .yaoqing_title{
+        width:100%;
+        position:fixed;
+        bottom:0;
+        font-size: r(38px);
+        color:#fff;
+        text-align:center;
+        height:r(88px);
+        line-height: r(88px);
+        background:#ff6f00;
+    }
+    .yaoqing_title:active{
+        background:#ededed;
+    }
+
+
+    /*二维码*/
+
+    .sharefd .sharebg{background:#000;opacity:.4;position:fixed;width:100%;height:100%;z-index:99;top:0}
+    .sharefd .sharebox{position:fixed;bottom:44px;z-index:99;background:#ededed;left:0;width:100%}
+    .sharefd .sharebox ul li{float:left;width:25%;text-align:center;text-align:-webkit-center;text-align:-moz-center;display:block;padding:15px}
+    .sharefd .sharebox ul li span{background:#fff;border-radius:50px;-webkit-border-radius:50px;-moz-border-radius:50px;font-size:24px;width:50px;height:50px;-moz-box-pack:center;-webkit-box-align:center;-moz-box-align:center;display:-webkit-box;
+        svg{
+                display: block;
+                width: 70%;
+                height: 70%;
+        }
+    }
+    .sharefd .sharebox ul li p{font-size:11px;color:#323232;margin-top:9px}
+    .sharefd .shareclose{font-size:16px;color:#323232;position:fixed;background:#ededed;left:0;width:100%;height:44px;line-height:44px;text-align:center;text-align:-webkit-center;text-align:-moz-center;border-top:1px solid #ccc;bottom:0;z-index:99}
+
+}

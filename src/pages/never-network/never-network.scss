@@ -1,0 +1,26 @@
+page-never-network {
+  .main {
+    padding: r(30px);
+    background: #efefef;
+    color: #666666;
+    font-size: r(26px);
+    height: 100%;
+
+    .til {
+      font-size: r(30px);
+      color: #333333;
+      padding: r(50px) 0;
+    }
+
+    .t1 {
+      padding: r(40px) 0;
+    }
+
+    .t2,
+    .t3,
+    .t4 {
+      padding-top: r(40px);
+    }
+  }
+
+}

@@ -1,0 +1,77 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>注册</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='login'>
+       <ul class='login_main'>
+
+          <li>
+            <div class='item_1'><i class='icon-shouji iconfont'></i></div>
+            <div class='item_2'>
+              <input type="tel"   placeholder="手机号码"  (keyup)='phone_key(phone)' name='phone' [(ngModel)]='phone' required maxlength="11">
+              <i class='iconfont icon-shanchu' *ngIf='phone_icon' (click)='phone_hide()'></i>
+            </div>
+            <div class="clear"></div>
+          </li>
+
+
+          <li>
+            <div class='item_1'><i class='icon-mima iconfont'></i></div>
+            <div class='item_2'>
+              <input [type]='pass'  placeholder="密码6-20位(字母+数字)" required (keyup)='password_key(psw)' name='psw' [(ngModel)]='psw' style='width:72%'>
+              <i [ngClass]="{true:'iconfont icon-display-copy',false:'iconfont icon-baomi'}[flag1]" (click)='passwordCtrl()'></i>
+              <i class='iconfont icon-shanchu' *ngIf='password_icon' (click)='password_hide()'></i>
+            </div>
+            <div class="clear"></div>
+          </li>
+
+
+          <li>
+            <div class='item_1'><i class='icon-gengduoactive iconfont'></i></div>
+            <div class='item_2'>
+              <input type="number"  placeholder="验证码" required maxlength="6" name='yzm' [(ngModel)]='yzm' style='width:60%;'>
+               <img [src]='verBase64'  (click)="refreshCode()">
+            </div>
+            <div class="clear"></div>
+          </li>
+
+           <li>
+            <div class='item_1'><i class='icon-duanxin iconfont'></i></div>
+            <div class='item_2'>
+              <input type="number"  placeholder="短信验证码" required maxlength="4" name='dxyzm' [(ngModel)]='dxyzm' style='width:60%;'>
+              <!--<validation></validation>-->
+              <button (click)='getMessageCode(phone,psw,yzm)' [disabled]='disabled_code'>{{code_title}}</button>
+            </div>
+            <div class="clear"></div>
+          </li>
+
+      </ul>
+
+      <div class="people_btn" (click)='flag2=!flag2' [ngClass]="{true:'iconfont icon-sanjiaoxing-copy',false:'iconfont icon-triangle'}[flag2]">
+        我有邀请人
+      </div>
+
+      <div class='people_phone' [ngStyle]="{'display':flag2==true?'none':'block'}">
+        <div class='item_1'><i class="icon-tongxun iconfont"></i></div>
+        <div class='item_2'> <input type="tel" placeholder="输入邀请人手机号，选填" name='yaoqingren' [(ngModel)]='yaoqingren' maxlength="11"></div>
+      </div>
+
+
+      <button class='login_button' (click)='register(phone,psw,yzm,dxyzm,yaoqingren)' [disabled]='disabled_state'>立即注册</button>
+
+      <div class="login_btn">已有账号？<i (click)='login()'>去登录</i> </div>
+      <div class="zcxy_btn">注册即表示同意<i (click)='Agreement()'>《融裕贷注册协议》</i></div>
+
+</ion-content>

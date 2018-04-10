@@ -1,0 +1,245 @@
+        page-list-details {
+            /* -------------------------------------------------------------------------------------------------- */
+            #top_All {
+                display: block;
+                overflow-y: hidden;
+            }
+            #top_All::after {
+                clear: both!important;
+            }
+            .view {
+                -webkit-transform: translate3d(0, 0, 0);
+                -webkit-overflow-scrolling: touch;
+                transform: translate3d(0, 0, 0);
+                position: relative;
+                z-index: 1;
+                -webkit-animation: mymove 300ms;
+                will-change: scroll-position;
+            }
+            @-webkit-keyframes mymove {
+                from {
+                    height: 100%;
+                }
+                to {
+                    height: 0px;
+                }
+            }
+            #child {
+                display: none;
+                position: relative;
+                z-index: 100;
+            }
+            #child::after {
+                clear: both!important;
+            }
+            /* -------------------------------------------------------------------------------------------------- */
+            .content-ios {
+                background: #ededed;
+            }
+             ::-webkit-scrollbar {
+                display: none !important;
+            }
+            ion-content {
+                div.fixed-content,
+                div.scroll-content {
+                    margin-top: 1.45313rem !important;
+                    margin-bottom: 1.5rem !important;
+                }
+                //全局颜色
+                div.fixed-content,
+                div.scroll-content {
+                    background: #ededed;
+                }
+                //局部调色
+                .change {
+                    background: rgb(255, 255, 255);
+                }
+                .details_top {
+                    background: rgb(255, 255, 255);
+                }
+                .end {
+                    font-size: r(24px);
+                    color: #666666;
+                    text-align: center;
+                    height: r(60px);
+                    padding-top: r(15px);
+                    border-bottom: solid r(1px) #ededed;
+                    span {
+                        color: #ff6f00;
+                    }
+                }
+                .grid {
+                    padding: 0
+                }
+                .col {
+                    padding: 0
+                }
+                .details_top {
+                    padding: r(38px) r(30px) 0 r(30px);
+                    .yearGains {
+                        text-align: center;
+                        .staticGains {
+                            font-size: r(24px);
+                            color: #909090;
+                            padding-bottom: r(15px);
+                        }
+                        //预期年化收益
+                        .dynamicGains {
+                            font-size: r(60px);
+                            color: #ff6f00;
+                            padding-bottom: r(30px);
+                            i {
+                                font-size: r(30px)
+                            }
+                        }
+                    }
+                    //进度条
+                    .remain {
+                        padding: 0;
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: r(20px);
+                        .allLength {
+                            display: block;
+                            height: r(15px);
+                            margin-top: r(10px);
+                            background-color: #ededed;
+                            width: 86%;
+                            float: left;
+                            border-radius: r(20px);
+                            -webkit-border-radius: r(15px);
+                            -moz-border-radius: r(15px);
+                            text-align: left;
+                            text-align: -webkit-left;
+                            text-align: -moz-left;
+                        }
+                        .finished {
+                            bottom: r(15px);
+                            height: r(15px);
+                            border-radius: r(20px);
+                            background-color: #ff6f00;
+                        }
+                    }
+                    .finished_rate {
+                        text-align: center;
+                        float: right;
+                        width: 14%;
+                        font-size: r(24px);
+                        color: #ff6f00;
+                    }
+                }
+                //期限,万元收益,可投金额
+                .trisomic {
+                    padding-bottom: r(30px);
+                }
+                .trisomic_first {
+                    font-size: r(24px);
+                    color: #909090;
+                    text-align: center;
+                    border-right: r(1px) solid #ededed;
+                    p {
+                        padding-top: r(16px);
+                        font-size: r(24px);
+                        color: #323232;
+                    }
+                }
+                .trisomic_second {
+                    border-right: r(1px) solid #ededed;
+                    font-size: r(24px);
+                    color: #909090;
+                    text-align: center;
+                    i {
+                        font-size: 0.4rem;
+                    }
+                    p {
+                        padding-top: r(14px);
+                        font-size: r(24px);
+                        color: #323232;
+                    }
+                }
+                .trisomic_third {
+                    font-size: r(24px);
+                    color: #909090;
+                    text-align: center;
+                    p {
+                        padding-top: r(16px);
+                        font-size: r(24px);
+                        color: #323232;
+                    }
+                }
+                //项目简介
+                .change_first {
+                    border-top: r(20px) solid #ededed;
+                    padding: r(30px) r(30px) r(30px) r(30px);
+                    background: rgb(255, 255, 255);
+                    .existence:last-child {
+                        text-align: center;
+                    }
+                    .existence {
+                        font-size: r(21px);
+                        padding-bottom: r(30px);
+                        span {
+                            color: rgb(255, 111, 0);
+                            letter-spacing: 0.01563rem;
+                            border: solid r(1px);
+                            border-radius: 0.23438rem;
+                            border-spacing: 0.01813rem;
+                            -webkit-border-radius: 0.4rem;
+                        }
+                    }
+                    .title {
+                        font-size: r(22px);
+                        color: #909090;
+                        padding-bottom: r(20px);
+                        letter-spacing: r(1px);
+                    }
+                    .anwser {
+                        // padding-left: r(40px);
+                        font-size: r(22px);
+                        color: #323232;
+                        letter-spacing: r(1px);
+                        text-align: justify;
+                    }
+                }
+                //底部上拉
+                .aboveRe {
+                    background: #ededed;
+                    width: 100%;
+                    text-align: center;
+                    padding: 0.46875rem 0.46875rem 0.46875rem 0.46875rem;
+                    // padding-top: 1rem;
+                    .iconfont {
+                        text-align: center;
+                        font-size: 0.8rem;
+                        color: rgb(144, 144, 144);
+                    }
+                    p {
+                        text-align: center;
+                        font-size: 0.5rem;
+                        color: rgb(144, 144, 144);
+                    }
+                }
+                .foot {
+                    height: r(98px);
+                    background: #ededed;
+                }
+                ion-infinite-scroll {
+                    height: 1px;
+                }
+                ion-infinite-scroll-content {
+                    min-height: 0;
+                }
+                .infinite-loading {
+                    margin: -2.5rem 0 32px 0;
+                }
+            }
+            ion-footer {
+                p {
+                    height: r(98px);
+                    padding-top: r(20px);
+                    font-size: r(32px);
+                    color: #ffffff;
+                    text-align: center;
+                }
+            }
+        }

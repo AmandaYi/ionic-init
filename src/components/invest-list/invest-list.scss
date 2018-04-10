@@ -1,0 +1,100 @@
+    invest-list {
+        .false {
+            padding: r(15px) r(30px) r(15px) r(30px);
+            font-size: 32px;
+            color: #909090;
+            text-align: center;
+            height: r(150px);
+            background-color: #ededed;
+        }
+        .scroll-content {
+            margin-bottom: 0px;
+        }
+        /* 分割线 */
+        .cut {
+            background-color: rgb(237, 237, 237);
+            height: r(20px)
+        }
+        /* 内容区 */
+        div {
+            background-color: white;
+            .body {
+                .col {
+                    padding-right: 0;
+                }
+                //标题
+                .mainTitle {
+                    font-size: r(30px);
+                    padding-left: 0px;
+                    padding-top: 0;
+                    span {
+                        margin-top: r(5px);
+                    }
+                }
+                //时间
+                .mainTime {
+                    font-size: r(22px);
+                    text-align: right;
+                    padding-left: 0px;
+                }
+                //年化率
+                .mainRatio {
+                    padding-left: 0;
+                    font-size: r(30px);
+                    color: rgb(255, 111, 0);
+                    span:first-child {
+                        font-size: r(50px);
+                    }
+                }
+                //月份
+                .mainMonths {
+                    div {
+                        font-size: r(30px);
+                        text-align: center;
+                        span:first-child {
+                            font-size: r(50px);
+                        }
+                    }
+                }
+                //点击 【投资】按钮；
+                .button.button-full {
+                    margin-top: r(10px);
+                    height: r(60px);
+                    margin-bottom: r(10px);
+                    .button-inner {
+                        font-size: r(26px);
+                    }
+                }
+                //年化收益文字
+                .mainLucre {
+                    font-size: r(24px);
+                    color: rgb(144, 144, 144);
+                }
+                //期限文字
+                .timeEnd {
+                    font-size: r(24px);
+                    text-align: center;
+                    color: rgb(144, 144, 144);
+                }
+                //剩余可投金额
+                .mainOverplus {
+                    padding-left: 0;
+                    padding-right: 0;
+                    font-size: r(24px);
+                    text-align: right;
+                    color: rgb(144, 144, 144);
+                }
+            }
+            .grid {
+                padding-left: r(20px);
+                padding-right: r(20px);
+                //row的间距
+                .firstrow {
+                    margin-top: r(23px);
+                }
+                .thirdrow {
+                    margin-bottom: r(25px);
+                }
+            }
+        }
+    }

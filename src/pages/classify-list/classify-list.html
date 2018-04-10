@@ -1,0 +1,53 @@
+<!--
+  Generated template for the ClassifyListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{types}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class='list'>
+        <div class='line'>
+            <p class='title'>{{types}}</p>
+        </div>
+        <div *ngFor='let items of list_all;let i=index' class='list_for'>
+            <ion-grid tappable (click)='isshow(i)'>
+                <ion-row>
+                    <ion-col col-1>
+                        <div class='list_icon' [ngClass]="{true:'iconfont icon-triangle ',false:'iconfont icon-sanjiaoxing-copy'} [i==Index]"> </div>
+                    </ion-col>
+                    <ion-col col-11>
+                        <p class='list_title'>{{items.title}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='list_content'>
+                        <div [innerHTML]='items.content' [ngStyle]="{'display':i!=Index?'none':'block'}" class='list_block'></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+</ion-content>
+
+
+<ion-footer>
+    <div class="footer">
+        <a href='tel:4001887398'>
+            <div class='call'>
+                <div class="icon iconfont icon-kefu1 small_icon"><span>联系客服</span></div>
+            </div>
+        </a>
+    </div>
+</ion-footer>

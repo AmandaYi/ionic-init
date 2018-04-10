@@ -1,0 +1,90 @@
+page-security {
+    .security_box {
+        background-color: #ededed;
+        margin-top: r(20px);
+    }
+
+    .security_box ul {
+        width:100%;
+        border-bottom: 1px solid  #ededed;
+    }
+    .security_box ul li:active{
+        background:#f8f8ff;
+    }
+    .security_box ul li {
+        padding: 0 5%;
+        background:#ffffff;
+    }
+    .security_box ul li i {
+        font-size: r(50px);
+        line-height: r(120px);
+        height: r(120px);
+        display:block;
+    }
+     .security_box ul li .ffr_1 {
+        color: #4ae104;
+        float:left;
+        width:10%;
+    }
+
+    .security_box ul li .frr_3 {
+        float:left;
+        width:10%;
+        color: #ff6600;
+    }
+
+      .security_box ul li .ffr_2 {
+        color: #909090;
+        float:right;
+        width:5%;
+        text-align:left;
+    }
+     .security_box ul li  .title_head{
+        float:left;
+        width:85%;
+        height:r(120px);
+    }
+     .security_box ul li  .title_1{
+         width:100%;
+         float:left;
+         margin: r(20px) 0 0 r(10px);
+            span{
+                    color: #323232;
+                    font-size: r(26px);
+                    float: left;
+                    width: r(120px);
+                    display:block;
+            }
+            b{
+                    color: #909090;
+                    float: left;
+                    font-size:r(20px);
+                    font-weight: normal;
+                    display:block;
+                    margin-left:r(20px);
+            }
+    }
+    .security_box ul li  .title_2{
+         width:100%;
+         float:left;
+        color: #909090;
+        font-size:r(20px);
+        margin: r(10px) 0 r(10px) r(10px);
+    }
+
+    
+
+    .bank{
+        width:100%;
+        background:#ededed;
+        height:r(20px);
+    }
+
+
+    .clear{
+        clear:both;
+    }
+
+
+
+}

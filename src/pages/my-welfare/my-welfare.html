@@ -1,0 +1,195 @@
+<!--
+  Generated template for the MyWelfarePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>我的福利券</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='myWelfare'>
+    <div class='myWelfare_tab'>
+         <ion-segment [(ngModel)]="change">
+            <ion-segment-button value="weishiyong" class='topbuttom' (click)='go_weishiyong()'>
+                未使用
+            </ion-segment-button>
+            <ion-segment-button value="yishiyong" class='topbuttom' (click)='go_yishiyong()'>
+                已使用
+            </ion-segment-button> 
+             <ion-segment-button value="guoqi" class='topbuttom' (click)='go_guoqi()'>
+                已过期
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+     <div class="welfare_list" [ngSwitch]="change">
+
+        <div *ngSwitchCase="'weishiyong'">
+            <div class="list_item" *ngFor="let item of all_list;let i=index;">
+
+                    <!--加息券-->
+                    <div class="item_cash" *ngIf="item.usageType=='JX'">
+                             <div class="left">
+                                <p>加息券</p>
+                                <p> {{item.amount*100 | number:'1.2-2'}} <span>%</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right"> 
+                                <p  >使用规则：<br> 满{{item.investSum}}元可加息.</p>
+                            </div>
+                            <div class="last"></div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--现金券-->
+                     <div class="item_interest" *ngIf="item.usageType=='TR'">
+                             <div class="left">
+                                <p>现金券</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                                <p>使用规则：<br> 每满{{item.investSum}} 元可使用1张.</p>
+
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']"></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--体验金-->
+                     <div class="item_reflect" *ngIf="item.usageType=='ZC'">
+                          <div class="left">
+                            <p>体验金</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                                <p>使用规则：<br>免费体验投资流程，并获得收益.</p>
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']" ng-click='isshow=!isshow'></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+                </div>
+        </div>
+
+        <div *ngSwitchCase="'yishiyong'">
+            <div class="list_item" *ngFor="let item of all_list;let i=index;">
+
+                    <!--加息券-->
+                    <div class="item_cash_used" *ngIf="item.usageType=='JX'">
+                             <div class="left">
+                                <p>加息券</p>
+                                <p> {{item.amount*100 | number:'1.2-2'}} <span>%</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right"> 
+                                <p>项目到期返还收益，已获{{item.reallymoney|number:'1.2-2'}}元
+                            </div>
+                            <div class="last"></div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--现金券-->
+                     <div class="item_interest_used" *ngIf="item.usageType=='TR'">
+                             <div class="left">
+                                <p>现金券</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                               <p> 项目满标可获收益{{item.reallymoney}} 元</p>
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']"></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--体验金-->
+                     <div class="item_reflect_used" *ngIf="item.usageType=='ZC'">
+                          <div class="left">
+                            <p>体验金</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                               <p> 项目到期可获收益{{item.reallymoney}} 元</p>
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']" ng-click='isshow=!isshow'></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+                </div>
+        </div>
+
+         <div *ngSwitchCase="'guoqi'">
+            <div class="list_item" *ngFor="let item of all_list;let i=index;">
+
+                    <!--加息券-->
+                    <div class="item_out" *ngIf="item.usageType=='JX'">
+                             <div class="left">
+                                <p>加息券</p>
+                                <p> {{item.amount*100 | number:'1.2-2'}} <span>%</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right"> 
+                                <p  >使用规则：<br> 满{{item.investSum}}元可加息.</p>
+                            </div>
+                            <div class="last"></div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--现金券-->
+                     <div class="item_out" *ngIf="item.usageType=='TR'">
+                             <div class="left">
+                                <p>现金券</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                                <p>使用规则：<br> 每满{{item.investSum}} 元可使用1张.</p>
+
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']"></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+
+                    <!--体验金-->
+                     <div class="item_out" *ngIf="item.usageType=='ZC'">
+                          <div class="left">
+                            <p>体验金</p>
+                                <p> {{item.amount | number:0}} <span>元</span> </p>
+                                <p>{{item.endDate}}到期</p>
+                            </div>
+                            <div class="right">
+                                <p>使用规则：<br>免费体验投资流程，并获得收益.</p>
+                            </div>
+                            <div class="last">
+                                <!--<i ng-if='button' class="icon-icon iconfont" ng-class="{false:'icon-icon',true:'icon-shang'}[isshow=='1']" ng-click='isshow=!isshow'></i>-->
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+                </div>
+        </div>
+
+      </div>
+
+
+
+
+
+</ion-content>

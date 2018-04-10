@@ -1,0 +1,85 @@
+page-risk {
+    div.fixed-content,
+    div.scroll-content {
+        margin-top: 0 !important;
+    }
+    ion-content {
+        //全局透明
+        .All {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        //按钮
+        .button {
+            line-height: 0;
+            color: #ffffff;
+            background-color: transparent;
+            left: 85%;
+            margin-top: -0.8rem;
+        }
+        //返回键
+        .button i {
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        //内容
+        .content {
+            background-color: #ffffff;
+            margin-top: -0.2rem;
+            margin-left: 0.5125rem;
+            margin-right: 0.5125rem;
+            margin-bottom: 1rem;
+        }
+        // 头部提示书
+        .top {
+            text-align: center;
+            height: 1.5rem;
+            padding-top: 0.2rem;
+            border-bottom: 0.03125rem #ededed solid;
+            p {
+                font-size: r(36px);
+                color: #323232;
+                height: 100%;
+                letter-spacing: r(3px);
+            }
+        }
+        //中间
+        .middle {
+            margin-left: r(15px);
+            margin-right: r(15px);
+            margin-top: r(20px);
+            text-align: justify;
+            font-family: serif;
+            p {
+                font-size: r(24px);
+                white-space: pre-wrap;
+                letter-spacing: r(2px);
+                padding-bottom: r(10px);
+            }
+        }
+        .middle p:last-child {
+            padding-bottom: r(40px);
+        }
+        .middle p:first-child {
+            font-weight: 550;
+        }
+        //底部确定
+        .bottom {
+            height: 1.53125rem;
+            width: 100%;
+            border-top: 10px solid #ff6f00;
+            border-radius: 0.1rem;
+            p {
+                color: #ffffff;
+                text-align: center;
+                font-size: 0.5rem;
+                height: 100%;
+                padding-top: 0.15rem;
+            }
+        }
+    }
+    //半透明
+    .content-ios {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}

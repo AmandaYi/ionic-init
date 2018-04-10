@@ -1,0 +1,615 @@
+<!--
+  Generated template for the MembersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>会员中心</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="members">
+
+            <div class="big_box">
+              <ion-slides pager (ionSlideDidChange)="slideChanged()">
+                <ion-slide  *ngFor='let key of lunbo_array;let i=index'  [ngStyle]="{'background':'url('+key.rankUrl+') no-repeat','background-size':'100% 100%'}">
+                   <div class="dongjie"  *ngIf='data_dongjie'>(冻结中)</div>
+                   <div class="chengzhang" *ngIf="key.rank_fs=='true'">我的成长值：{{key.rank_id}}</div>
+                   <div class="chengzhang" *ngIf="key.rank_fs!='true'">成长值：{{key.rank_id}}+</div>
+                   <div class="jindu"  *ngIf="key.rank_fs=='true'">
+                        <div class="jindu_start">{{key.integralStart}}</div>
+                        <div class="jindu_process"><span [ngStyle]="{'width':width}"></span></div>
+                        <div class="jindu_end" *ngIf='key.integralEnd!=0'>{{key.integralEnd}}</div>
+                        <div class="jindu_end" *ngIf='key.integralEnd==0'></div>
+                    </div>
+                </ion-slide>
+              </ion-slides>
+            </div>
+
+            <div style="background:#fff;">
+              <div class="privilege">会员特权 
+                <span class="menber" (click)='go_grade()'> 
+                   <i>等级说明</i>
+                   <i class="icon iconfont icon-gengduo" style="float:left;height:100%;margin-left:10px;"></i>
+                </span>
+              </div>
+            </div>
+
+
+            <ul class="privilege_content" *ngIf='menber_number==0'>
+                <li (click)="go_detail('短信提醒')">
+                    <div class="img"> <i class="icon icon-duanxintixing1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>短信提醒</h3>
+                        <p>资金变动短信实时提醒</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('投资管理费')">
+                    <div class="img"> <i class="icon icon-touziguanlifei1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>投资管理费</h3>
+                        <p>对用户投资手续费进行费用减免</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('自动投标')">
+                    <div class="img"> <i class="icon icon-zidongtoubiao iconfont"></i></div>
+                    <div class="title">
+                        <h3>自动投标</h3>
+                        <p>自动投标优先级为<span>低</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('提现费率')">
+                    <div class="img"> <i class="icon icon-tixianfeishuai iconfont"></i></div>
+                    <div class="title">
+                        <h3>提现费率</h3>
+                        <p>对用户提现手续费率为<span>0.20%</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('生日礼金')">
+                    <div class="img"> <i class="icon icon-shengrilijin iconfont"></i></div>
+                    <div class="title">
+                        <h3>生日礼金</h3>
+                        <p>生日当天可获<span>18元</span>现金券</p>
+                    </div>
+                </li>
+                <!--<li (click)="go_detail('会员礼包')">
+                    <div class="img"> <i class="icon icon-huiyuanlibao iconfont"></i></div>
+                    <div class="title">
+                        <h3>会员礼包</h3>
+                        <p>每月18号发放会员礼包</p>
+                    </div>
+                </li>-->
+                <li (click)="go_detail('好友佣金系数')">
+                    <div class="img"> <i class="icon icon-haoyouyongjinxishu iconfont"></i></div>
+                    <div class="title">
+                        <h3>好友佣金系数</h3>
+                        <p>邀请好友时的佣金系数为<span>1.00</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('免费提现额度')" >
+                    <!--<div class="img"> <i class="icon icon-mianfeitixianedu iconfont"></i></div>-->
+                    <div class="img"> <i class="icon icon-mianfeitixianedu iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>免费提现额度</h3>
+                        <p>每月<span>0</span>元免费提现额度</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('升级礼金')">
+                    <!--<div class="img" > <i class="icon icon-shengjilijin iconfont"></i></div>-->
+                    <div class="img" > <i class="icon icon-shengjilijin iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>升级礼金</h3>
+                        <p >无</p>
+                        <!--<p >会员升级当天可获<span>20元</span>现金券</p>
+                        <p >会员升级当天可获<span>50元</span>现金券</p>
+                        <p>会员升级当天可获<span>0.5%</span>加息券</p>
+                        <p >会员升级当天可获<span>1%</span>加息券</p>-->
+                    </div>
+                </li>
+                <li (click)="go_detail('专属客服')">
+                    <!--<div class="img"> <i class="icon icon-zhuanshukefu iconfont"></i></div>-->
+                    <div class="img" ng-switch-when="2"> <i class="icon icon-zhuanshukefu iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>专属客服</h3>
+                        <p>专属客服1对1服务</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('年会参与特权')">
+                    <!--<div class="img"> <i class="icon icon-nianhuicanyutequan iconfont"></i></div>-->
+                    <div class="img"> <i class="icon icon-nianhuicanyutequan iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>年会参与特权</h3>
+                        <p>免费参加瑾瑜科技年会</p>
+                    </div>
+                </li>
+            </ul>
+
+             <ul class="privilege_content" *ngIf='menber_number==1'>
+                <li (click)="go_detail('短信提醒')">
+                    <div class="img"> <i class="icon icon-duanxintixing1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>短信提醒</h3>
+                        <p>资金变动短信实时提醒</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('投资管理费')">
+                    <div class="img"> <i class="icon icon-touziguanlifei1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>投资管理费</h3>
+                        <p>对用户投资手续费进行费用减免</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('自动投标')">
+                    <div class="img"> <i class="icon icon-zidongtoubiao iconfont"></i></div>
+                    <div class="title">
+                        <h3>自动投标</h3>
+                        <p>自动投标优先级为<span>较低</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('提现费率')">
+                    <div class="img"> <i class="icon icon-tixianfeishuai iconfont"></i></div>
+                    <div class="title">
+                        <h3>提现费率</h3>
+                        <p>对用户提现手续费率为<span>0.15%</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('生日礼金')">
+                    <div class="img"> <i class="icon icon-shengrilijin iconfont"></i></div>
+                    <div class="title">
+                        <h3>生日礼金</h3>
+                        <p>生日当天可获<span>58元</span>现金券</p>
+                    </div>
+                </li>
+                <!--<li (click)="go_detail('会员礼包')">
+                    <div class="img"> <i class="icon icon-huiyuanlibao iconfont"></i></div>
+                    <div class="title">
+                        <h3>会员礼包</h3>
+                        <p>每月18号发放会员礼包</p>
+                    </div>
+                </li>-->
+                <li (click)="go_detail('好友佣金系数')">
+                    <div class="img"> <i class="icon icon-haoyouyongjinxishu iconfont"></i></div>
+                    <div class="title">
+                        <h3>好友佣金系数</h3>
+                        <p>邀请好友时的佣金系数为<span>1.05</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('免费提现额度')" >
+                    <div class="img"> <i class="icon icon-mianfeitixianedu iconfont"></i></div>
+                    <!--<div class="img"> <i class="icon icon-mianfeitixianedu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>免费提现额度</h3>
+                        <p>每月<span>3000</span>元免费提现额度</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('升级礼金')">
+                    <div class="img" > <i class="icon icon-shengjilijin iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-shengjilijin iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>升级礼金</h3>
+                        <!--<p >无</p>-->
+                        <p >会员升级当天可获<span>20元</span>现金券</p>
+                        <!--<p >会员升级当天可获<span>50元</span>现金券</p>
+                        <p>会员升级当天可获<span>0.5%</span>加息券</p>
+                        <p >会员升级当天可获<span>1%</span>加息券</p>-->
+                    </div>
+                </li>
+                <li (click)="go_detail('专属客服')">
+                    <!--<div class="img"> <i class="icon icon-zhuanshukefu iconfont"></i></div>-->
+                    <div class="img"> <i class="icon icon-zhuanshukefu iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>专属客服</h3>
+                        <p>专属客服1对1服务</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('年会参与特权')">
+                    <!--<div class="img"> <i class="icon icon-nianhuicanyutequan iconfont"></i></div>-->
+                    <div class="img" ng-switch-when="2"> <i class="icon icon-nianhuicanyutequan iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>年会参与特权</h3>
+                        <p>免费参加瑾瑜科技年会</p>
+                    </div>
+                </li>
+            </ul>
+
+             <ul class="privilege_content" *ngIf='menber_number==2'>
+                <li (click)="go_detail('短信提醒')">
+                    <div class="img"> <i class="icon icon-duanxintixing1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>短信提醒</h3>
+                        <p>资金变动短信实时提醒</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('投资管理费')">
+                    <div class="img"> <i class="icon icon-touziguanlifei1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>投资管理费</h3>
+                        <p>对用户投资手续费进行费用减免</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('自动投标')">
+                    <div class="img"> <i class="icon icon-zidongtoubiao iconfont"></i></div>
+                    <div class="title">
+                        <h3>自动投标</h3>
+                        <p>自动投标优先级为<span>中</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('提现费率')">
+                    <div class="img"> <i class="icon icon-tixianfeishuai iconfont"></i></div>
+                    <div class="title">
+                        <h3>提现费率</h3>
+                        <p>对用户提现手续费率为<span>0.10%</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('生日礼金')">
+                    <div class="img"> <i class="icon icon-shengrilijin iconfont"></i></div>
+                    <div class="title">
+                        <h3>生日礼金</h3>
+                        <p>生日当天可获<span>118元</span>现金券</p>
+                    </div>
+                </li>
+                <!--<li (click)="go_detail('会员礼包')">
+                    <div class="img"> <i class="icon icon-huiyuanlibao iconfont"></i></div>
+                    <div class="title">
+                        <h3>会员礼包</h3>
+                        <p>每月18号发放会员礼包</p>
+                    </div>
+                </li>-->
+                <li (click)="go_detail('好友佣金系数')">
+                    <div class="img"> <i class="icon icon-haoyouyongjinxishu iconfont"></i></div>
+                    <div class="title">
+                        <h3>好友佣金系数</h3>
+                        <p>邀请好友时的佣金系数为<span>1.15</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('免费提现额度')" >
+                    <div class="img"> <i class="icon icon-mianfeitixianedu iconfont"></i></div>
+                    <!--<div class="img"> <i class="icon icon-mianfeitixianedu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>免费提现额度</h3>
+                        <p>每月<span>10000</span>元免费提现额度</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('升级礼金')">
+                    <div class="img" > <i class="icon icon-shengjilijin iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-shengjilijin iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>升级礼金</h3>
+                        <!--<p >无</p>-->
+                        <!--<p >会员升级当天可获<span>20元</span>现金券</p>-->
+                        <p >会员升级当天可获<span>50元</span>现金券</p>
+                        <!--<p>会员升级当天可获<span>0.5%</span>加息券</p>-->
+                        <!--<p >会员升级当天可获<span>1%</span>加息券</p>-->
+                    </div>
+                </li>
+                <li (click)="go_detail('专属客服')">
+                    <div class="img"> <i class="icon icon-zhuanshukefu iconfont"></i></div>
+                    <!--<div class="img"> <i class="icon icon-zhuanshukefu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>专属客服</h3>
+                        <p>专属客服1对1服务</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('年会参与特权')">
+                    <!--<div class="img"> <i class="icon icon-nianhuicanyutequan iconfont"></i></div>-->
+                    <div class="img"> <i class="icon icon-nianhuicanyutequan iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>年会参与特权</h3>
+                        <p>免费参加瑾瑜科技年会</p>
+                    </div>
+                </li>
+            </ul>
+
+             <ul class="privilege_content" *ngIf='menber_number==3'>
+                <li (click)="go_detail('短信提醒')">
+                    <div class="img"> <i class="icon icon-duanxintixing1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>短信提醒</h3>
+                        <p>资金变动短信实时提醒</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('投资管理费')">
+                    <div class="img"> <i class="icon icon-touziguanlifei1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>投资管理费</h3>
+                        <p>对用户投资手续费进行费用减免</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('自动投标')">
+                    <div class="img"> <i class="icon icon-zidongtoubiao iconfont"></i></div>
+                    <div class="title">
+                        <h3>自动投标</h3>
+                        <p>自动投标优先级为<span>较高</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('提现费率')">
+                    <div class="img"> <i class="icon icon-tixianfeishuai iconfont"></i></div>
+                    <div class="title">
+                        <h3>提现费率</h3>
+                        <p>对用户提现手续费率为<span>0.08%</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('生日礼金')">
+                    <div class="img"> <i class="icon icon-shengrilijin iconfont"></i></div>
+                    <div class="title">
+                        <h3>生日礼金</h3>
+                        <p>生日当天可获<span>188元</span>现金券</p>
+                    </div>
+                </li>
+                <!--<li (click)="go_detail('会员礼包')">
+                    <div class="img"> <i class="icon icon-huiyuanlibao iconfont"></i></div>
+                    <div class="title">
+                        <h3>会员礼包</h3>
+                        <p>每月18号发放会员礼包</p>
+                    </div>
+                </li>-->
+                <li (click)="go_detail('好友佣金系数')">
+                    <div class="img"> <i class="icon icon-haoyouyongjinxishu iconfont"></i></div>
+                    <div class="title">
+                        <h3>好友佣金系数</h3>
+                        <p>邀请好友时的佣金系数为<span>1.25</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('免费提现额度')" >
+                    <div class="img"> <i class="icon icon-mianfeitixianedu iconfont"></i></div>
+                    <!--<div class="img"> <i class="icon icon-mianfeitixianedu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>免费提现额度</h3>
+                        <p>每月<span>30000</span>元免费提现额度</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('升级礼金')">
+                    <div class="img" > <i class="icon icon-shengjilijin iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-shengjilijin iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>升级礼金</h3>
+                        <!--<p >无</p>-->
+                        <!--<p >会员升级当天可获<span>20元</span>现金券</p>-->
+                        <!--<p >会员升级当天可获<span>50元</span>现金券</p>-->
+                        <p>会员升级当天可获<span>100元</span>现金券</p>
+                        <!--<p >会员升级当天可获<span>1%</span>加息券</p>-->
+                    </div>
+                </li>
+                <li (click)="go_detail('专属客服')">
+                    <div class="img"> <i class="icon icon-zhuanshukefu iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-zhuanshukefu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>专属客服</h3>
+                        <p>专属客服1对1服务</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('年会参与特权')">
+                    <!--<div class="img"> <i class="icon icon-nianhuicanyutequan iconfont"></i></div>-->
+                    <div class="img"> <i class="icon icon-nianhuicanyutequan iconfont" style="color: rgb(156, 151, 148);"></i></div>
+                    <div class="title">
+                        <h3>年会参与特权</h3>
+                        <p>免费参加瑾瑜科技年会</p>
+                    </div>
+                </li>
+            </ul>
+
+             <ul class="privilege_content" *ngIf='menber_number==4'>
+                <li (click)="go_detail('短信提醒')">
+                    <div class="img"> <i class="icon icon-duanxintixing1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>短信提醒</h3>
+                        <p>资金变动短信实时提醒</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('投资管理费')">
+                    <div class="img"> <i class="icon icon-touziguanlifei1 iconfont"></i></div>
+                    <div class="title">
+                        <h3>投资管理费</h3>
+                        <p>对用户投资手续费进行费用减免</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('自动投标')">
+                    <div class="img"> <i class="icon icon-zidongtoubiao iconfont"></i></div>
+                    <div class="title">
+                        <h3>自动投标</h3>
+                        <p>自动投标优先级为<span>高</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('提现费率')">
+                    <div class="img"> <i class="icon icon-tixianfeishuai iconfont"></i></div>
+                    <div class="title">
+                        <h3>提现费率</h3>
+                        <p>对用户提现手续费率为<span>0.05%</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('生日礼金')">
+                    <div class="img"> <i class="icon icon-shengrilijin iconfont"></i></div>
+                    <div class="title">
+                        <h3>生日礼金</h3>
+                        <p>生日当天可获<span>268元</span>现金券</p>
+                    </div>
+                </li>
+                <!--<li (click)="go_detail('会员礼包')">
+                    <div class="img"> <i class="icon icon-huiyuanlibao iconfont"></i></div>
+                    <div class="title">
+                        <h3>会员礼包</h3>
+                        <p>每月18号发放会员礼包</p>
+                    </div>
+                </li>-->
+                <li (click)="go_detail('好友佣金系数')">
+                    <div class="img"> <i class="icon icon-haoyouyongjinxishu iconfont"></i></div>
+                    <div class="title">
+                        <h3>好友佣金系数</h3>
+                        <p>邀请好友时的佣金系数为<span>1.40</span></p>
+                    </div>
+                </li>
+                <li (click)="go_detail('免费提现额度')" >
+                    <div class="img"> <i class="icon icon-mianfeitixianedu iconfont"></i></div>
+                    <!--<div class="img"> <i class="icon icon-mianfeitixianedu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>免费提现额度</h3>
+                        <p>每月<span>50000</span>元免费提现额度</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('升级礼金')">
+                    <div class="img" > <i class="icon icon-shengjilijin iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-shengjilijin iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>升级礼金</h3>
+                        <!--<p >无</p>-->
+                        <!--<p >会员升级当天可获<span>20元</span>现金券</p>
+                        <p >会员升级当天可获<span>50元</span>现金券</p>
+                        <p>会员升级当天可获<span>0.5%</span>加息券</p>-->
+                        <p >会员升级当天可获<span>150元</span>现金券</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('专属客服')">
+                    <div class="img" > <i class="icon icon-zhuanshukefu iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-zhuanshukefu iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>专属客服</h3>
+                        <p>专属客服1对1服务</p>
+                    </div>
+                </li>
+                <li (click)="go_detail('年会参与特权')">
+                    <div class="img"> <i class="icon icon-nianhuicanyutequan iconfont"></i></div>
+                    <!--<div class="img" > <i class="icon icon-nianhuicanyutequan iconfont" style="color: rgb(156, 151, 148);"></i></div>-->
+                    <div class="title">
+                        <h3>年会参与特权</h3>
+                        <p>免费参加瑾瑜科技年会</p>
+                    </div>
+                </li>
+            </ul>
+
+          <div class='bank'></div>
+
+          <div style="background:#fff;width:100%;float:left;">
+              <div class="privilege">成长值任务中心 
+                <span class="menber"  (click)='go_task()'> 
+                  <i>更多</i>
+                  <i class="icon iconfont icon-gengduo" style="float:left;height:100%;margin-left:10px;"></i>
+                </span>
+              </div>
+          </div>
+
+
+        <!-- 判断任务第一条没完成 -->
+        <div class="mission"  *ngIf='task=="task1"'>
+            <!-- 开通银行存管 -->
+            <div class="mission_img"> <i class="icon icon-kaitongyinhangcunguan iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1' >开通银行存管任务</div>
+                <div class='mission_title2' >获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian1()" >去开通</button>
+        </div>   
+
+         <!-- 首次绑定银行卡 -->
+        <div class="mission"  *ngIf='task=="task2"'>
+            <div class="mission_img" ng-switch-when="task2"><i class="icon icon-shoucibangdingyinhangqia iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task2">
+                <div  class='mission_title1'>首次绑定银行卡</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian2()">去绑定</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task3"'>
+             <!-- 首次参加风险测评 -->
+            <div class="mission_img" ng-switch-when="task3"><i class="icon icon-shoucicanjiafengxianceping iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task3">
+                <div  class='mission_title1'>首次参加风险测评</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian3()">去测评</button>
+        </div>
+        
+        <div class="mission"  *ngIf='task=="task4"'>
+            <!-- 使用体验金 -->
+            <div class="mission_img" ng-switch-when="task4"><i class="icon icon-shiyongtiyanjin iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task4">
+                <div  class='mission_title1'>使用体验金</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian4()">去投标</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task5"'>
+             <!-- 首次充值 -->
+            <div class="mission_img" ng-switch-when="task5"><i class="icon icon-shoucichongzhi iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task5">
+                <div  class='mission_title1'>首次充值</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">15</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian5()" >去充值</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task6"'>
+              <!-- 首次投资 -->
+            <div class="mission_img" ng-switch-when="task6"><i class="icon icon-shoucitouzi iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task6">
+                <div  class='mission_title1'>首次投资</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">15</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian6()" >去投资</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task7"'>
+             <!-- 首次邀友注册并投资 -->
+            <div class="mission_img" ng-switch-when="task7"><i class="icon icon-shouciyaoqinghaoyouzhucebingtouzi iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task7">
+                <div  class='mission_title1'>首次邀友注册并投资</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">40</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian7()">去邀请</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task8"'>
+             <!-- 首次开启自动投标 -->
+            <div class="mission_img" ng-switch-when="task8"><i class="icon icon-zidongtoubiaorenwu iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task8">
+                <div  class='mission_title1'>首次开启自动投标</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian8()">去开启</button>
+        </div>
+
+        <div class="mission"  *ngIf='task=="task9"'>
+             <!-- 绑定邮箱 -->
+            <div class="mission_img" ng-switch-when="task9"><i class="icon icon-bangdingyouxiang iconfont"></i></div>
+            <div class="mission_title" ng-switch-when="task9">
+                <div  class='mission_title1'>绑定邮箱</div>
+                <div  class='mission_title2'>获得<span style="color:#f57c00;">10</span>成长值</div>
+            </div>
+            <button class="mission_btn" (click)="dian9()">去绑定</button>
+        </div>
+        
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-shoucitouzi iconfont"></i></div>
+            <div class="mission_title">
+                <div  class='mission_title1'>投资任务</div>
+                <div  class='mission_title2'>手动投标成功获得投标<span style="color:#f57c00;">应收利息*1</span>的成长值</div>
+            </div>
+            <button class="mission_btn"  (click)='dian6()'>去投资</button>
+        </div>
+
+        <div class="mission">
+            <div class="mission_img"><i class="icon icon-zidongtoubiaorenwu iconfont"></i></div>
+            <div class="mission_title">
+                <div class='mission_title1'>自动投标任务</div>
+                <div  class='mission_title2'>自动投标成功即可获得投标<span style="color:#f57c00;">应收利息*1.2</span>的成长值</div>
+            </div>
+            <button class="mission_btn" [disabled]='miss_btn3' (click)='miss_dian3()'>{{miss_title3}}</button>
+        </div>
+
+
+
+          
+
+
+
+
+
+      
+</ion-content>

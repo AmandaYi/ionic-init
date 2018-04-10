@@ -1,0 +1,55 @@
+page-unlock {
+     .bankLists{
+        background:#ededed;
+        .bankcard_title {
+            color: #909090;
+            font-size:r(25px);
+            width: 90%;
+            margin: 0 5%;
+            height: r(96px);
+            line-height: r(96px);
+        }
+
+        .bankcard_content{
+            width: 100%;
+            padding:0 5%;
+             height:48px;
+                line-height:48px;
+            /*height: r(96px);
+            line-height: r(96px);*/
+            background:#fff;
+            span{
+                display:block;
+                float:left;
+                font-size:17px;
+                height:48px;
+                line-height:48px;
+                /*height: r(96px);*/
+                /*line-height: r(96px);*/
+                color:#323232;
+            }
+            ion-toggle{
+                float:right;
+                /*display:block;
+                width:200px;*/
+                margin-top:10px;
+                /*margin-top:r(25px);
+                span{
+                    height:100%;
+                }
+            }
+            .toggle-ios{
+                  /*width:r(100px);*/
+            }
+            .toggle-ios.toggle-checked .toggle-icon{
+                background:#32db64;
+            }
+        }
+
+        .clear{
+            clear:both;
+        }
+    }
+
+
+}

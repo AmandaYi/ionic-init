@@ -1,0 +1,175 @@
+insade-foot {
+    //普通标
+    .body {
+        //金额显示
+        .moneyView {
+            padding: r(30px) r(30px) r(90px) r(30px);
+            background-color: rgb(255, 255, 255);
+            border-top: r(20px) solid #ededed;
+            //money标题.
+            .moneyTitle {
+                font-size: r(28px);
+                padding-bottom: r(30px);
+                text-align: left;
+                letter-spacing: r(1px);
+            }
+            .money {
+                font-size: r(28px);
+                letter-spacing: r(1px);
+            }
+            //投资输入
+            .recharge {
+                font-size: r(28px);
+                color: #006cff;
+            }
+            .border_line {
+                padding-top: r(25px);
+                border-bottom: r(2px) solid #323232;
+            }
+            .iconfont {
+                padding: 0;
+                font-size: r(40px);
+            }
+            .inputMoney {
+                margin-top: r(-60px);
+            }
+            .inside {
+                padding: 0;
+                font-size: 0.4rem;
+                letter-spacing: r(1px);
+                border: 0;
+                width: 100%;
+            }
+            .allinput {
+                font-size: 0.4rem;
+                padding-top: 0.2rem;
+                text-align: right;
+                color: #006cff;
+                bottom: 0;
+            }
+        }
+        // 优惠券
+        .coupon {
+            padding: r(30px) r(30px) r(30px) r(30px);
+            background-color: rgb(255, 255, 255);
+            border-top: r(20px) solid #ededed;
+            .couponTitle {
+                font-size: r(26px);
+                color: #323232;
+            }
+            .ClickCoupon {
+                font-size: r(24px);
+                color: #909090;
+                text-align: right;
+                i {
+                    padding-left: r(5px);
+                    font-size: r(20px);
+                }
+            }
+        }
+    }
+    //体验标
+    .Texperience {
+        //金额显示
+        .moneyView {
+            padding: r(30px) r(30px) r(90px) r(30px);
+            background-color: rgb(255, 255, 255);
+            border-top: r(20px) solid #ededed;
+            //money标题.
+            .moneyTitle {
+                font-size: r(28px);
+                padding-bottom: r(30px);
+                text-align: left;
+                letter-spacing: r(1px);
+            }
+            .money {
+                font-size: r(28px);
+                letter-spacing: r(1px);
+            }
+            //投资输入
+            .recharge {
+                font-size: r(28px);
+                color: #006cff;
+            }
+            .orangeMoney {
+                i {
+                    color: #ff6f00;
+                    font-size: r(28px);
+                }
+                font-size: r(28px);
+            }
+        }
+    }
+    // 债券表
+    .Invest {
+        //金额显示
+        .moneyView {
+            padding: r(30px) r(30px) r(90px) r(30px);
+            background-color: rgb(255, 255, 255);
+            border-top: r(20px) solid #ededed;
+            //money标题.
+            .moneyTitle {
+                font-size: r(28px);
+                padding-bottom: r(30px);
+                text-align: left;
+                letter-spacing: r(1px);
+            }
+            .money {
+                font-size: r(28px);
+                letter-spacing: r(1px);
+            }
+            //投资输入
+            .recharge {
+                font-size: r(28px);
+                color: #006cff;
+            }
+            .orangeMoney {
+                i {
+                    color: #ff6f00;
+                    font-size: r(28px);
+                }
+                font-size: r(28px);
+            }
+        }
+    }
+    //foot脚步
+    .foot {
+        padding-top: r(100px);
+        padding-bottom: 1rem;
+        text-align: center;
+        p {
+            font-size: r(20px);
+            color: #909090;
+            i {
+                color: #006cff;
+                font-size: 0.3125rem;
+            }
+        }
+    }
+    //全局的grid和col去掉边框
+    .grid {
+        padding: 0;
+    }
+    .col {
+        padding: 0;
+    }
+    .bank {
+        height: r(98px);
+        width: 100%;
+    }
+    .ionFoot {
+        height: r(98px);
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        button {
+            height: r(98px);
+            font-size: r(32px);
+            color: #ffffff;
+            text-align: center;
+            background: #ff6f00;
+            display: block;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.ion-ios-backicon:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/backicon.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+    font-size: 0.78125rem;
+}
+
+.ion-md-backicon:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/backicon.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+    font-size: 0.78125rem;
+}
+
+
+/* 全局窗口样式 */
+
+.alert-ios .alert-button:last-child {
+    border-right: 0;
+    background-color: #ff6f00;
+}
+
+.alert-ios .alert-wrapper {
+    border-radius: 13px;
+    max-width: 270px;
+    background-color: #f8f8f8;
+}
+
+.alert-ios .alert-title {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.alert-ios .alert-sub-title {
+    font-size: 14px;
+    color: #666;
+}
+
+.alert-ios .alert-message:empty {
+    padding: 0 0 12px;
+}
+
+.alert-button-group {
+    border: #f8f8f8 0.3rem solid;
+    -webkit-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+.alert-ios .alert-button.activated {
+    background-color: #e9e9e9;
+}
+
+.alert-ios .alert-button:last-child {
+    border-right: 0;
+    background-color: #ff6f00;
+}
+.alert-ios .alert-button{
+    color: black;
+    border-top: 0;
+}
+.alert-ios .alert-button:last-child{
+    color: #e9e9e9;
+}
+.alert-ios .alert-message {
+  border-bottom: solid 0.05rem #ededed;
+}

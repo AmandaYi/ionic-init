@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+        <button tappable (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>优惠券</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <!-- <coupon-xj [xjqdatas]="xjq" [isuser]="toxj" (search)="getXJID($event)" (click)="xjclick()"></coupon-xj>
+
+    <coupon-jx [jxqdatas]="jxq" [isuser]="tojx" (search)="getJXID($event)" (click)="jxclick()"></coupon-jx> -->
+
+    <coupon-child [JXdatas]="jxq" [TRdatas]="xjq" [alldata]="allq" (search)="getoutParam($event)"></coupon-child>
+</ion-content>
+
+<ion-footer>
+    <button type="" tappable (click)="callback()">确定</button>
+</ion-footer>

@@ -1,0 +1,112 @@
+<!--
+  Generated template for the MyPropertPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <button navPop>
+      <i class="icon iconfont icon-fanhui"></i>
+    </button>
+    <ion-title>资产统计</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="top">
+    <p class="tittle">资产总额(元)</p>
+    <div class="all">{{propert.TotalAssets}}</div>
+    <div class="detail">
+      <ul>
+        <li>
+          <p class="til">待收本金(元)</p>
+          <p class="num">{{propert.Paid}}</p>
+        </li>
+        <li>
+          <p class="til">待收利息(元)</p>
+          <p class="num">{{propert.InterestPaid}}</p>
+        </li>
+        <li>
+          <p class="til">冻结资金(元)</p>
+          <p class="num">{{propert.FrozenFunds}}</p>
+        </li>
+        <li>
+          <p class="til">可用余额(元)</p>
+          <p class="num">{{propert.AvailableBalance}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hui"></div>
+
+  <div class="interest">
+    <p class="intTil">利息收益(元)</p>
+    <p class="intNum">{{propert.IntersetIncome}}</p>
+
+    <ul>
+      <li>
+        <p class="til">已赚利息(元)</p>
+        <p class="num">{{propert.EamedIncome}}</p>
+      </li>
+      <li>
+        <p class="til">待赚利息(元)</p>
+        <p class="num">{{propert.EamingsEamed}}</p>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="hui"></div>
+
+  <div class="award">
+      <p class="intTil">奖励收益(元)</p>
+      <p class="intNum">{{propert.RewardIncome | rydNum:'2'}}</p>
+  
+      <ul>
+        <li>
+          <p class="til">福利卷收益(元)</p>
+          <p class="num">{{propert.BenefitCoupon}}</p>
+        </li>
+        <li>
+          <p class="til">邀请奖励(元)</p>
+          <p class="num">{{propert.Invitation}}</p>
+        </li>
+        <li>
+          <p class="til">站岗补贴(元)</p>
+          <p class="num">{{propert.StationAllowance}}</p>
+        </li>
+        <li>
+          <p class="til">活动奖励(元)</p>
+          <p class="num">{{propert.ActivityReward}}</p>
+        </li>
+      </ul>
+  
+  </div>
+
+  <div class="hui"></div>
+
+  <div class="add">
+    <p class="addTil">累计数据</p>
+    <ul>
+        <li>
+            <p class="til">累计投资(元)</p>
+            <p class="num">{{propert.AccumulatedInvestment}}</p>
+          </li>
+          <li>
+            <p class="til">累计充值(元)</p>
+            <p class="num">{{propert.AccumulatedRecharge}}</p>
+          </li>
+          <li>
+            <p class="til">累计提现(元)</p>
+            <p class="num">{{propert.CumulativeWithdrawal}}</p>
+          </li>
+    </ul>
+  </div>
+
+</ion-content>

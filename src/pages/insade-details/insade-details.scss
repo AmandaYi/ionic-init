@@ -1,0 +1,122 @@
+page-insade-details {
+    ion-content {
+        //设其全局背景颜色
+        div.fixed-content,
+        div.scroll-content {
+            background-color: #ededed;
+        }
+        .faherColor {
+            background-color: rgb(255, 255, 255);
+        }
+        .end {
+            font-size: r(24px);
+            color: #666666;
+            text-align: center;
+            height: r(60px);
+            padding-top: r(15px);
+            border-bottom: solid r(1px) #ededed;
+            span {
+                color: #ff6f00;
+            }
+        }
+        .grid {
+            padding: 0
+        }
+        .col {
+            padding: 0
+        }
+        .details_top {
+            padding: r(38px) r(30px) 0 r(30px);
+            .yearGains {
+                text-align: center;
+                .staticGains {
+                    font-size: r(24px);
+                    color: #909090;
+                    padding-bottom: r(15px);
+                }
+                //预期年化收益
+                .dynamicGains {
+                    font-size: r(60px);
+                    color: #ff6f00;
+                    padding-bottom: r(30px);
+                    i {
+                        font-size: r(30px)
+                    }
+                }
+            }
+            //进度条
+            .remain {
+                padding: 0;
+                position: relative;
+                width: 100%;
+                padding-bottom: r(20px);
+                .allLength {
+                    display: block;
+                    height: r(15px);
+                    margin-top: r(10px);
+                    background-color: #ededed;
+                    width: 86%;
+                    float: left;
+                    border-radius: r(20px);
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    text-align: left;
+                    text-align: -webkit-left;
+                    text-align: -moz-left;
+                }
+                .finished {
+                    bottom: r(15px);
+                    height: r(15px);
+                    border-radius: r(20px);
+                    background-color: #ff6f00;
+                }
+            }
+            .finished_rate {
+                text-align: center;
+                float: right;
+                width: 14%;
+                font-size: r(24px);
+                color: #ff6f00;
+            }
+        }
+        //期限,万元收益,可投金额
+        .trisomic {
+            padding-bottom: r(30px);
+        }
+        .trisomic_first {
+            font-size: r(24px);
+            color: #909090;
+            text-align: center;
+            border-right: r(1px) solid #ededed;
+            p {
+                padding-top: r(16px);
+                font-size: r(24px);
+                color: #323232;
+            }
+        }
+        .trisomic_second {
+            border-right: r(1px) solid #ededed;
+            font-size: r(24px);
+            color: #909090;
+            text-align: center;
+            i {
+                font-size: 0.4rem;
+            }
+            p {
+                padding-top: r(14px);
+                font-size: r(24px);
+                color: #323232;
+            }
+        }
+        .trisomic_third {
+            font-size: r(24px);
+            color: #909090;
+            text-align: center;
+            p {
+                padding-top: r(16px);
+                font-size: r(24px);
+                color: #323232;
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+<!-- 水花 -->
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+        <div class="Aligner-item Aligner-item--top" (click)="animation()">{{time}}</div>
+        <img src="assets/logo.svg">
+        <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+</div> -->
+
+
+<ion-content>
+    <!-- 头部 -->
+    <div class='header'>
+        <!-- 轮播图 -->
+
+
+
+
+        <!-- 
+        <ion-slides (ionSlideDidChange)='slideChanged()' initialSlide=0 autoplay=1000 [pager]='true' autoplayDisableOnInteration=true *ngIf="activity.length > 1" class='roundpicture' [loop]='true' #Slides>
+             <div class='hot_all' tappable (click)='on_hot_roundpicture(hot?.advUrl)'>  
+            <ion-slide class='hot_slide' *ngFor="let hot of activity">
+                <img data-src={{hot?.advImg}} />
+            </ion-slide>
+             </div>
+        </ion-slides>
+ -->
+        <ion-slides class='roundpicture' pager=true loop=true *ngIf="activity.length > 1">
+            <div class='hot_all' *ngIf="pic_first!=null">
+                <ion-slide class='hot_slide' tappable (click)='on_hot_roundpicture(pic_first?.advUrl)'>
+                    <img src={{pic_first?.advImg}} />
+                </ion-slide>
+            </div>
+
+            <div class='hot_all' *ngIf="pic_second!=null">
+                <ion-slide class='hot_slide' tappable (click)='on_hot_roundpicture(pic_second?.advUrl)'>
+                    <img src={{pic_second?.advImg}} />
+                </ion-slide>
+            </div>
+
+            <div class='hot_all' *ngIf="pic_third!=null">
+                <ion-slide class='hot_slide' tappable (click)='on_hot_roundpicture(pic_third?.advUrl)'>
+                    <img src={{pic_third?.advImg}} />
+                </ion-slide>
+            </div>
+            <div class='hot_all' *ngIf="pic_fourth!=null">
+                <ion-slide class='hot_slide' tappable (click)='on_hot_roundpicture(pic_fourth?.advUrl)'>
+                    <img src={{pic_fourth?.advImg}} />
+                </ion-slide>
+            </div>
+        </ion-slides>
+
+        <ion-grid class='toptitle'>
+            <ion-row>
+                <ion-col class="leftTitle" col-6>
+                    <span id=sumMoney></span>
+                    <p>累计交易额</p>
+                </ion-col>
+                <ion-col class="rightTitle" col-6>
+                    <span id=runday></span>
+                    <p>平台已运营</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!--top交易额和运营时间  -->
+
+    </div>
+
+    <!-- 网络连接错误 -->
+    <network-fail *ngIf='!net'></network-fail>
+
+    <!-- icon图标 -->
+    <div class='nav'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="navtitle" col-3 tappable (click)='on_icon4()'>
+                    <ion-icon class='icon'>
+                        <img src="assets/image/icon4.png" />
+                    </ion-icon>
+                    <p>关于我们</p>
+                </ion-col>
+                <ion-col class="navtitle" col-3 tappable (click)='on_icon()'>
+                    <ion-icon class='icon'>
+                        <img src="assets/image/icon.png" />
+                    </ion-icon>
+                    <p>安全保障</p>
+                </ion-col>
+                <ion-col class="navtitle" col-3 tappable (click)='on_icon2()'>
+                    <ion-icon class='icon'>
+                        <img src='assets/image/icon2.png' />
+                    </ion-icon>
+                    <p>数据披露</p>
+                </ion-col>
+
+                <ion-col *ngIf='islogin' class="navtitle" col-3 tappable (click)='on_icon3()'>
+                    <ion-icon class='icon'>
+                        <img src="assets/image/icon3.png" />
+                    </ion-icon>
+                    <p>新手任务</p>
+                </ion-col>
+
+                <ion-col *ngIf='!islogin' class="navtitle" col-3 tappable (click)='on_icon5()'>
+                    <ion-icon class='icon'>
+                        <img src="assets/image/icon-5.png" />
+                    </ion-icon>
+                    <p>邀请好友</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Loading..." refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class='body'>
+        <!-- 网络连接错误 -->
+        <network-show *ngIf='!net' (click)='willEnt()'></network-show>
+        <div [ngStyle]="{'display':net?'block':'none'}">
+            <invest-list [datas]="homeType" [page]="type"></invest-list>
+            <div class='foot'>
+                <p>投资有风险,理财需谨慎</p>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<!-- 底部跳转栏 -->
+<ion-footer>
+    <div id='ion-foot'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="nav" col-3 tappable (click)='home_click()'>
+                    <ion-icon class='icon iconfont icon-home_check'></ion-icon>
+                    <p>首页</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='list_click()'>
+                    <ion-icon class='icon iconfont icon-invest_default'></ion-icon>
+                    <p>投资</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='concat_click()'>
+                    <ion-icon class='icon iconfont icon-find_default'></ion-icon>
+                    <p>发现</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='me_click()'>
+                    <ion-icon class='icon iconfont icon-my_default'></ion-icon>
+                    <p>我</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-footer>

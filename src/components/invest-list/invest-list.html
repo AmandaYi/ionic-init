@@ -1,0 +1,222 @@
+<div>
+    <!-- 投资标 -->
+    <div *ngIf='Pcontent!=null&&Pcontent!=undefined&&datas!=3'>
+        <div class='body' *ngFor="let item of Pcontent" tappable (click)='on_list_details(item.id,item.type)'>
+
+            <ion-grid>
+                <ion-row [ngSwitch]="item.status" class='firstrow'>
+                    <ion-col col-8 class='mainTitle'>
+                        <span>{{item.bidTitle}}</span>
+                    </ion-col>
+
+                    <ion-col col-4 class='mainTimen' *ngSwitchCase="'DFB'">
+                        <span>{{item.releaseTime}} </span>
+                    </ion-col>
+
+                    <ion-col col-4 class='mainTime' *ngSwitchCase="'YFB'">
+                        <span>{{item.releaseTime}} </span>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='secondrow'>
+                    <ion-col col-4 class='mainRatio'>
+                        <span *ngIf='datas==1'>{{item.rate*1 |rydNum:'2'}}</span>
+                        <span *ngIf='datas==2'>{{item.rate*100|rydNum:'2'}}</span>
+                        <span>%</span>
+                    </ion-col>
+                    <ion-col col-4 class='mainMonths' [ngSwitch]="item.isDay">
+                        <div *ngSwitchCase="'S'">
+                            <span>{{item.cycle}}</span>
+                            <span>天</span>
+                        </div>
+                        <div *ngSwitchCase="'F'">
+                            <span>{{item.cycle}}</span>
+                            <span>个月</span>
+                        </div>
+                        <div *ngSwitchDefault>
+                            <span>{{item.cycle}}</span>
+                            <span>{{item.isDay}}</span>
+                        </div>
+                    </ion-col>
+
+                    <ion-col col-4 class="mainEnter" [ngSwitch]='item.status'>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">待发布</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">即将开始</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'TBZ'" [ngStyle]="{'background-color': '#ff6f00'}">投资</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'ZRZ'" [ngStyle]="{'background-color': '#ff6f00'}">投资</button>
+                        <!-- 以下只是防备出现这类状况，以前遗留下来的选择 -->
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'SQZ'" [ngStyle]="{'background-color': '#cccccc'}">申请中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DSH'" [ngStyle]="{'background-color': '#cccccc'}">待审核</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFK'" [ngStyle]="{'background-color': '#cccccc'}">待放款</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'HKZ'" [ngStyle]="{'background-color': '#cccccc'}">还款中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YJQ'" [ngStyle]="{'background-color': '#cccccc'}">已结清</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YLB'" [ngStyle]="{'background-color': '#cccccc'}">已流标</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YDF'" [ngStyle]="{'background-color': '#cccccc'}">已垫付</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YZF'" [ngStyle]="{'background-color': '#cccccc'}">已作废</button>
+                        <button ion-button full class='mianbutton' *ngSwitchDefault>预备中</button>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='thirdrow'>
+                    <ion-col col-4 class='mainLucre'>
+                        <span>年化收益</span>
+                    </ion-col>
+                    <ion-col col-4 class='timeEnd'>
+                        <span>期限</span>
+                    </ion-col>
+                    <ion-col col-4 class='mainOverplus'>
+                        <span>可投{{ item.remainAmount/10000 |rydNum:'2'}}万元</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 分割线 -->
+            <hr class='cut' />
+        </div>
+    </div>
+
+    <!-- 债券转让标 -->
+    <div *ngIf='Zcontent!=null&&Zcontent!=undefined&&datas!=2'>
+
+        <div class='body' *ngFor="let item of Zcontent" tappable (click)='on_invest_details(item.id,item.zqId,item.bidId)'>
+
+
+            <ion-grid>
+                <ion-row class='firstrow'>
+                    <ion-col col class='mainTitle'>
+                        <span>债券转让</span>
+                    </ion-col>
+                    <ion-col col class='mainTime'>
+                        <span>{{item.releaseTime}} </span>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='secondrow'>
+                    <ion-col col-4 class=' mainRatio'>
+                        <span>{{item.rate*100 |rydNum:'2'}}</span>
+                        <span>%</span>
+                    </ion-col>
+                    <ion-col col-4 class='mainMonths'>
+                        <div>
+                            <span *ngIf='item.syqx!=null'>{{item.syqx}}</span>
+                            <span *ngIf='item.tranTotalDays!=null'>{{item.tranTotalDays}}</span>
+                            <span>天</span>
+                        </div>
+                    </ion-col>
+
+                    <ion-col col-4 class="mainEnter" [ngSwitch]='item.status'>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">待发布</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">即将开始</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'TBZ'" [ngStyle]="{'background-color': '#ff6f00'}">投资</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'ZRZ'" [ngStyle]="{'background-color': '#ff6f00'}">投资</button>
+                        <!-- 以下只是防备出现这类状况，以前遗留下来的选择 -->
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'SQZ'" [ngStyle]="{'background-color': '#cccccc'}">申请中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DSH'" [ngStyle]="{'background-color': '#cccccc'}">待审核</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFK'" [ngStyle]="{'background-color': '#cccccc'}">待放款</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'HKZ'" [ngStyle]="{'background-color': '#cccccc'}">还款中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YJQ'" [ngStyle]="{'background-color': '#cccccc'}">已结清</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YLB'" [ngStyle]="{'background-color': '#cccccc'}">已流标</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YDF'" [ngStyle]="{'background-color': '#cccccc'}">已垫付</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YZF'" [ngStyle]="{'background-color': '#cccccc'}">已作废</button>
+                        <button ion-button full class='mianbutton' *ngSwitchDefault>预备中</button>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='thirdrow'>
+                    <ion-col col-4 class='mainLucre'>
+                        <span>年化收益</span>
+                    </ion-col>
+                    <ion-col col-4 class='timeEnd'>
+                        <span>期限</span>
+                    </ion-col>
+                    <!-- 因布局原因，当超出整数超出6位数{包括小数点}时，将改成万元 -->
+                    <ion-col col-4 class='mainOverplus'>
+                        <span>价格{{ item.salePrice/10000 |rydNum:'2'}}万元</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 分割线 -->
+            <hr class='cut' />
+        </div>
+    </div>
+
+    <!-- 体验标 -->
+    <div *ngIf='Tcontent!=null&&Tcontent!=undefined&&datas==1'>
+
+        <div class='body' tappable (click)='on_list_details(Tcontent_id,Tcontent_type)'>
+            <ion-grid>
+                <ion-row class='firstrow'>
+                    <ion-col col class='mainTitle'>
+                        <span>体验标</span>
+                    </ion-col>
+                    <ion-col col class='mainTime'>
+                        <span>{{releaseTime}}</span>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class='secondrow'>
+                    <ion-col col-4 class=' mainRatio'>
+                        <span>{{rate*100 |rydNum:'2'}}</span>
+                        <span>%</span>
+                    </ion-col>
+                    <!-- 此处判断体验标时间是天数还是月份 -->
+                    <ion-col col-4 class='mainMonths' [ngSwitch]="isDay">
+                        <div *ngSwitchCase="'S'">
+                            <span>{{cycle}}</span>
+                            <span>天</span>
+                        </div>
+                        <div *ngSwitchCase="'F'">
+                            <span>{{cycle}}</span>
+                            <span>个月</span>
+                        </div>
+                        <div *ngSwitchDefault>
+                            <span>{{cycle}}</span>
+                            <span>{{isDay}}</span>
+                        </div>
+                    </ion-col>
+
+                    <!-- 判断按钮状态 -->
+                    <ion-col col-4 class="mainEnter" [ngSwitch]='status'>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">待发布</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YFB'" [ngStyle]="{'background-color': 'rgb(79,195,247)'}">即将开始</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'TBZ'" [ngStyle]="{'background-color': '#ff6f00'}">体验</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'ZRZ'" [ngStyle]="{'background-color': '#ff6f00'}">体验</button>
+                        <!--       以下只是防备出现这类状况，以前遗留下来的选择 -->
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'SQZ'" [ngStyle]="{'background-color': '#cccccc'}">申请中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DSH'" [ngStyle]="{'background-color': '#cccccc'}">待审核</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'DFK'" [ngStyle]="{'background-color': '#cccccc'}">待放款</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'HKZ'" [ngStyle]="{'background-color': '#cccccc'}">还款中</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YJQ'" [ngStyle]="{'background-color': '#cccccc'}">已结清</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YLB'" [ngStyle]="{'background-color': '#cccccc'}">已流标</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YDF'" [ngStyle]="{'background-color': '#cccccc'}">已垫付</button>
+                        <button ion-button full class='mianbutton' *ngSwitchCase="'YZF'" [ngStyle]="{'background-color': '#cccccc'}">已作废</button>
+                        <button ion-button full class='mianbutton' *ngSwitchDefault>预备中</button>
+                    </ion-col>
+
+                </ion-row>
+
+                <ion-row class='thirdrow'>
+                    <ion-col col-4 class='mainLucre'>
+                        <span>年化收益</span>
+                    </ion-col>
+                    <ion-col col-4 class='timeEnd'>
+                        <span>期限</span>
+                    </ion-col>
+                    <ion-col col-4 class='mainOverplus'>
+                        <span>可投{{ remainAmount/10000 |rydNum:'2'}}万元</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 分割线 -->
+            <hr class='cut' />
+        </div>
+    </div>
+
+
+
+    <div *ngIf='datas==2||datas==3&&view_Judges'>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold='1%' immediate-check="false">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading..." class='logo'>
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</div>

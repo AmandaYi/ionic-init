@@ -1,0 +1,177 @@
+    page-list {
+        /* 分割线 */
+        .cut {
+            background-color: rgb(237, 237, 237);
+            height: r(20px)
+        }
+        ion-header {
+            border-bottom: r(20px) solid #ededed;
+            /* 分割;普通标和债券的设置 */
+            .topframe {
+                padding: 0;
+                height: r(95px);
+                line-height: r(95px);
+                /*border-top: r(1px) solid #ededed;*/
+                .index {
+                    /*border-bottom: r(2px) solid #ededed;*/
+                    .topbuttom {
+                        border: 0;
+                        font-size: r(28px);
+                        max-width: r(999px);
+                    }
+                }
+            }
+            .topframe .index .topbuttom {
+                border-bottom: 2px solid #ededed;
+            }
+            /* 点击颜色字体颜色变化 */
+            .segment-ios .segment-button {
+                color: #909090;
+                background-color: rgb(255, 255, 255);
+                height: r(95px);
+                line-height: r(95px);
+            }
+            .segment-ios .segment-button.segment-activated {
+                color: rgb(255, 111, 0);
+                background-color: rgb(255, 255, 255);
+                border-bottom: 2px solid #ff6f00;
+                height: r(95px);
+                line-height: r(95px);
+            }
+        }
+        ion-content {
+            /* nav图标的设置 */
+            .nav {
+                background-color: white;
+                /*width:100%!important;
+                float:left!important;*/
+                height: 2.65rem !important;
+                padding-bottom: 0.46875rem;
+                line-height: 0.7rem !important;
+                ion-grid {
+                    padding: 0;
+                    padding-left: r(20px);
+                    padding-right: r(20px);
+                    .navtitle {
+                        padding: 0;
+                        text-align: center;
+                        .icon img {
+                            height: r(56px);
+                            color: #ff6f00;
+                        }
+                        p {
+                            font-size: r(24px);
+                            color: #ff6f00;
+                        }
+                        .navtitle-left {
+                            // text-align: left;
+                        }
+                        .navtitle-right {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            div.fixed-content,
+            div.scroll-content {
+                margin-top: 2.93rem !important;
+                background: #ededed;
+            }
+            ion-refresher {
+                position: absolute;
+                top: 3.0rem !important;
+            }
+            .refresher-pulling-icon,
+            .refresher-refreshing-icon {
+                font-size: 0.6rem !important;
+                margin-top: r(50px);
+            }
+            .logo {
+                font-size: r(30px);
+            }
+        }
+        .foot {
+            height: -webkit-fill-available;
+            width: 100%;
+            bottom: 0px;
+            color: #909090;
+            background-color: #ededed;
+            padding: r(15px) r(30px) r(15px) r(30px);
+            p {
+                text-align: center;
+                padding-top: r(80px);
+                font-size: r(24px);
+            }
+        }
+        //底部栏设置
+        ion-footer {
+            #ion-foot {
+                border-top: #ededed 1px solid;
+                min-height: 1.5625rem !important;
+                background: #f8f8f8 !important;
+                text-align: center;
+                .nav {
+                    margin: 0;
+                    text-align: center;
+                    border-radius: 0;
+                    position: relative;
+                    z-index: 0;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    overflow: hidden;
+                    -webkit-box-flex: 1;
+                    -webkit-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-align-self: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                    -webkit-box-pack: center;
+                    -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    border: 0;
+                    text-decoration: none;
+                    background: none;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                .nav:nth-child(2) {
+                    color: #ff6f00;
+                }
+                .iconfont {
+                    font-size: 0.8125rem !important;
+                }
+                ion-grid {
+                    padding: 0;
+                }
+                ion-col {
+                    padding: 0;
+                    border: 0;
+                    padding-top: r(12px);
+                    padding-bottom: r(5px);
+                }
+                p {
+                    padding-top: r(5px);
+                    font-size: 0.3125rem !important;
+                }
+            }
+        }
+        .back-button.show-back-button {
+            display: none;
+        }
+    }

@@ -1,0 +1,126 @@
+page-record {
+  .done {
+    background: #ff6f00;
+    color: #fff!important;
+    border: 0;
+  }
+
+  .trem1 {
+    .month {
+      padding: 0 r(30px);
+      height: r(60px);
+      line-height: r(60px);
+      background: #ededed;
+      color: #909090;
+      font-size: r(30px);
+
+    }
+
+    .li {
+      padding: r(20px) r(30px);
+      border: r(1px) solid #ededed;
+
+      .box1,
+      .box2 {
+        overflow: hidden;
+      }
+
+      .til {
+        float: left;
+        font-size: r(26px);
+        color: #332233;
+        // width: 50%;
+      }
+
+      .money {
+        float: right;
+        font-size: r(34px);
+        color: #259b24;
+      }
+
+      .money2 {
+        float: right;
+        font-size: r(34px);
+        color: #ff6f00;
+      }
+
+      .time {
+        float: left;
+        font-size: r(22px);
+        color: #909090;
+        width: 45%;
+      }
+
+      .text {
+        float: left;
+        font-size: r(22px);
+        color: #909090;
+        width: 55%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+  }
+
+  // 顶部
+  .header .toolbar-content .choose {
+    margin-top: -2.5%;
+    margin-right: -3%;
+    font-size: r(30px);
+  }
+
+  .bottom {
+    color: #999999;
+    background: #ededed;
+    font-size: r(24px);
+    text-align: center;
+    height: r(80px);
+    line-height: r(80px);
+  }
+}
+
+.trem2 {
+    position: fixed;
+    top:r(100px);
+    width: 100%;
+    height: 100%;
+    // filter: none;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .chooseBox {
+      position: absolute;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      float: left;
+      background-color: #fff;
+      padding-top: r(80px);
+      padding: r(30px);
+
+      li {
+        width: 25%;
+        height: r(45px);
+        line-height: r(45px);
+        float: left;
+        color: #666666;
+        font-size: r(22px);
+        text-align: center;
+        margin: r(20px);
+        border: r(1px) solid #ededed;
+        border-radius: r(7px);
+      }
+
+      li:first-of-type,
+      li:nth-child(4) {
+        margin-left: 0;
+      }
+
+      .til {
+        font-size: r(26px);
+        color: #666666;
+        clear: both;
+      }
+    }
+  }

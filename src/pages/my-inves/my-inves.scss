@@ -1,0 +1,99 @@
+page-my-inves {
+    .inves{
+        background:#ededed;
+        .inves_all{
+            background:#ffffff;
+            width:100%;
+            .topbuttom{
+                font-size:r(26px);
+                border:0;
+                color:#323232;
+                height:r(100px);
+                line-height:r(100px);
+            }
+            .segment-ios .segment-button.segment-activated{
+                background:none;
+                color:#ff6f00;
+                border-bottom:1px solid #ff6f00;
+            }
+            .segment-ios .segment-button.segment-activated:active{
+                background:#ededed;
+            }
+        }
+
+
+         .list_all{
+             width:100%;
+             padding-top:r(100px);
+         }
+         .list_all .item{
+             width:100%;
+             float:left;
+             border:none;
+             margin-top:r(20px);
+             background:#fff;
+             /*padding:0 5% 0 5%;*/
+             padding:r(16px);
+             padding-top:r(40px);
+        }
+         .list_all .item .item1{
+             width:100%;
+             float:left;
+             padding-right:0;
+             padding-left:0;
+             font-size:r(26px);
+             color:#323232;
+             margin-bottom:r(32px);
+        }
+         .list_all .item .item1 span{
+             color:#909090;
+             float:right;
+             font-size:r(20px);
+        }
+         .list_all .item .item2{
+             padding-right:0;
+             padding-left:0;
+             width:100%;
+             float:left;
+        }
+         .list_all .item .item2 div{
+            float:left;
+            width:50%;
+            font-size:r(22px);
+            color:#323232;
+            margin-bottom:8px;
+        }
+         .list_all .item .item2 div i{
+             color:#909090;
+             font-size:r(20px);
+             margin-right:r(24px);
+        }
+         .list_all .item .item2 div span{
+             color:#ff6f00;
+        }
+         .clear{
+            clear:both;
+        }
+
+        .my-item{
+            width:100%;
+            background:#ededed;
+            text-align:center;
+            font-size:r(50px);
+            margin-top:r(300px);
+            color:#909090;
+        }
+        .nodata{
+            width:100%;
+            text-align:center;
+            font-size:r(20px);
+            margin-top:r(20px);
+            color:#909090;
+        }
+        ion-refresher{
+            top:r(30px)!important;
+            z-index:99999;
+        }   
+    }
+
+}

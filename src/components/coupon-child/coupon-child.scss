@@ -1,0 +1,55 @@
+coupon-child {
+    label {
+        height: r(180px);
+        display: flex;
+        color: #fff;
+        .left {
+            width: 37%;
+            text-align: center;
+            p:nth-child(1) {
+                font-size: r(24px);
+                padding-top: r(15px);
+            }
+            p:nth-child(2) {
+                font-weight: bold;
+                font-size: r(46px);
+                padding-top: r(8px);
+                span {
+                    font-size: 0.50125rem;
+                }
+            }
+            p:nth-child(3) {
+                font-size: r(16px);
+                padding-top: r(8px);
+            }
+        }
+        .right {
+            padding: r(15px) r(30px) 0 r(15px);
+            position: relative;
+            width: 63%;
+            font-size: r(26px);
+            span.iconfont {
+                font-size: r(50px);
+                position: absolute;
+                right: r(20px);
+                bottom: r(5px);
+            }
+        }
+    }
+    label.TR {
+        background: url(../assets/image/welfare1.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    label.JX {
+        background: url(../assets/image/welfare2.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    input {
+        display: none;
+    }
+    .checkedout {
+        webkit-filter: brightness(.3);
+        -moz-filter: brightness(.3);
+        filter: brightness(.3);
+    }
+}

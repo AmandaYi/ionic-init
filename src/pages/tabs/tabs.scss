@@ -1,0 +1,182 @@
+.ion-ios-tab1:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/me.svg") no-repeat;
+    background: url("../assets/image/home_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab1:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/me.svg") no-repeat;
+    background: url("../assets/image/home_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab1-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/home_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab1-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/home_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab2:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab1.svg") no-repeat;
+    background: url("../assets/image/invest_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab2:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab1.svg") no-repeat;
+    background: url("../assets/image/invest_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab2-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/invest_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab2-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/invest_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab3:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab2.svg") no-repeat;
+    background: url("../assets/image/find_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab3:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab2.svg") no-repeat;
+    background: url("../assets/image/find_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab3-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/find_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab3-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/find_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab4:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab2.svg") no-repeat;
+    background: url("../assets/image/my_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab4:before {
+    text-align: center;
+    content: " "; //  background: url("../assets/image/tab2.svg") no-repeat;
+    background: url("../assets/image/my_check.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-ios-tab4-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/my_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+.ion-md-tab4-outline:before {
+    text-align: center;
+    content: " ";
+    background: url("../assets/image/my_default.svg") no-repeat;
+    background-size: 100%;
+    display: list-item;
+    width: 100%;
+    height: r(70px);
+}
+
+ion-tabs {
+    background: #000000;
+    ion-icon.tab-button-icon {
+        height: auto!important;
+    }
+}
+
+
+/* 全局返回键样式 */
+
+.back-button-ios {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+    min-height: 1.2rem;
+}
+
+.back-button-icon-ios {
+    display: inherit;
+    min-width: 0.78125rem;
+    color: black;
+}

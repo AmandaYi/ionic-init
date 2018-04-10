@@ -1,0 +1,175 @@
+page-grade {
+    .grade {
+    background: #fff;
+}
+
+.grade .gra_title {
+    width: 90%;
+    margin: r(30px) auto;
+    font-size: r(36px);
+    color: #666666;
+    font-family: STXihei;
+    font-weight: bold;
+}
+
+.grade .biaoge1 {
+    width: 90%;
+    text-align: center;
+    margin: r(30px) auto r(80px);
+    /*padding-bottom:40px;*/
+}
+
+.grade .biaoge1 thead tr td {
+    border: 1px solid #ccc;
+    color: #909090;
+    height: r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+
+.grade .biaoge1 tbody tr td {
+    border: 1px solid #ccc;
+    color: #323232;
+    height: r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+
+.grade .bank {
+    background: #EDEDED;
+    height: r(40px);
+    width: 100%;
+}
+
+.grade .rule {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.grade .rule .title {
+    width: 100%;
+    font-family: STXihei;
+    font-size: r(36px);
+    color: #666666;
+    margin: r(30px) auto;
+    font-weight: bold;
+}
+
+.grade .rule ul {
+    width: 100%;
+    margin-bottom: 29px;
+}
+
+.grade .rule ul li {
+    font-size: r(30px);
+    line-height: r(40px);
+    color: #909090;
+    font-family: STXihei;
+}
+
+.grade .channel {
+    width: 90%;
+    margin: 0 auto r(58px);
+}
+
+.grade .channel h3 {
+    float: left;
+    font-family: STXihei;
+    font-size: r(36px);
+    letter-spacing: 0px;
+    color: #666666;
+    margin: r(30px) 0;
+    font-weight: bold;
+}
+
+.grade .channel .qianwang {
+    float: right;
+    font-family: STXihei;
+    margin: r(30px) 0;
+}
+
+.grade .channel .qianwang span {
+    font-family: STXihei;
+    font-size: r(32px);
+    color: #039be5;
+    display:block;
+    float:right;
+    height:r(40px);
+    line-height:r(40px);
+}
+
+.grade .channel .qianwang i {
+    font-family: STXihei;
+    font-size: r(44px);
+    color: rgba(3, 155, 229, 1);
+    display:block;
+    float:right;
+    height:r(40px);
+    line-height:r(40px);
+}
+
+.grade .biaoge2 {
+    width: 100%;
+    text-align: center;
+    margin: r(30px) auto r(80px);
+    /*padding-bottom:40px;*/
+}
+
+.grade .biaoge2 thead tr td {
+    border: 1px solid #ccc;
+    color: #909090;
+    height: r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+
+.grade .biaoge2 tbody tr td {
+    border: 1px solid #ccc;
+    color: #323232;
+    height:r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+
+.grade .freezing {
+    width: 90%;
+    margin: 0 auto r(60px);
+}
+
+.grade .freezing h3 {
+    font-family: STXihei;
+    font-size: r(36px);
+    color: #666666;
+    font-weight: bold;
+    margin: r(30px) 0;
+}
+
+.grade .biaoge3 {
+    width: 100%;
+    text-align: center;
+    margin: 0px auto r(80px);
+    /*padding-bottom:40px;*/
+}
+
+.grade .biaoge3 thead tr td {
+    border: 1px solid #ccc;
+    color: #909090;
+    height: r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+
+.grade .biaoge3 tbody tr td {
+    border: 1px solid #ccc;
+    color: #323232;
+    height: r(100px);
+    vertical-align: middle;
+    font-family: STHeitiSC-Light;
+    font-size: r(30px);
+}
+}

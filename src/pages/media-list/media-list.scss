@@ -1,0 +1,70 @@
+    page-media-list {
+        ion-content {
+            //以下是调试下拉更新
+            .refresher-pulling-icon,
+            .refresher-refreshing-icon {
+                font-size: 0.7rem !important;
+            }
+            .refresher-pulling-text,
+            .refresher-refreshing-text {
+                font-size: r(24px)!important;
+            }
+            ion-spinner {
+                width: r(28px)!important;
+                height: r(28px)!important;
+            }
+            //上啦加载..
+            ion-infinite-scroll {
+                font-size: 20px!important;
+            }
+            //错误情况
+            .false {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                font-size: r(32px);
+                color: #909090;
+                text-align: center;
+                height: r(150px);
+                background-color: #ededed;
+            }
+            .list {
+                padding: r(15px) r(30px) r(15px) r(30px);
+                border-top: r(2px) solid #ededed;
+                ion-grid {
+                    padding: 0;
+                }
+                ion-col {
+                    padding-left: 0;
+                }
+                .list_picture {
+                    padding-right: r(15px);
+                    height: r(120px);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .list_text {
+                    padding-right: 0px;
+                    .list_title {
+                        font-size: r(24px);
+                        color: #323232;
+                        text-align: justify;
+                    }
+                    .list_time {
+                        font-size: r(20px);
+                        color: #909090;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    .list_address {
+                        font-size: r(20px);
+                        color: #909090;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }

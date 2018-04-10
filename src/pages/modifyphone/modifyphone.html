@@ -1,0 +1,28 @@
+<!--
+  Generated template for the ModifyphonePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>修改手机号码</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="register_box">
+      <span>新手机号码</span>
+      <input type="tel" class="new_phone" (keyup)="myKeyup(new_phone)" placeholder="请输入新的手机号码" [(ngModel)]='new_phone' name="new_phone" maxlength="11" required>
+      <div class="clear"></div>
+   </div>
+
+   <button class="button" (click)='olve_phone(new_phone)'  [disabled]='submit_phone'>提交</button>
+
+   
+
+</ion-content>

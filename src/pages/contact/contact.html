@@ -1,0 +1,194 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>发现</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<!-- nav图标 -->
+<ion-content>
+    <!-- 网络连接错误 -->
+    <network-fail *ngIf='!network'></network-fail>
+
+    <div class='nav'>
+        <ion-grid class='nav-grid'>
+            <ion-row>
+                <ion-col class="navtitle_help" col-4 tappable (click)='on_bangzhu()'>
+                    <ion-icon class='icon iconfont icon-bangzhu'></ion-icon>
+                    <p>帮助中心</p>
+                </ion-col>
+                <ion-col class="navtitle_WeChat" col-4 tappable (click)='on_weixin()'>
+                    <ion-icon class='icon iconfont icon-weixin1'></ion-icon>
+                    <p>关注微信</p>
+                </ion-col>
+                <ion-col class="navtitle_report" col-4 tappable (click)='on_yunyingbaogao()'>
+                    <ion-icon class='icon iconfont icon-yunyingbaogao'></ion-icon>
+                    <p>运营报告</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <!-- 网络连接失败 -->
+    <network-show *ngIf='!network' (click)='willEnt()'></network-show>
+
+    <div *ngIf='network'>
+        <!--公告消息-->
+        <div class='Bulletin' *ngIf='bulletin_new!=null&&bulletin_new!=undefined' tappable (click)='on_Bulletin(bulletin_id)'>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-1 class='Bulletin-word-first'>
+                        <div class='icon iconfont icon-iconfontgonggao'></div>
+                    </ion-col>
+                    <ion-col col-9 class='Bulletin-word-second'>
+                        {{bulletin_title}}
+                    </ion-col>
+                    <ion-col col-2 class='Bulletin-word-third'>
+                        {{bulletin_time}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+        <!-- 热门活动 -->
+        <div class='activity'>
+            <h3 class='activity_title'>热门活动</h3>
+            <hr class='cut' />
+            <div *ngFor="let hot of hot_activity" class='activity_pic'>
+                <ul>
+                    <li class="hot_pic" tappable (click)='on_hot_pic(hot?.advUrl)'>
+                        <img src={{hot?.advImg}}/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 分割线 -->
+        <hr class='cut' />
+        <!-- 媒体报道 -->
+        <div class='media'>
+            <ion-grid class='media_jump' tappable (click)='on_media_jump("MTBD")'>
+                <ion-row>
+                    <ion-col class='media_title'>
+                        媒体报道
+                    </ion-col>
+                    <ion-col class='media_icon'>
+                        <div class='icon iconfont icon-zuoyoujiantouicon-defuben1'></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 轮播图 -->
+            <ion-slides class='roundpicture' *ngIf="media_up?.length>0" pager=true loop=true>
+
+                <ion-slide class='meida_picture' tappable (click)='on_media_and_Company("MTBD",media_P1?.id)'>
+                    <img src={{media_P1?.picUrl}}/>
+                    <div class='round_title'>
+                        <p>{{media_P1?.title}}</p>
+                    </div>
+                </ion-slide>
+
+                <ion-slide class='meida_picture' tappable (click)='on_media_and_Company("MTBD",media_P2?.id)'>
+                    <img src={{media_P2?.picUrl}}/>
+                    <div class='round_title'>
+                        <p>{{media_P2?.title}}</p>
+                    </div>
+                </ion-slide>
+
+                <ion-slide class='meida_picture' tappable (click)='on_media_and_Company("MTBD",media_P3?.id)'>
+                    <img src={{media_P3?.picUrl}}/>
+                    <div class='round_title'>
+                        <p>{{media_P3?.title}}</p>
+                    </div>
+                </ion-slide>
+
+                <ion-slide class='meida_picture' tappable (click)='on_media_and_Company("MTBD",media_P4?.id)'>
+                    <img src={{media_P4?.picUrl}}/>
+                    <div class='round_title'>
+                        <p>{{media_P4?.title}}</p>
+                    </div>
+                </ion-slide>
+
+            </ion-slides>
+        </div>
+
+        <!-- 分割线 -->
+        <hr class='cut' />
+
+        <div class='company'>
+            <ion-grid class='company_jump' tappable (click)='on_media_jump("GSDT")'>
+                <ion-row>
+                    <ion-col class=' company_title '>
+                        公司动态
+                    </ion-col>
+                    <ion-col class='company_icon '>
+                        <div class='icon iconfont icon-zuoyoujiantouicon-defuben1 '></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 轮播图 -->
+            <ion-slides class='roundpicture' *ngIf="Company_new?.length>0" pager=true loop=true>
+
+                <ion-slide class='company_picture ' tappable (click)='on_media_and_Company( "GSDT",company_P1?.id)'>
+                    <img src={{company_P1?.picUrl}}/>
+                    <div class='company_round_title '>
+                        <p>{{company_P1?.title}}</p>
+                    </div>
+                </ion-slide>
+                <ion-slide class='company_picture ' tappable (click)='on_media_and_Company( "GSDT",company_P2?.id)'>
+                    <img src={{company_P2?.picUrl}}/>
+                    <div class='company_round_title '>
+                        <p>{{company_P2?.title}}</p>
+                    </div>
+                </ion-slide>
+                <ion-slide class='company_picture ' tappable (click)='on_media_and_Company( "GSDT",company_P3?.id)'>
+                    <img src={{company_P3?.picUrl}}/>
+                    <div class='company_round_title '>
+                        <p>{{company_P3?.title}}</p>
+                    </div>
+                </ion-slide>
+                <ion-slide class='company_picture ' tappable (click)='on_media_and_Company( "GSDT",company_P4?.id)'>
+                    <img src={{company_P4?.picUrl}}/>
+                    <div class='company_round_title '>
+                        <p>{{company_P4?.title}}</p>
+                    </div>
+                </ion-slide>
+
+            </ion-slides>
+        </div>
+    </div>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher>
+</ion-content>
+
+<!-- 底部跳转栏 -->
+<ion-footer>
+    <div id='ion-foot'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="nav" col-3 tappable (click)='home_click()'>
+                    <ion-icon class='icon iconfont icon-home_default'></ion-icon>
+                    <p>首页</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='list_click()'>
+                    <ion-icon class='icon iconfont icon-invest_default'></ion-icon>
+                    <p>投资</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='concat_click()'>
+                    <ion-icon class='icon iconfont icon-find_check'></ion-icon>
+                    <p>发现</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='me_click()'>
+                    <ion-icon class='icon iconfont icon-my_default'></ion-icon>
+                    <p>我</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-footer>

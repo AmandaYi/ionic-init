@@ -1,0 +1,288 @@
+<ion-header>
+
+    <ion-navbar>
+
+        <button class='buttons_1' (click)='more()'>
+      <i class="icon-my iconfont"></i>
+    </button>
+        <ion-title>我的账户</ion-title>
+        <button class='buttons_2' (click)='message()' *ngIf='network && !islogin'>
+      <i class="icon-xiaoxi iconfont" style='position:relative;'>
+        <!--<ion-badge>100</ion-badge>-->
+        <span class='xiaobiaoti' *ngIf='xiaoxi'>{{xiaobiaoti}}</span>
+        <span *ngIf='!xiaoxi'></span>
+      </i>
+    </button>
+
+    </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class='myaccount'>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf='!network'>
+        <!-- 网络连接错误 -->
+        <network-fail></network-fail>
+
+        <div class='myaccount_head' style='background:linear-gradient(to bottom,#ff6f00,#ff9700);'>
+            <div class="item_a">资产总额(元)
+            </div>
+            <div class="item_b">--</div>
+            <div class='item_c line'>
+                <span class="col_1">可用余额(元)</span>
+                <p class="col_2">--</p>
+            </div>
+            <div class='item_c'>
+                <span class="col_1">累计收益(元)</span>
+                <p class="col_2">--</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- 网络连接失败 -->
+        <network-show (click)='willEnt()'></network-show>
+    </div>
+
+
+    <div *ngIf='network'>
+        <!--未登录-->
+        <div *ngIf='islogin'>
+            <div class='myaccount_head'>
+                <div class="item_1">融裕贷</div>
+                <div class="item_2">裕见更有财的自己</div>
+                <div class="item_3">
+                    <div class='item'>
+                        <button (click)='login()'>登录</button>
+                    </div>
+                    <div class='item'>
+                        <button (click)='register()'>注册</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <ul class='myaccount_content'>
+                <li (click)='login()'>充值</li>
+                <li (click)='login()'>提现</li>
+                <li (click)='login()'>交易记录</li>
+                <div class="clear"></div>
+            </ul>
+
+            <ul class='myaccount_main'>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-huiyuan iconfont'></i>会员中心</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-shoukuan iconfont'></i>回款计划</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-tz-copy-copy iconfont'></i>我的投资</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-quan iconfont'></i>福利券</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-iconqw iconfont'></i>邀请好友</div>
+                    <div class="center">赚收益</div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-zidongtoubiao1 iconfont'></i>自动投标</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='login()'>
+                    <div class='left'>
+                        <i class='icon-iconfontzhanghu iconfont'></i>账户安全</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <!--已登陆-->
+        <div *ngIf='!islogin'>
+            <div class='myaccount_head' style='background:linear-gradient(to bottom,#ff6f00,#ff9700);'>
+                <div class="item_a">资产总额(元)
+                    <p>
+                        <i [ngClass]="{true: 'icon-xianshi iconfont', false: 'icon-baomi iconfont'}[isActive]" (click)='numChange()'></i>
+                    </p>
+                </div>
+                <div class="item_b" *ngIf='isActive'>{{totalAmount}}
+                    <p class="more" (click)='goPropert()'>
+                        <i class="iconfont icon-gengduo"></i>
+                    </p>
+                </div>
+                <div class="item_b" *ngIf='!isActive'>--</div>
+                <div class='item_c line'>
+                    <span class="col_1">可用余额(元)</span>
+                    <p class="col_2" *ngIf='isActive'>¥{{overAmountRB}}</p>
+                    <p class="col_2" *ngIf='!isActive'>--</p>
+                </div>
+                <div class='item_c'>
+                    <span class="col_1">累计收益(元)</span>
+                    <p class="col_2" *ngIf='isActive'>¥{{earnAmount}}</p>
+                    <p class="col_2" *ngIf='!isActive'>--</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="towqq" *ngIf="hide_towqq">
+                <div class="twoqq_title" style="color:#FF6F00;">
+                    您的双乾账户余额{{new_overAmount}}元，请尽快登录PC端官网，将余额转移到富民银行存管账户。
+                </div>
+                <div class="twoqq_cha" (click)='del_mycha()'>X</div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="towqq" *ngIf="hide_oenqq" style="background:#CCCCCC">
+                <div class="twoqq_title" style="width:100%;float:left;color:#FF6F00;">
+                    您有{{new_yuer}}元充值处理中，通常5分钟内到账，可等待5分钟尝试下拉刷新，余额更新表示已到账。
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <ul class='myaccount_content'>
+                <li (click)='recharge()'>充值</li>
+                <li (click)='withdrawals()'>提现</li>
+                <li (click)='record()'>交易记录</li>
+                <div class="clear"></div>
+            </ul>
+
+            <ul class='myaccount_main'>
+                <li (click)='members()'>
+                    <div class='left'>
+                        <i class='icon-huiyuan iconfont'></i>会员中心</div>
+                    <div class="center" *ngIf='isActive'>{{grade}}</div>
+                    <div class="center" *ngIf='!isActive'></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li *ngIf='yes_schemes' (click)='goschemes()'>
+                    <div class='left'>
+                        <i class='icon-shoukuan iconfont'></i>回款计划</div>
+                    <div class="center center_huikuan" *ngIf='isActive'>下次回款: {{next_time}}<br/>￥{{next_qian}}</div>
+                    <div class="center" *ngIf='!isActive'></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li *ngIf='!yes_schemes' (click)='goschemes()'>
+                    <div class='left'>
+                        <i class='icon-shoukuan iconfont'></i>回款计划</div>
+                    <div class="center center_huikuan" *ngIf='isActive'></div>
+                    <div class="center" *ngIf='!isActive'></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='toMyInves()'>
+                    <div class='left'>
+                        <i class='icon-tz-copy-copy iconfont'></i>我的投资</div>
+                    <div class="center" *ngIf='isActive'>待收 {{investAmount}}元</div>
+                    <div class="center" *ngIf='!isActive'></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='toMyWelfare()'>
+                    <div class='left'>
+                        <i class='icon-quan iconfont'></i>福利券</div>
+                    <div class="center" *ngIf='isActive'>
+                        <span>{{ticketCount}}</span>
+                    </div>
+                    <div class="center" *ngIf='!isActive'></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='toInvitation()'>
+                    <div class='left'>
+                        <i class='icon-iconqw iconfont'></i>邀请好友</div>
+                    <div class="center">赚收益</div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='toAutoInvest()'>
+                    <div class='left'>
+                        <i class='icon-zidongtoubiao1 iconfont'></i>自动投标</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+                <li (click)='security()'>
+                    <div class='left'>
+                        <i class='icon-iconfontzhanghu iconfont'></i>账户安全</div>
+                    <div class="center"></div>
+                    <div class="right">
+                        <i class="icon-gengduo iconfont"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</ion-content>
+<!-- 底部跳转栏 -->
+<ion-footer>
+    <div id='ion-foot'>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="nav" col-3 tappable (click)='home_click()'>
+                    <ion-icon class='icon iconfont icon-home_default'></ion-icon>
+                    <p>首页</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='list_click()'>
+                    <ion-icon class='icon iconfont icon-invest_default'></ion-icon>
+                    <p>投资</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='concat_click()'>
+                    <ion-icon class='icon iconfont icon-find_default'></ion-icon>
+                    <p>发现</p>
+                </ion-col>
+
+                <ion-col class="nav" col-3 tappable (click)='me_click()'>
+                    <ion-icon class='icon iconfont icon-my_check'></ion-icon>
+                    <p>我</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-footer>

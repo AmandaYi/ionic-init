@@ -1,0 +1,95 @@
+<!--
+  Generated template for the WithdrawalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>提现</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='tixian'>
+
+    <ul>
+      <li>
+        <span>银行卡</span>
+        <p>{{tail_bankname}}  尾号{{tailFour}}</p>
+        <div class="clear"></div>
+      </li>
+    </ul>
+
+    <div class="bank"></div>
+
+    <ul>
+      <li>
+        <span>账户余额(元)</span>
+        <p>{{overAmountRB}}</p>
+        <div class="clear"></div>
+      </li>
+       <li>
+        <span>免费提现额度(元)</span>
+        <p>{{lv_remain | number:'1.2-2'}}</p>
+        <div class="clear"></div>
+      </li>
+       <li>提现金额(元)</li>
+       <li style='border-bottom:1px solid #ccc;'>
+        <span class='iconfont icon-invest_default'></span>
+        <input type="number"  placeholder="请输入提现金额"  name='cash' [(ngModel)]='cash' (keyup)='keyup(cash)'>
+        <p style='color:#387ef5' (click)='allWithdrawal()'>全部提现</p>
+        <div class="clear"></div>
+      </li>
+    </ul>
+    <div class="tis" *ngIf='isshow==0'></div>
+    <div class="tis" *ngIf='isshow==1'>提现金额不能大于{{lv_max}}</div>
+    <div class="tis" *ngIf='isshow==2'>提现金额不能大于余额</div>
+    <div class="ttp1" *ngIf='isshow==3'><span>提现费率{{lv2}}，提现手续费{{fee | number:'1.2-2'}}元</span></div>
+    <div class="ttp2" *ngIf='isshow==3'><span>实际到账金额<i>{{de | number:'1.2-2'}}</i>元</span></div>
+    <div class="tis" *ngIf='isshow==4'>提现金额需大于等于{{min}}元</div>
+
+    <button [disabled]='delaiameng' (click)='withdrawal(cash)'>提现</button>
+
+    <div class='xiugai'><span (click)='findPayPassword()'>修改/找回支付密码</span></div>
+    <!--<div class='xiugai' *ngIf='!find_data'>修改/找回支付密码</div>-->
+
+    <div class='wenxin'>温馨提示</div>
+    <ol class='pingtai'>
+      <li >1、根据会员等级，平台会给用户每月免费提现额度，免费提现额度每月1号0点重置；</li>
+      <li>2、超出免费额度提现时，需收取提现手续费，平台会对用户提现手续费进行补贴，不同等级的权益如下（橙色为当前权益）：</li>
+    </ol>
+    <table class="biaoge">
+      <thead>
+        <tr>
+          <td>会员等级</td>
+          <td>提现费率</td>
+          <td>免费提现额度</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr *ngFor='item in data_main;let i=index' [ngClass]="{'with_color':i==lv_id-1}">
+          <td>{{item.F07}}</td>
+          <td>{{item.F04}}</td>
+          <td>{{item.F03}}</td>
+        </tr>-->
+          <tr *ngFor='let item of data_main;let i=index' [ngClass]="{'with_color':i==lv_id-1}">
+          <td>{{item.F07}}</td>
+          <td>{{item.F04}}</td>
+          <td>{{item.F03}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+</ion-content>
+
+<div class="zhifu_container" *ngIf='zhifu'>
+  <div class='zhifu_content'>
+       <div class="zhifu_mima">请先修改初始支付密码，否则提现失败</div>
+      <div class="zhifu_tixian" (click)='zhifu_tixian()'>已修改，去提现</div>
+      <div class="zhifu_xiugai" (click)='zhifu_xiugai()'>修改支付密码</div>
+  </div>
+</div>

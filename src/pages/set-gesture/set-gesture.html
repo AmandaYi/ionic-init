@@ -1,0 +1,63 @@
+<!--
+  Generated template for the SetGesturePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()' *ngIf='gesture_btn'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title *ngIf='!gesture'>设置手势密码</ion-title>
+        <ion-title *ngIf='gesture'>启动手势密码</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+      <div class="gesture">
+            <div id="main">
+                <div class="logo">
+                    <img src="assets/image/gesture.png" alt="">
+                </div>
+                <h2>欢迎您</h2>
+                <h3>{{phone}}</h3>
+
+                <!--未设置手势提示的title-->
+                <div id="hint" class="hint" *ngIf='draw==0'>设置密码，请绘制密码图案</div>
+                <div id="hint" class="hint" *ngIf='draw==1'>请再次绘制相同图案</div>
+                <div id="hint" class="hint" *ngIf='draw==2'>两次绘制的图形不一样,请重新绘制!</div>
+
+                <!--设置了手势验证的提示title-->
+                <div id="hint" class="hint" *ngIf='draw==3'>验证密码,请绘制密码图案!</div>
+                <div id="hint" class="hint" *ngIf='draw==4'>密码错误,请重新绘制!</div>    
+
+                <!--手势-->
+                <div id="handlock">
+                     <!--未设置手势-->
+                     <gesture-password *ngIf='!gesture' [ngStyle]="{'height':gesture_height}"    [(ngModel)]="pwd" [type]="type" [options]="options"(error)="onError($event)"(checked)="onChecked($event)" (beforeRepeat)="onBeforeRepeat($event)"(afterRepeat)="onAfterRepeat($event)"></gesture-password>
+                      <!--设置手势-->
+                     <gesture-password *ngIf='gesture'   [ngStyle]="{'height':gesture_height}"   [(ngModel)]="pwd" [type]="type" [options]="options"(error)="onError($event)"(checked)="onChecked($event)"></gesture-password>
+                </div>
+
+                <!--手势登录-->
+                <div  *ngIf='gesture' class='zhanghao_login' (click)='to_login()'>帐号密码登录</div>
+            </div>
+        </div>
+
+        
+
+
+        <!--<gesture-password style="height: 350px;"[(ngModel)]="pwd" [type]="type" [options]="options"(error)="onError($event)"(checked)="onChecked($event)" (beforeRepeat)="onBeforeRepeat($event)"(afterRepeat)="onAfterRepeat($event)"></gesture-password>-->
+
+
+            <!--<p class="text-center">current password: {{pwd}}</p>
+    <button class="btn btn-link btn-sm" [ngClass]="{'text-success': type==='check'}" (click)="type='check'">确认密码</button>
+    <button class="btn btn-link btn-sm" [ngClass]="{'text-success': type==='recorder'}" (click)="type='recorder'">设置密码</button>
+    <div class="row">
+        <gesture-password style="height: 350px;" [(ngModel)]="pwd" [type]="type" [options]="options" (error)="onError($event)" (checked)="onChecked($event)" (beforeRepeat)="onBeforeRepeat($event)" (afterRepeat)="onAfterRepeat($event)"></gesture-password>
+    </div>-->
+        
+
+

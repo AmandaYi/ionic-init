@@ -1,0 +1,137 @@
+page-addbank {
+    .addbank{
+        background:#ffffff;
+        .title{
+                color: #909090;
+                font-size: r(30px);
+                height: r(100px);
+                line-height: r(100px);
+                background:#ededed;
+                width:100%;
+                padding:0 5%;
+        }
+
+        ul{
+            li{
+                width:90%;
+                margin:0 5%;
+                border-bottom:solid 1px #ededed;
+                u{
+                    float:left;
+                    font-size:r(28px);
+                    color:#909090;
+                    display:block;
+                    text-decoration:none;
+                    height:r(100px);
+                    line-height:r(100px);
+
+                }
+
+                span{
+                    display:block;
+                    float:left;
+                    width:r(190px);
+                    font-size:r(34px);
+                    color:#323232;
+                     height:r(100px);
+                    line-height:r(100px);
+                }
+                input{
+                    display:block;
+                    float:left;
+                    width:65%;
+                    font-size:r(28px);
+                    color:#909090;
+                     height:r(90px);
+                     margin-top:r(5px);
+                     margin-bottom:r(5px);
+                     line-height:r(90px);
+                     border:none;
+                     background:#fff;
+                }
+                input::disabled{
+                    background:#fff;
+                }
+                i{
+                    display:block;
+                    float:right;
+                    width:5%;
+                    font-size:r(28px);
+                    color:#909090;
+                    height:r(100px);
+                    line-height:r(100px);
+                    border:none;
+                }
+                select{
+                    display:block;
+                    background:#ffffff;
+                    float:left;
+                    width:60%;
+                    font-size:r(28px);
+                    color:#909090;
+                     height:r(90px);
+                     margin-top:r(5px);
+                     margin-bottom:r(5px);
+                    line-height:r(90px);
+                    border:none;
+                    appearance:none
+                }
+                select::disabled{
+                    background:#fff;
+                }
+                small{
+                    display:block;
+                    float:left;
+                    width:60%;
+                    font-size:r(28px);
+                    color:#909090;
+                    height:r(100px);
+                    line-height:r(100px);
+                }
+                img{
+                    display:block;
+                    float:right;
+                    width:32%;
+                    font-size:r(28px);
+                    color:#323232;
+                    height:r(100px);
+                    line-height:r(100px);
+                    border:none;
+                }
+
+                button{
+                    display:block;
+                    float:right;
+                    width:32%;
+                    font-size:r(26px);
+                    color:#fff;
+                    height:r(70px);
+                    line-height:r(70px);
+                    margin-top:r(15px);
+                    margin-bottom:r(15px);
+                    border-radius:r(16px);
+                    background:#ff6600;
+                }
+                 clear{
+                    clear:both;
+                }
+                
+            }
+        }
+
+         .addbank_btn{
+           width:90%;
+           margin:0 auto;
+            height:r(88px);
+            line-height:r(88px);
+            text-align:center;
+            border-radius:r(16px);
+            background:#ff6f00;
+            font-size:r(34px);
+            color:#ffffff;
+            display:block;
+            margin-top:8%;
+            margin-bottom:r(80px);
+        }
+    }
+}

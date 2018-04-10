@@ -1,0 +1,109 @@
+<div [ngSwitch]="getType">
+
+    <div *ngSwitchCase="'0'" class='body'>
+        <ion-grid class='moneyView'>
+            <ion-row class='moneyBottom'>
+                <ion-col class='moneyTitle' col-3>账户余额</ion-col>
+                <ion-col class='money' col-5>{{overAmountRB}}元</ion-col>
+                <ion-col col-2 class='recharge' col-3>
+                    <div tappable (click)='on_recharge()'>充值</div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class='moneyTitle' col-3>投资金额</ion-col>
+            </ion-row>
+
+            <ion-row class='border_line'>
+                <ion-col class="icon-qian-copy iconfont" col-1> </ion-col>
+                <ion-col col-8 class='inputMoney'>
+                    <input class="inside" type="number" oninput="if(value.length>10)value=value.slice(0,10)" placeholder="输入不小于100的投资金额" (keyup)='on_money(inside_money)' [(ngModel)]="inside_money">
+                </ion-col>
+                <ion-col class='allinput' tappable (click)='on_all()' col-3>
+                    余额全投
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid class='coupon'>
+            <ion-row [ngSwitch]='userXJQ'>
+                <ion-col col-2 class='couponTitle'>福利券</ion-col>
+
+                <ion-col *ngIf='userXJQ=="S"' col-10 class='ClickCoupon' tappable (click)='on_coupon()'>
+                    <span *ngIf='!message'>点击选择福利券</span>
+                    <span *ngIf='message'>{{message}}</span>
+                    <i class='icon iconfont icon-zuoyoujiantouicon-defuben1'></i></ion-col>
+                <ion-col *ngIf='userXJQ=="F"' col-10 class='ClickCoupon'>此项目不可使用<i class='icon iconfont icon-zuoyoujiantouicon-defuben1'></i></ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <div *ngSwitchCase="'1'" class='Texperience'>
+        <ion-grid class='moneyView'>
+            <ion-row class='moneyBottom'>
+                <ion-col class='moneyTitle' col-3>账户余额</ion-col>
+                <ion-col class='money' col-5>{{overAmountRB}}元</ion-col>
+                <ion-col col-2 class='recharge' col-3>
+                    <div tappable (click)='on_recharge()'>充值</div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class='moneyTitle' col-3>投资金额</ion-col>
+                <ion-col class='orangeMoney' col-5> <i>8888.00</i>元</ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class='moneyTitle' col-3>到期收益</ion-col>
+                <ion-col class='orangeMoney' col-5><i>3.65</i>元</ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <div *ngSwitchCase="'2'" class='Invest'>
+        <ion-grid class='moneyView'>
+            <ion-row class='moneyBottom'>
+                <ion-col class='moneyTitle' col-3>账户余额</ion-col>
+                <ion-col class='money' col-5>{{overAmountRB}}元</ion-col>
+                <ion-col col-2 class='recharge' col-3>
+                    <div tappable (click)='on_recharge()'>充值</div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class='moneyTitle' col-3>投资金额</ion-col>
+                <ion-col class='orangeMoney' col-5> <i>{{salePrice}}</i>元</ion-col>
+            </ion-row>
+
+            <ion-row *ngIf='sale>0'>
+                <ion-col class='orangeMoney'><i>余额不足，还需充值{{sale |rydNum:'2'}}元</i></ion-col>
+            </ion-row>
+
+        </ion-grid>
+    </div>
+
+    <div class='foot' *ngSwitchCase="'0'">
+        <p>投资即表示同意<i tappable (click)='lend_contract()'>《借款合同范本》</i>的协议</p>
+    </div>
+
+    <div class='foot' *ngSwitchCase="'2'">
+        <p>投资即表示同意<i tappable (click)='bond_contract()'> 《债权合同范本》</i>的协议</p>
+    </div>
+
+</div>
+
+<div class='bank'></div>
+
+<div class='ionFoot' [ngSwitch]="getType">
+    <button *ngSwitchCase="'0'" tappable (click)="on_investment()" class=" orange " [disabled]="first">
+        立即投资
+    </button >
+
+     <button  *ngSwitchCase="'1'"  tappable (click)="on_experience()" class=" orange " [disabled]="first">
+            立即投资
+        </button >
+
+        <button   *ngSwitchCase="'2'"  tappable (click)="on_invest()" class=" orange " [disabled]="first">
+                立即投资
+         </button >
+</div>

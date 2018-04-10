@@ -1,0 +1,56 @@
+page-navtitle-we-chat {
+    ion-content {
+        .headline {
+            background: linear-gradient(to bottom, #ff6f00, #ff9800);
+        }
+        ion-grid {
+            padding: 0;
+        }
+        .title {
+            font-size: r(34px);
+            color: #ffffff;
+            text-align: center;
+            line-height: r(40px);
+            padding: 0;
+            padding-top: r(30px);
+        }
+        .small_title {
+            font-size: r(30px);
+            color: #ffffff;
+            text-align: center;
+            line-height: r(60px);
+            padding: 0;
+            padding-top: r(60px);
+            padding-bottom: r(40px);
+        }
+        .content {
+            background-color: #ededed;
+            padding: r(30px) r(30px) r(30px) r(30px);
+            ion-grid {
+                padding: 0;
+            }
+            ion-col {
+                padding: 0;
+            }
+            ion-row {
+                padding-bottom: r(40px);
+            }
+            .iconfont {
+                color: #ff6f00;
+                font-size: r(36px);
+                text-align: right;
+                bottom: r(6px);
+            }
+            p {
+                font-size: r(30px);
+                color: #666666;
+                text-align: left;
+                padding-left: r(11px);
+                padding-bottom: r(10px);
+            }
+            img {
+                max-width: 90%;
+            }
+        }
+    }
+}

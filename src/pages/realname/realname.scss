@@ -1,0 +1,97 @@
+page-realname {
+     .register_box{
+        width:90%;
+        background:#fff;
+        margin:10% 5% 0;
+        border-bottom:1px solid #ededed;
+        height:r(100px);
+        span{
+            float:left;
+            display:block;
+            width:r(180px);
+            font-size:r(26px);
+            color:#909090;
+            height:r(100px);
+            line-height:r(100px);
+        }
+        input{
+            float:left;
+            display:block;
+            font-size:r(22px);
+            border:none;
+            width:60%;
+            color:#909090;
+            margin-left:5%;
+            height:r(90px);
+            margin:r(5px) 0 r(5px) 3%;
+            line-height:r(90px);
+
+        }
+        img{
+            display:block;
+            float:right;
+            height:r(100px);
+            line-height:r(100px);
+        }
+       
+    }
+
+     .button{
+            display:block;
+            float:left;
+            width:90%;
+            margin:r(40px) 5%;
+            height:r(90px);
+            line-height:r(90px);
+            font-size:r(28px);
+            color:#ffffff;
+            background:#ff6f00;
+            text-align:center;
+            border-radius:r(16px);
+        }
+
+        .bing_box{
+            background:#fff;padding-top: r(70px);
+            i{
+                text-align:center;width:100%;height:r(100px);line-height:r(100px);font-size: r(100px);width: 100%;display: block;color:#4ae104;
+            }
+            div{
+                font-size:r(40px);margin:r(20px) 0 0 0 ;padding-bottom:r(80px);text-align:center;
+            }
+        }
+        .binding_box {
+            width: 100%;
+            float: left;
+            background-color: #fff;
+        }
+
+        .binding_box ul li {
+            width: 90%;
+            margin:0 5%;
+            float: left;
+            border-bottom: solid 1px #ededed;
+            height: r(96px);
+            line-height: r(96px);
+        }
+
+        .binding_box ul li  span {
+            color: #323232;
+            font-size: r(26px);
+            float: left;
+            display:block;
+             height: r(96px);
+            line-height: r(96px);
+        }
+
+        .binding_box ul li  p {
+            color: #909090;
+            font-size: r(24px);
+            float: right;
+        }
+
+        clear{
+            clear:both;
+        }
+
+        
+}   

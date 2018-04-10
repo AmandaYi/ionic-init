@@ -1,0 +1,30 @@
+page-navtitle-report {
+    ion-content {
+        .all {
+            padding: r(30px) r(30px) r(30px) r(30px);
+        }
+        .report {
+            padding-bottom:r(30px);
+        }
+       .report_title{
+           font-size:r(20px);
+           color:#909090;
+           text-align:center;
+       }
+       .report_pic{
+           height:r(370px);
+       }
+       img {
+        width:100%;
+        height:r(370px);
+       }
+       .false {
+        padding: r(15px) r(30px) r(15px) r(30px);
+        font-size: 32px;
+        color: #909090;
+        text-align: center;
+        height: r(150px);
+        background-color: #ededed;
+    }
+    }
+}

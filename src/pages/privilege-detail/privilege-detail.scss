@@ -1,0 +1,92 @@
+page-privilege-detail {
+    .task_detail {
+        width: 100%;
+        background: #fff;
+    }
+
+    .task_detail .head {
+        width: 100%;
+        padding: r(52px) 10% r(30px) 5%;
+        border-bottom: 1px solid #ccc;
+        float: left;
+    }
+
+    .task_detail .head .head_left {
+        float: left;
+    }
+
+    .task_detail .head .head_left .head_title {
+        font-size: r(32px);
+        color: #323232;
+        margin-top:r(40px);
+    }
+
+    .task_detail .head .head_left .head_content {
+        font-size: 14px;
+        color: #323232;
+        margin-top: r(20px);
+    }
+
+    .task_detail .head .head_img {
+        float: right;
+        /*margin-top: r(15px);*/
+        i{
+            display:block;
+            font-size:r(120px);
+            color:#ff6f00;
+        }
+    }
+
+    .task_detail .article {
+        width: 100%;
+        padding: 0 5% 0 5%;
+        float: left;
+        margin-bottom: r(40px);
+    }
+
+    .task_detail .article .article_title1 {
+        /*width:100px;*/
+        font-size: r(32px);
+        /*border-bottom:1px solid #ccc;*/
+        margin: 30px 0 0 0;
+    }
+
+    .task_detail .article .article_title2 {
+        /*width:120px;*/
+        font-size: r(32px);
+        /*border-bottom:1px solid #ccc;*/
+        margin:r(60px) 0 0 0;
+    }
+
+    .task_detail .article .article_content {
+        font-size: r(30px);
+        margin-top:r(20px);
+        color: #909090;
+        line-height: r(50px);
+    }
+
+    .task_detail .article .article_biaoge {
+        width: 100%;
+        text-align: center;
+        margin-top: r(60px);
+    }
+
+    .task_detail .article .article_biaoge thead td {
+        font-size: r(30px);
+        border: 1px solid #ccc;
+        height: r(100px);
+        line-height: r(100px);
+        color: #909090;
+    }
+
+    .task_detail .article .article_biaoge tbody td {
+        font-size: r(30px);
+        border: 1px solid #ccc;
+        height: r(100px);
+        line-height: r(100px);
+    }
+
+    .task_detail .article .article_biaoge tbody td .icon {
+        display: inline;
+    }
+}

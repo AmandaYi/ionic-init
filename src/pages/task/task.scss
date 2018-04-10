@@ -1,0 +1,80 @@
+page-task {
+    .task {
+    background: #fff;
+}
+
+.task .task_title {
+    width: 90%;
+    margin: 0 auto;
+    padding: r(30px) 0;
+    text-align: left;
+    color: #323232;
+    font-size: r(32px);
+    border-bottom: 1px solid #ccc;
+}
+
+.task .mission {
+    /*border-bottom:1px solid #ccc;*/
+    height: r(180px);
+    /*line-height:80px;*/
+    /*float:left;*/
+    width: 100%;
+    padding: 0 5% 0 5%;
+}
+
+.task .mission .mission_img {
+    float: left;
+    width: r(100px);
+    margin-top: r(30px);
+}
+.task .mission .mission_img i{
+  display: block;
+  font-size: r(90px);
+  color: rgba(255, 111, 0, 1);
+  line-height: r(90px);
+  font-weight:bold;
+}
+
+/*.task .mission .mission_img img {*/
+    /*width: 100%;*/
+    /*display: block;*/
+/*}*/
+
+.task .mission .mission_title {
+    float: left;
+    margin-left: r(20px);
+    width: 50%;
+}
+
+.task .mission .mission_btn {
+    float: right;
+    display: block;
+    background: #FF6600;
+    border-radius: 8px;
+    width: r(140px);
+    height: r(72px);
+    line-height: r(72px);
+    font-size: r(28px);
+    color: #fff;
+    margin-top: 20px;
+    border: none;
+}
+
+.task .bank {
+    width: 100%;
+    background: #ededed;
+    height: r(20px);
+    /*float:left;*/
+}
+
+.clear {
+    clear: both;
+}
+.mission_title1{
+    font-size:r(30px);margin-top:r(30px);
+}
+.mission_title2{
+    font-size:r(20px);margin-top:r(10px);color:#909090;
+}
+
+}

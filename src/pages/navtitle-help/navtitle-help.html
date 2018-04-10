@@ -1,0 +1,95 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>帮助中心</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class='classify'>
+        <div class='classsify_top'>
+            <p class='title'>问题分类</p>
+        </div>
+
+        <ion-grid>
+            <ion-row class='classify_row'>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('ZCYDL')">
+                    <div class="icon iconfont icon-zhucedenglu nav_icon"></div>
+                    <p class='question'>注册登录</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('CZYTX')">
+                    <div class="icon iconfont icon-qianbao nav_icon"></div>
+                    <p class="question">充值提现</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('TZYHK')">
+                    <div class="icon iconfont icon-bingzhuangtu nav_icon"></div>
+                    <p class="question">投资安全</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('JHYHH')">
+                    <div class="icon iconfont icon-jiekuanhuikuan nav_icon"></div>
+                    <p class="question">借款回款</p>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class='classify_row'>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('LXHFY')">
+                    <div class="icon iconfont icon-lixifeiyong nav_icon"></div>
+                    <p class="question">利息费用</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('ZQZR')">
+                    <div class="icon iconfont icon-zhaiquanzhuanrangicon1 nav_icon"></div>
+                    <p class="question">债权转让</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('MCJS')">
+                    <div class="icon iconfont icon-book-copy1 nav_icon"></div>
+                    <p class="question">名词解释</p>
+                </ion-col>
+                <ion-col col-3 class='classify_col' tappable (click)="on_classify('HDDY')">
+                    <div class="icon iconfont icon-jiaocheng nav_icon"></div>
+                    <p class="question">投资攻略</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+    </div>
+
+    <div class='hot'>
+        <div class='line'>
+            <p class='title'>热门问题</p>
+        </div>
+        <div *ngFor='let items of help_all;let i=index' class='hot_list'>
+            <ion-grid tappable (click)='isshow(i)'>
+                <ion-row>
+                    <ion-col col-1>
+                        <div class='hot_icon' [ngClass]="{true:'iconfont icon-triangle ',false:'iconfont icon-sanjiaoxing-copy'} [i==Index]"> </div>
+                    </ion-col>
+                    <ion-col col-11>
+                        <p class='hot_title'>{{items.title}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='hot_content'>
+                        <div [innerHTML]='items.content' [ngStyle]="{'display':i!=Index?'none':'block'}" class='hot_block'></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+
+</ion-content>
+
+<ion-footer>
+    <div class="footer">
+        <a href='tel:4001887398'>
+            <div class='call'>
+                <div class="icon iconfont icon-kefu1 small_icon"><span>联系客服</span></div>
+            </div>
+        </a>
+    </div>
+</ion-footer>

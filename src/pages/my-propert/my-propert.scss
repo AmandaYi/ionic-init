@@ -1,0 +1,117 @@
+page-my-propert {
+  .top {
+    background: linear-gradient(to bottom,#ff6f00,#ff9700);
+    overflow: hidden;
+    padding-bottom: r(30px);
+
+    .tittle {
+      font-family: STXihei;
+      color: #fff;
+      font-size: r(24px);
+      text-align: center;
+      padding: r(30px) 0;
+    }
+
+    .all {
+      color: #fff;
+      font-size: r(60px);
+      text-align: center;
+      padding-bottom: r(50px);
+    }
+
+    .detail li {
+      width: 50%;
+      float: left;
+      color: #fff;
+
+      .til {
+        font-size: r(24px);
+        text-align: center;
+        padding-bottom: r(20px);
+      }
+
+      .num {
+        font-size: r(34px);
+        text-align: center;
+      }
+    }
+
+    .detail li:first-of-type,
+    .detail li:nth-child(2) {
+      padding-bottom: r(40px);
+    }
+  }
+
+  .hui {
+    height: r(20px);
+    background: #ededed;
+  }
+
+  .award,
+  .interest {
+    color: #666;
+    overflow: hidden;
+    padding-bottom: r(40px);
+
+    .intTil {
+      text-align: center;
+      font-size: r(24px);
+      padding: r(30px) 0 r(20px);
+    }
+
+    .intNum {
+      color: #ff6f00;
+      font-size: r(60px);
+      text-align: center;
+      padding-bottom: r(50px);
+    }
+
+    li {
+      width: 50%;
+      float: left;
+
+      .til {
+        font-size: r(24px);
+        text-align: center;
+        padding-bottom: r(20px);
+      }
+
+      .num {
+        font-size: r(34px);
+        text-align: center;
+      }
+    }
+
+    li:nth-child(3),
+    li:nth-child(4) {
+      padding-top: r(30px);
+    }
+  }
+
+  .add {
+    color: #666;
+    padding-bottom: r(50px);
+    .addTil {
+      font-size: r(34px);
+      text-align: center;
+      padding: r(30px) 0;
+    }
+    ul{
+        display: flex;
+    }
+
+    li {
+        flex: 1;
+      .til {
+        font-size: r(20px);
+        text-align: center;
+        padding-bottom: r(20px);
+    }
+    .num {
+        font-size: r(30px);
+        text-align: center;
+
+      }
+    }
+  }
+}

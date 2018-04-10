@@ -1,0 +1,49 @@
+page-media-company {
+    ion-content {
+        .media {
+            padding: r(30px) r(30px) r(50px) r(30px);
+            .media_title {
+                text-align: center;
+                color: #323232;
+                font-size: r(32px);
+                font-weight: bold;
+            }
+            .media_time {
+                padding-top: r(20px);
+                padding-bottom: r(20px);
+                font-size: r(20px);
+                color: #909090;
+                text-align: center;
+            }
+            .media_content {
+                font-size: r(24px);
+                color: #323232;
+                text-align: justify;
+            }
+            .MsoNormal {
+                padding-top: r(20px);
+            }
+            img {
+                width: 100%;
+                border: 0;
+                height: 100%;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            strong,
+            span,
+            p {
+                padding-top: r(20px);
+                margin: 0;
+                font-size: r(24px);
+            }
+            a {
+                color: rgb(50, 50, 50);
+            }
+        }
+    }
+}

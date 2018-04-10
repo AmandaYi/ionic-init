@@ -1,0 +1,91 @@
+
+<ion-content class='modal'>
+
+        <div id="pay_modal">
+
+            <div class="icon iconfont icon-guanbi3 pay_del" (click)='hide_del()' *ngIf='!hide_x'></div>
+            <div class="icon iconfont" *ngIf='hide_x'></div>
+
+            <div class="pay_all"  *ngIf='all_tiem'>
+                <div class="pay_future" *ngIf='racharge_title'>您将充值<span>{{pay_code}}</span>元</div>
+                <div class="pay_future" *ngIf='!racharge_title'>您将投资<span>{{pay_code}}</span>元</div>
+                <div class="pay_sms">
+                    <div class="sms_title">短信验证(已发送到{{pay_phone}})</div>
+                    <button class="sms_time" [disabled]='disabled_code' (click)='on_again()'>{{code_title}}</button>
+                    <div class="clear"></div>
+                </div>
+
+                <ul class="pay_number">
+                    <li>{{currentNumber1}}</li>
+                    <li>{{currentNumber2}}</li>
+                    <li>{{currentNumber3}}</li>
+                    <li>{{currentNumber4}}</li>
+                    <li>{{currentNumber5}}</li>
+                    <li>{{currentNumber6}}</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+
+
+            <div class="number" *ngIf='show_tiem==1' >
+                <div class="number_top">
+                    <button class="" (click)='doInput(1)'>1</button>
+                    <button class="" (click)='doInput(2)'>2</button>
+                    <button class="" (click)='doInput(3)'>3</button>
+                    <div class="clear"></div>
+                </div>
+                <div class="number_center1">
+                    <button class="" (click)='doInput(4)'>4</button>
+                    <button class="" (click)='doInput(5)'>5</button>
+                    <button class="" (click)='doInput(6)'>6</button>
+                    <div class="clear"></div>
+                </div>
+                <div class="number_center2">
+                    <button class="" (click)='doInput(7)'>7</button>
+                    <button class="" (click)='doInput(8)'>8</button>
+                    <button class="" (click)='doInput(9)'>9</button>
+                    <div class="clear"></div>
+                </div>
+                <div class="number_bottom">
+                    <button class=""></button>
+                    <button class="" (click)='doInput(0)'>0</button>
+                    <button class="icon iconfont icon-shanchu2" (click)="doInput('C')"></button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+
+            <div class="pay_apply" *ngIf='show_tiem==2' >
+                <div class="pay_loading"><img src="./assets/image/loading.gif" alt=""></div>
+                <div class="pay_info" *ngIf='data_chongzhi'>充值申请处理中，请稍后......</div>
+                <div class="pay_info" *ngIf='!data_chongzhi'>投资申请处理中，请稍后......</div>
+            </div>
+
+
+            <div class="pay_applytrue" *ngIf='show_tiem==3' >
+                <div class="icon iconfont icon-chenggong pay_chenggong"></div>
+                <div class="pay_chenggonghead">充值成功</div>
+                <div class="pay_chenggongtitle">{{pay_code}}元</div>
+                <div class="pay_reload"><button (click)='on_sure()'>确定</button></div>
+            </div>
+
+            <div class="pay_applytrue" *ngIf='show_tiem==4' >
+                <div class="icon iconfont icon-chenggong pay_chenggong"></div>
+                <div class="pay_chenggonghead">投资成功</div>
+                <div class="pay_chenggongtitle">{{pay_code}}元</div>
+                <div class="pay_reload"><button (click)='on_close()'>关闭弹窗</button></div>
+                <div class="pay_reload"><button (click)='on_mytouzi()' style='color:#ff6600;background:#fff'>我的投资</button></div>
+            </div>
+
+             <div class="pay_applytrue" *ngIf='show_tiem==5' >
+                <div class="icon iconfont icon-chenggong pay_chenggong"></div>
+                <div class="pay_chenggonghead">投资成功</div>
+                <div class="pay_chenggongtitle">{{pay_code}}元</div>
+                <div class="pay_reload"><button (click)='on_success()'>投资完成</button></div>
+                <div class="pay_reload"><button (click)='on_myzhaiquan()' style='color:#ff6600;background:#fff'>我的投资</button></div>
+            </div>
+
+
+        </div>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the NavtitleReportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>运营报告</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class='all'>
+        <div *ngIf='this.judge_report==true'>
+            <div *ngFor="let items of report_all" class='report' tappable (click)='on_report_pic(items.url)'>
+                <ul>
+                    <li class="report_pic">
+                        <img src={{items.picUrl}}/>
+                    </li>
+                    <li>
+                        <p class='report_title'>{{items.title}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class='false' *ngIf='this.judge_report==false'>
+        抱歉，服务器显示错误。请稍后再试...
+    </div>
+</ion-content>

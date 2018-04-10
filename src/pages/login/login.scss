@@ -1,0 +1,113 @@
+page-login {
+    .login{
+        background:#ffffff;
+        width:100%;
+    }
+    .login .login_main{
+        width:100%;
+    }
+     .login .login_main li{
+        width:80%;
+        margin:r(60px) auto 0;
+        /*padding:0 5%;*/
+        border-bottom:1px solid #ccc;
+        padding-bottom:r(25px);
+    }
+    .login .login_main li:nth-child(1){
+        padding-top:r(76px);
+    }
+    .login .login_main li .item_1{
+        width:5%;
+        float:left;
+        margin-right:5%;
+        i{
+            display:block;
+             height:r(50px);
+            line-height:r(50px);
+            font-size:r(40px);
+        }
+    }
+    .login .login_main li .item_2{
+        width:90%;
+        float:left;
+        input{
+            display:block;
+            width:90%;
+            height:r(50px);
+            line-height:r(50px);
+            font-size:12px;
+            color:#323232;
+            border:0;
+            float:left;
+            font-size:r(30px);
+        }
+        i{
+            width:10%;
+            display:block;
+            float:right;
+             height:r(50px);
+            line-height:r(50px);
+             font-size:r(30px);
+        }
+        img{
+            display:block;
+            float:right;
+            width:r(150px);
+            height:r(50px)
+        }
+    }
+    .login_button{
+        width:80%;
+        margin:0 auto;
+        height:r(88px);
+        line-height:r(88px);
+        text-align:center;
+        border-radius:r(16px);
+        background:#ff6f00;
+         font-size:r(34px);
+        color:#ffffff;
+        display:block;
+        margin-top:8%;
+    }
+    .login_zhaohui{
+        font-size:r(26px);
+        color:#039be5;
+        padding-left:10%;
+        float:left;
+        margin-top:r(35px);
+        margin-bottom:r(400px);
+    }
+    .login_zhanghu{
+        font-size:r(26px);
+        color:#039be5;
+        float:right;
+        padding-right:10%;
+        margin-top:r(35px);
+        margin-bottom:r(400px);
+    }
+
+
+
+
+
+
+
+
+    .clear{
+        clear:both;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

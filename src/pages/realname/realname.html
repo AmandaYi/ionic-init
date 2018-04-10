@@ -1,0 +1,83 @@
+<!--
+  Generated template for the RealnamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>开通银行存管</ion-title>
+    </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+    <!--已有填写-->
+    <div *ngIf='tianxie'>
+         <div  class='bing_box'>
+          <i class="iconfont icon-chenggong"></i>
+          <div >已开通银行存管</div>
+        </div>
+        <div class="binding_box">
+            <ul>
+                <li>
+                    <span>真实姓名</span>
+                    <p>{{bid_name}}</p>
+                </li>
+                <li>
+                    <span>身份证号</span>
+                    <p>{{bid_cad}}</p>
+                </li>
+                <!--<li>
+                    <span>银行卡号</span>
+                    <p>{{bank_cad}}</p>
+                </li>
+                <li>
+                    <span>银行手机号码</span>
+                    <p>{{bank_phone}}</p>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+
+    <!--未有填写-->
+    <div *ngIf='!tianxie'>
+        <div class="register_box">
+            <span>真实姓名</span>
+            <input type="text" class="new_phone"  placeholder="输入姓名" [(ngModel)]='real_name' name="real_name"  required>
+            <div class="clear"></div>
+        </div>
+
+        <div class="register_box">
+            <span>身份证号</span>
+            <input type="text" class="new_phone"  placeholder="输入身份证号" [(ngModel)]='card' name="card" required>
+            <div class="clear"></div>
+        </div>
+
+         <!--<div class="register_box">
+            <span>银行卡号</span>
+            <input type="text" class="new_phone"  placeholder="输入银行卡号" [(ngModel)]='bank_cad' name="bank_cad" required>
+            <div class="clear"></div>
+        </div>
+
+         <div class="register_box">
+            <span>银行手机号码</span>
+            <input type="text" class="new_phone"  placeholder="输入银行手机号码" [(ngModel)]='bank_phone' name="bank_phone" required maxlength="11">
+            <div class="clear"></div>
+        </div>-->
+
+        <div class="register_box">
+            <span>验证码</span>
+            <input type="number" class="new_phone"  placeholder="输入验证码" [(ngModel)]='yzm' name="yzm"  required style='width:36%;'>
+            <img [src]='verBase64'  (click)="refreshCode()" style='width:27%;'>
+            <div class="clear"></div>
+        </div>
+
+    <button class="button" (click)='submitPassword(real_name,card,yzm,bank_cad,bank_phone)'  [disabled]='submit_phone'>确定</button>
+   </div>
+</ion-content>

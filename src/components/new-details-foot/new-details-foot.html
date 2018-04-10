@@ -1,0 +1,460 @@
+<!-- 普通标和债券标 -->
+<div class='Investment' *ngIf="Pagetype==0||Pagetype==2">
+    <div>
+        <ion-toolbar class='frame'>
+            <ion-segment [(ngModel)]="change" class="index">
+                <ion-segment-button value="introduce" class='pagination'>
+                    项目详情
+                </ion-segment-button>
+                <ion-segment-button value="detailds" class='pagination'>
+                    风控详情
+                </ion-segment-button>
+                <ion-segment-button value="Record" class='pagination'>
+                    投资记录
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+    </div>
+
+    <div [ngSwitch]="change">
+        <div *ngSwitchCase="'introduce'" class='change_first'>
+            <!--项目介绍  -->
+            <ion-grid class='description'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>项目介绍</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        {{details_project.bidIntroduce}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!--项目基本信息  -->
+            <ion-grid class='description'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>项目基本信息</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>项目名称</ion-col>
+                    <ion-col class='messageContent'>{{details_project.bidName}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>借款金额</ion-col>
+                    <ion-col class='messageContent'>{{details_project.bidAmount}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>借款限期</ion-col>
+                    <ion-col class='messageContent'>{{details_project.loanTerm}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>借款用途</ion-col>
+                    <ion-col class='messageContent'>{{details_project.loanUse}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>年化利率</ion-col>
+                    <ion-col class='messageContent'>{{details_project.rate}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>起息日</ion-col>
+                    <ion-col class='messageContent'>{{details_project.qxTime}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>还款来源</ion-col>
+                    <ion-col class='messageContent'>{{details_project.hkCome}}</ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>还款方式</ion-col>
+                    <ion-col class='messageContent'>{{details_project.hkType}}
+                        <i class="icon-wenhao iconfont" tappable (click)='on_window(details_project.hkType,details_project.hkTypeIntroduce)' [ngStyle]="{'color': '#ff6f00'}"></i>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>还款保障措施</ion-col>
+                    <ion-col class='messageContent'>{{details_project.hkSave}}</ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+            <ion-grid class='description' *ngIf="details_project.peopelTypeEnum !='ZRR'">
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>借款人信息</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>主体性质</ion-col>
+                    <ion-col class='messageContent'>{{details_project.peopleType}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>所属行业</ion-col>
+                    <ion-col class='messageContent'>{{details_project.industry}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>注册资本</ion-col>
+                    <ion-col class='messageContent'>{{details_project.registerMoney}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>资产净值</ion-col>
+                    <ion-col class='messageContent'>{{details_project.assetValue}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>收入情况</ion-col>
+                    <ion-col class='messageContent'>{{details_project.inComeMessage}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>负债情况</ion-col>
+                    <ion-col class='messageContent'>{{details_project.debtMessage}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>借款人主要经营所在地</ion-col>
+                    <ion-col class='messageContent'>{{details_project.producePlace}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>借款前6个月逾期情况</ion-col>
+                    <ion-col class='messageContent'>{{details_project.sixMonthMessage}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col col-4 class='subtitle'>在其他网络平台借款情况</ion-col>
+                    <ion-col class='messageContent'>{{details_project.otherPlatformMeaage}}</ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+            <ion-grid class='lastdescription' *ngIf="details_project.hasDhxx !='false'">
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>贷后信息</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款资金运用情况</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F02}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人经营状况</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F03}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人财务状况</ion-col>
+
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F04}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人还款能力变化情况</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F05}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人逾期情况</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F06}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人涉诉情况</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F07}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>借款人受行政处罚情况</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F08}}</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='afterTitle'>其他影响借款人还款的信息</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='AfterContent'>{{F09}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+    <div [ngSwitch]="change">
+        <div *ngSwitchCase="'detailds'" class='change_second'>
+            <!--项目描述  -->
+            <ion-grid class='description' *ngIf='details_enterprise.db=="S"'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>风控信息</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p>担保机构</p>
+                        <div class='more'>
+                            {{details_enterprise.dbjg}}
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p> 担保机构介绍</p>
+                        <div class='more'>{{details_enterprise.dbdesc}}</div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p>风险措施</p>
+                        <div class='more'>{{details_enterprise.fkcs}}</div>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p>反担保情况</p>
+                        <div class='more'>{{details_enterprise.fdbinfo}}</div>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+
+            <!--抵押物  -->
+            <ion-grid class='message'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>资产信息/抵押物信息</ion-col>
+                </ion-row>
+
+                <div *ngIf="details_enterprise.dy=='S'">
+                    <div *ngFor='let open of dys;let i=index'>
+                        <div *ngFor="let open_dys of dys[i].dysxs ">
+                            <ion-row>
+                                <ion-col col-4 class='subtitle'>{{open_dys.dxsxName}}</ion-col>
+                                <ion-col class='messageContent'>{{open_dys.dxsxVal}}</ion-col>
+                            </ion-row>
+                        </div>
+                    </div>
+                </div>
+            </ion-grid>
+
+            <!--项目风险评估 -->
+            <ion-grid class='message'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>资项目风险评估</ion-col>
+                </ion-row>
+
+                <ion-col class='AfterContent'>{{details_enterprise.fxpg}}</ion-col>
+
+            </ion-grid>
+
+            <!--可能产生的风险结果 -->
+            <ion-grid class='message'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>可能产生的风险结果</ion-col>
+                </ion-row>
+
+                <ion-col class='AfterContent'>{{details_enterprise.fxjg}}</ion-col>
+            </ion-grid>
+
+
+
+            <!--借款合同文件-->
+            <ion-grid class='detailsPicture'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>资质文件</ion-col>
+                </ion-row>
+
+
+                <div *ngIf="relevantFirst.details" class='independence'>
+                    <ion-row>
+                        <ion-col class='picTitle'>{{relevantFirst.name}} </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-3 class='picPicture' *ngFor="let item of relevantFirst.details;let i=index" tappable (click)='card(i)'>
+                            <img [src]="SERVERURL+item.imag" alt='身份证正反面' />
+                            <p class='picName'>{{item.fjName}}</p>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <div *ngIf="relevanSecond.details" class='independence'>
+                    <ion-row>
+                        <ion-col class='picTitle'>{{relevanSecond.name}} </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-3 *ngFor="let item of relevanSecond.details;let i=index" class='picPicture' tappable (click)='licence(i)'>
+                            <img [src]="SERVERURL+item.imag" alt='营业执照' />
+                            <p class='picName'>{{item.fjName}}</p>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <div *ngIf="relevanThrid.details" class='independence'>
+                    <ion-row>
+                        <ion-col class='picTitle'> {{relevanThrid.name}} </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-3 *ngFor="let item of relevanThrid.details;let i=index" class='picPicture' tappable (click)='contract(i)'>
+                            <img [src]="SERVERURL+item.imag" alt='合同文件' />
+                            <p class='picName'>{{item.fjName}}</p>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+            </ion-grid>
+
+        </div>
+    </div>
+
+
+
+    <div [ngSwitch]="change">
+        <div *ngSwitchCase="'Record'" class='change_third'>
+            <ion-grid class='thirdRecord'>
+                <ion-row>
+                    <ion-col col-3 class='recordTittle'>投资用户 </ion-col>
+                    <ion-col col-4 class='recordTittle'>投资金额(元) </ion-col>
+                    <ion-col col-5 class='recordTittle'>投资时间 </ion-col>
+                </ion-row>
+
+                <div *ngFor="let item of details_record">
+                    <ion-row>
+                        <ion-col col-3 class='recordMain'>{{item.name}} </ion-col>
+                        <ion-col col-4 class='recordMain'> {{item.money |rydNum:'2'}}</ion-col>
+                        <ion-col col-5 class='recordMain'>{{item.standby}} </ion-col>
+                    </ion-row>
+                </div>
+            </ion-grid>
+
+
+            <div *ngIf='loadingJudge'>
+                <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                    <ion-infinite-scroll-content loadingSpinner="bubbles" class='logo'>
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 体验标 -->
+<div class='taste' *ngIf="Pagetype==1">
+    <div>
+        <ion-toolbar class='frame'>
+            <ion-segment [(ngModel)]="change" class="index">
+                <ion-segment-button value="introduce" class='pagination'>
+                    项目详情
+                </ion-segment-button>
+                <ion-segment-button value="Record" class='pagination'>
+                    投资记录
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+    </div>
+
+    <div [ngSwitch]="change">
+        <div *ngSwitchCase="'introduce'" class='change_first'>
+            <!--项目描述  -->
+            <ion-grid class='description'>
+                <ion-row>
+                    <ion-col class='moreTitle' col-12>项目介绍</ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p class='moreP'>项目介绍</p>
+                        <div>
+                            体验标是融裕贷平台设立的一个专门提供给平台客户使用体验金进行投资体验的虚拟项目。用户只可使用体验金进行投资，投资后产生的利息收益归用户所有，体验金自动清零。
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col class='moreDetails'>
+                        <p class='moreP'>体验金使用规则</p>
+                        <div>
+                            1.体验金是融裕贷的一种虚拟货币，不显示在用户的可用资金中，不可提现，仅限投资体验标使用，不可投资其他标的。
+                            <br/> 2.投资体验标产生的收益融裕贷以奖励的形式发放给用户，该收益可以提现。
+                            <br/> 3.投资的项目到期后，系统自动收回体验本金。
+                            <br/> 4.每项体验金存在有效期，有效期到期时系统自动回收体验金。
+                            <br/> 5.体验标不参与平台活动奖励，如：首投奖励、土豪榜、推荐奖励、一锤定音、资金站岗补贴等。
+                            <br/> 6.体验标无法使用现金券。
+                            <br/> 7.体验标不设电子合同。
+                            <br/> 8.体验金的最终解释权归融裕贷所有。
+                            <br/>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+
+    <div [ngSwitch]="change">
+        <div *ngSwitchCase="'Record'" class='change_third'>
+            <ion-grid class='thirdRecord'>
+                <ion-row>
+                    <ion-col col-3 class='recordTittle'>投资用户 </ion-col>
+                    <ion-col col-4 class='recordTittle'>投资金额(元) </ion-col>
+                    <ion-col col-5 class='recordTittle'>投资时间 </ion-col>
+                </ion-row>
+
+                <div *ngFor="let item of details_record">
+                    <ion-row>
+                        <ion-col col-3 class='recordMain'>{{item.name}} </ion-col>
+                        <ion-col col-4 class='recordMain'> {{item.money |rydNum:'2'}}</ion-col>
+                        <ion-col col-5 class='recordMain'>{{item.standby}} </ion-col>
+                    </ion-row>
+                </div>
+            </ion-grid>
+
+            <div *ngIf='loadingJudge'>
+                <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                    <ion-infinite-scroll-content loadingSpinner="bubbles" class='logo'>
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,266 @@
+new-details-foot {
+    .Investment {
+        background: #fff;
+    } //切换装置的样式
+    .frame {
+        padding: 0;
+        height: r(95px);
+        .index {
+            border-bottom: r(1px) solid #ededed;
+            .pagination {
+                border: 0;
+                font-size: r(24px);
+                max-width: r(999px);
+            }
+        }
+    }
+    /* 点击颜色字体颜色变化 */
+    .segment-ios .segment-button {
+        color: #909090;
+        background-color: rgb(255, 255, 255);
+        border-bottom: 0.6rem solid #ededed;
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: rgb(255, 111, 0);
+        background-color: rgb(255, 255, 255);
+        border-bottom: 0.6rem solid #ff6f00;
+    } //全局的grid和col去掉边框
+    .grid {
+        padding: 0;
+    }
+    .col {
+        padding: 0;
+    } //普通标和债券标
+    .Investment {
+        //项目介绍
+        .change_first {
+            padding: 0;
+            .description {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                border-bottom: r(20px) solid #ededed;
+            }
+            .lastdescription {
+                padding: r(30px) r(30px) r(30px) r(30px);
+            } //标题和|
+            .moreTitle {
+                font-size: r(26px);
+                color: #ff6f00;
+                padding-left: 0.4rem;
+            }
+            .moreTitle::after {
+                content: '';
+                border-left: 0.12rem #ff6f00 solid;
+                position: absolute;
+                height: 0.34rem;
+                left: 0;
+                top: 18%;
+                border-radius: 0.4rem;
+                display: inline-block;
+            }
+            .moreDetails {
+                font-size: r(22px);
+                color: #909090;
+                padding-bottom: r(32px);
+                text-align: justify;
+                padding-top: 0.3rem;
+            }
+            .moreDetails p {
+                font-size: r(22px);
+                color: #909090;
+            }
+            .subtitle {
+                font-size: r(22px);
+                color: #909090;
+                padding-top: r(20px);
+                letter-spacing: r(1px);
+            }
+            .messageContent {
+                padding-top: r(20px);
+                padding-left: r(20px);
+                font-size: r(22px);
+                color: #323232;
+                letter-spacing: r(1px);
+                text-align: justify;
+            }
+            .iconfont {
+                color: rgb(255, 111, 0);
+                font-size: 0.35rem;
+            }
+            /* 贷后信息 */
+            .afterTitle {
+                font-size: r(22px);
+                padding-top: r(20px);
+                letter-spacing: r(1px);
+            }
+            .AfterContent {
+                font-size: r(22px);
+                color: #909090;
+                padding-top: r(20px);
+                letter-spacing: r(1px);
+                padding-bottom: r(20px);
+                border-bottom: r(2px) solid #ededed;
+            }
+            .AfterContent:last-child {
+                border: 0;
+            }
+        } //更多详情
+        .change_second {
+            //项目详情
+            .description {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                padding-bottom: r(40px);
+            } //标题和|
+            .moreTitle {
+                font-size: r(26px);
+                color: #ff6f00;
+                padding-left: 0.4rem;
+                padding-bottom: r(20px);
+            }
+            .moreTitle::after {
+                content: '';
+                border-left: 0.12rem #ff6f00 solid;
+                position: absolute;
+                height: 0.34rem;
+                left: 0;
+                top: 18%;
+                border-radius: 0.4rem;
+                display: inline-block;
+            }
+            .moreDetails {
+                font-size: r(20px);
+                color: #909090;
+                padding-bottom: r(32px);
+                text-align: justify;
+            }
+            .more {
+                padding-top: r(20px);
+            } //抵押物信息 
+            .message {
+                border-top: r(20px) solid #ededed;
+                padding: r(30px) r(30px) r(30px) r(30px); //调节小图标的大小。。
+            }
+            .subtitle {
+                font-size: r(22px);
+                color: #909090;
+                padding-bottom: r(20px);
+                letter-spacing: r(1px);
+            }
+            .messageContent {
+                padding-left: r(20px);
+                font-size: r(22px);
+                color: #323232;
+                letter-spacing: r(1px);
+                text-align: justify;
+            } // 身份证和营业
+            .detailsPicture {
+                border-top: r(20px) solid #ededed;
+                padding: r(30px) r(30px) r(30px) r(30px);
+                .picTitle {
+                    font-size: r(24px);
+                    padding-bottom: r(30px);
+                    padding-top: r(30px);
+                    font-weight: bold;
+                }
+                .independence {
+                    padding-bottom: r(20px);
+                    border-bottom: #ededed r(1px) solid;
+                }
+                .picPicture {
+                    padding-right: r(20px);
+                    img {
+                        height: r(120px); // width: 100%;
+                    }
+                    p {
+                        font-size: r(18px);
+                        color: #323232;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    } //体验标
+    .taste {
+        background: #fff; //项目详情
+        .change_first {
+            padding: 0;
+            //项目详情
+            .description {
+                padding: r(30px) r(30px) r(30px) r(30px);
+                padding-bottom: r(40px);
+            }
+            .moreTitle {
+                font-size: r(26px);
+                color: #ff6f00;
+                padding-left: 0.4rem;
+            }
+            .moreTitle::after {
+                content: '';
+                border-left: 0.12rem #ff6f00 solid;
+                position: absolute;
+                height: 0.34rem;
+                left: 0;
+                top: 18%;
+                border-radius: 0.4rem;
+                display: inline-block;
+            }
+            .moreDetails {
+                font-size: r(22px);
+                color: #909090;
+                padding-bottom: r(32px);
+                text-align: justify;
+                padding-top: 0.3rem;
+            }
+            .moreP {
+                padding-bottom: r(30px);
+            }
+        }
+    } //投资记录
+    .change_third {
+        .thirdRecord {
+            padding: r(30px) r(30px) r(30px) r(30px);
+            margin-bottom: r(100px);
+        }
+        .recordTittle {
+            font-weight: bold;
+            font-size: r(24px);
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding-bottom: r(20px);
+            border-bottom: r(2px) solid #ededed;
+        }
+        .recordTittle:nth-child(2) {
+            text-align: right;
+        }
+        .recordTittle:last-child {
+            padding-left: 0.6rem;
+        }
+        .recordMain {
+            padding-top: r(20px);
+            text-align: center;
+            font-size: r(20px);
+            color: rgb(102, 102, 102);
+            letter-spacing: 0.00563rem;
+        }
+        .recordMain:last-child {
+            letter-spacing: -0.016rem;
+        }
+    } //上啦加载..
+    ion-infinite-scroll {
+        font-size: 20px!important;
+    }
+}
+
+//图片页面的设计;
+.scroll-content {
+    [icon-only] ion-icon {
+        position: absolute;
+        top: 0;
+        font-size: 2.0rem !important;
+    }
+    [_nghost-c2] .fitted-image[_ngcontent-c2] {
+        bottom: 2.4rem!important;
+    }
+    .button[icon-only] {
+        top: -0.4rem!important;
+    }
+}

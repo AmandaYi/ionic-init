@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+        <ion-navbar hideBackButton>
+                <button navPop><i class="icon iconfont icon-fanhui"></i></button>
+              <ion-title>更多</ion-title>
+            </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='more'>
+
+        <ul>
+            <li (click)='aboutUs()'>
+              <span>关于我们</span>
+              <i class="icon-gengduo iconfont"></i>
+              <div class="clear"></div>
+            </li>
+            <li (click)='callPhone(4001887398)'>
+                <span>客服电话</span>
+                <i class="icon-gengduo iconfont"></i>
+                <p>400-188-7398</p>
+                <div class="clear"></div>
+            </li>
+            <div class="clear"></div>
+        </ul>
+
+        <ul>
+          <li (click)='dangqian()'><span>当前版本</span>
+              <i class="icon-gengduo iconfont"></i>
+              <!--<p class='dangqian_detail'>{{verson}}</p>-->
+              <p>{{verson}}</p>
+              <div class="clear"></div>
+          </li>
+        </ul>
+
+
+        <button (click)='showExitConfirm()' *ngIf='isLogin'>安全退出</button>
+
+</ion-content>

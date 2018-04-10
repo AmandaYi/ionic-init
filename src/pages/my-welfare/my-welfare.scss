@@ -1,0 +1,131 @@
+page-my-welfare {
+    .myWelfare {
+        .myWelfare_tab{
+            width:100%;
+            .topbuttom{
+                font-size:r(26px);
+                border:0;
+                color:#323232;
+                height:r(100px);
+                line-height:r(100px);
+            }
+            .segment-ios .segment-button.segment-activated{
+                background:none;
+                color:#ff6f00;
+                border-bottom:1px solid orange;
+            }
+            .segment-ios .segment-button.segment-activated:active{
+              background:#ededed;
+            }
+        }
+    }
+
+    .myWelfare .welfare_list .list_item{
+           margin-bottom:r(20px);
+           padding:0 r(20px);
+    }
+
+    
+     .myWelfare .welfare_list .list_item .item_interest{
+            padding-left:r(20px);
+            padding-right:r(20px);
+            background:url(../assets/image/welfare1.png) 100% 100% no-repeat;background-size:100% 100%;
+    }
+     .myWelfare .welfare_list .list_item .item_cash{
+          padding-left:r(20px);
+          padding-right:r(20px);
+          background:url(../assets/image/welfare2.png) 100% 100% no-repeat;background-size:100% 100%;
+    }
+    .myWelfare .welfare_list .list_item .item_reflect{
+         padding-left:r(20px);
+         padding-right:r(20px);
+         background:url(../assets/image/welfare3.png) 100% 100% no-repeat;background-size:100% 100%;
+    }
+
+
+    .myWelfare .welfare_list .list_item .item_cash_used{
+         padding-left:r(20px);
+        padding-right:r(20px);
+        background:url(../assets/image/welfare2_user.png) 100% 100% no-repeat;background-size:100% 100%
+    }
+    .myWelfare .welfare_list .list_item .item_interest_used{
+         padding-left:r(20px);
+         padding-right:r(20px);
+        background:url(../assets/image/welfare1_user.png) 100% 100% no-repeat;background-size:100% 100%
+    }
+    .myWelfare .welfare_list .list_item .item_reflect_used{
+         padding-left:r(20px);
+            padding-right:r(20px);
+            background:url(../assets/image/welfare3_user.png) 100% 100% no-repeat;background-size:100% 100%
+    }
+    .myWelfare .welfare_list .list_item .item_out{
+         padding-left:r(20px);
+            padding-right:r(20px);
+            background:url(../assets/image/welfare_out.png) 100% 100% no-repeat;background-size:100% 100%
+    }
+
+
+
+
+   .myWelfare .welfare_list .list_item .left{
+            text-align:center;
+            width:35%;
+            height:r(210px);
+            padding-top:r(28px);
+            float:left;
+    }
+    .myWelfare .welfare_list .list_item .left p{
+        color:#fff;
+    }
+    .myWelfare .welfare_list .list_item .left p:nth-child(1){
+        font-size:r(26px);
+    }
+    .myWelfare .welfare_list .list_item .left p:nth-child(2){
+            font-size:r(30px);
+            font-weight:bold;
+     }
+     .myWelfare .welfare_list .list_item .left p:nth-child(2) span{
+            font-size:r(26px);
+            color:#fff
+     }
+    .myWelfare .welfare_list .list_item .left p:nth-child(3){
+         font-size:r(26px);
+    }
+    .myWelfare .welfare_list .list_item .right{
+         float:left;
+         width:50%;
+         color:#fff;
+         margin-left:8%;
+     }
+    .myWelfare .welfare_list .list_item .right p{
+        font-size:r(26px);
+        color:#fff;
+        margin-top:21%;
+    }
+    .myWelfare .welfare_list .list_item .right p i{
+        color:#fff
+    }
+    .myWelfare .welfare_list .list_item .last{
+        float:left;
+        width:6%
+    }
+    .myWelfare .welfare_list .list_item .last i{
+         position:absolute;
+         right:0;
+         padding:14px 10px;
+         color:#fff;
+    }
+    .invitation h2{
+        /*font-size:13px;
+        color:#323232;
+        text-align:center;
+        text-align:-webkit-center;
+        text-align:-moz-center;
+        font-weight:600;
+        height:40px;
+        line-height:40px;*/
+    }
+    .clear{
+        clear:both;
+    }
+}

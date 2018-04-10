@@ -1,0 +1,41 @@
+<!--
+  Generated template for the MoreBulletinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>公告列表</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf='list_all!=null&&list_all!=undefined'>
+        <div class='list' *ngFor='let items of list_all' tappable (click)='on_list_content(items.id)'>
+            <p class='list_title'>{{items.title}}</p>
+            <p class='list_time'>{{items.releaseTime}}</p>
+        </div>
+    </div>
+
+    <div class='false' *ngIf="loading_jugde==false">
+        已无更多数据...
+    </div>
+
+    <div *ngIf="loading_jugde==true">
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading..." class='logo'>
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+
+</ion-content>

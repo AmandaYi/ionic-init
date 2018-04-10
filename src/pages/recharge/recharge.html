@@ -1,0 +1,57 @@
+<!--
+  Generated template for the RechargePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>充值</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class='recharge'>
+     <ul>
+        <li>
+          <span>账户余额(元)</span>
+          <p>{{overAmountRB}}</p>
+          <div class="clear"></div>
+        </li>
+        <li>
+          <span>充值银行卡(元)</span>
+          <p>{{tail_bankname}} 尾号{{tailFour}}</p>
+          <div class="clear"></div>
+        </li>
+         <!--<li>
+          <span>预留手机号</span>
+          <input type="tel"  placeholder="请输入银行预留手机号" maxlength="11"  name='phone' [(ngModel)]='phone' style='text-align:right;float:right'>
+          <div class="clear"></div>
+        </li>-->
+        <li>充值金额(元)</li>
+        <li style='border-bottom:1px solid #ccc;'>
+          <span class='iconfont icon-invest_default'></span>
+          <input type="tel" placeholder="输入不小于100的充值金额"  name='cz'  [(ngModel)]='cz' (keyup)='keyup(cz)' style='width:90%' maxlength="8">
+          <div class="clear"></div>
+        </li>
+        <!--<li>充值后余额 {{all_money}}元</li>-->
+        <li>充值后余额 {{all_money | number:"1.2-2"}}元</li>
+    </ul>
+
+
+    <button [disabled]='delaiameng' (click)='pay_value(phone,cz)'>充值</button>
+
+    <div class='pay_limit'><span (click)='toBankLimt()'>限额说明</span></div>
+
+</ion-content>
+
+<div class="zhifu_container" *ngIf='zhifu'>
+  <div class='zhifu_content'>
+       <div class="zhifu_mima">请先修改初始支付密码，否则充值失败</div>
+      <div class="zhifu_tixian" (click)='zhifu_tixian()'>已修改，去充值</div>
+      <div class="zhifu_xiugai" (click)='zhifu_xiugai()'>修改支付密码</div>
+  </div>
+</div>

@@ -1,0 +1,513 @@
+<!--
+  Generated template for the PrivilegeDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>特权详情</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="task_detail">
+      <!--短信-->
+      <div *ngIf="task_id==1">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">短信提醒</div>
+            <div class="head_content">资金变动实时提醒</div>
+          </div>
+          <div class="head_img"><i class="icon-duanxintixing1 iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">充值、投资、回款、提现等环节带来的任何资金变动均有短信通知；让用户随时了解到账户资金变化，提高用户账户的安全性</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>短信提醒</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--投资管理费-->
+      <div *ngIf="task_id==2">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">投资管理费</div>
+            <div class="head_content">平台用户的投资手续费减免</div>
+          </div>
+          <div class="head_img"><i class="icon-touziguanlifei1 iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">业内大部分平台普遍收取的投资手续费，由平台进行全额补贴、减免；</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>投资管理费</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>减免</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>减免</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>减免</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>减免</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>减免</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--生日礼金-->
+      <div *ngIf="task_id==3">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">生日礼金</div>
+            <div class="head_content">用户的生日礼物</div>
+          </div>
+          <div class="head_img"><i class="icon-shengrilijin iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">生日当天，用户可获得由平台专门准备的生日投资礼金；不同等级所获得的奖励力度不同，会员等级越高，生日礼金奖励越高。奖励发放时，将发送短信提醒。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>生日礼金</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>18元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>58元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>118元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>188元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>268元现金券</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--升级礼金-->
+      <div *ngIf="task_id==4">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">升级礼金</div>
+            <div class="head_content">用户等级提升奖励</div>
+          </div>
+          <div class="head_img"><i class="icon-shengjilijin iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">会员等级升级当天可获得升级礼金；会员等级越高，升级奖励越高。奖励发放时，将发送短信提醒。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>升级礼金</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>20元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>50元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>100元现金券</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>150元现金券</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--自动投标-->
+      <div *ngIf="task_id==5">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">自动投标优先级</div>
+            <div class="head_content">自动投标优先级提高</div>
+          </div>
+          <div class="head_img"><i class="icon-zidongtoubiao iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">根据不同的会员级别，享受不同优先级的自动抢标，会员等级越高，自动投标优先级越高，更容易抢到标。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>自动投标优先级</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>低</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>较低</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>中</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>较高</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>高</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--提现费率-->
+      <div *ngIf="task_id==6">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">提现费率</div>
+            <div class="head_content">用户提现手续费</div>
+          </div>
+          <div class="head_img"><i class="icon-tixianfeishuai iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">超出免费提现额度后，用户进行提现需收取手续费；根据会员等级不同，用户可获得不同的提现手续费率减免。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>提现费率</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>0.20%</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>0.15%</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>0.10%</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>0.08%</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>0.05%</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--免费提现额度-->
+      <div *ngIf="task_id==7">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">免费提现额度</div>
+            <div class="head_content">用户免费提现费用提现额度</div>
+          </div>
+          <div class="head_img"><i class="icon-mianfeitixianedu iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">用户每月拥有免费提现额度，超出免费额度才需收取手续费；等级越高，每月免费提现额度越高；免费提现额度每月1号0点重置。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>免费提现额度</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>3000元/月</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>10000元/月</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>30000元/月</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>50000元/月</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--专属客服-->
+      <div *ngIf="task_id==8">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">专属客服</div>
+            <div class="head_content">专属客服，1对1服务</div>
+          </div>
+          <div class="head_img"><i class="icon-zhuanshukefu iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">专属资深客服1对1服务；对用户提出的问题进行专业解答，协助用户进行更好的投资，同时有优惠活动时专属客服也会第一时间通知。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>专属客服</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--年会参与特权-->
+      <div *ngIf="task_id==9">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">年会参与特权</div>
+            <div class="head_content">瑾瑜科技年会参与特权</div>
+          </div>
+          <div class="head_img"><i class="icon-nianhuicanyutequan iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">该特权可免费参加瑾瑜科技一年一度的年会，参与抽奖、宴会福利等，并提供住宿。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>年会参与特权</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>无</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--好友佣金系数-->
+      <div *ngIf="task_id==10">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">好友佣金系数</div>
+            <div class="head_content">邀请好友佣金系数</div>
+          </div>
+          <div class="head_img"><i class=" icon-haoyouyongjinxishu iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">邀请好友投资时，获得佣金的系数跟会员等级有关，高等级会员邀请好友可获得更多佣金。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>好友佣金系数</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td>1.00</td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td>1.05</td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td>1.15</td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td>1.25</td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td>1.40</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--会员礼包-->
+      <div *ngIf="task_id==11">
+        <div class="head">
+          <div class="head_left">
+            <div class="head_title">会员礼包</div>
+            <div class="head_content">每月给予会员福利</div>
+          </div>
+          <div class="head_img"> <i class="icon-huiyuanlibao iconfont"></i></div>
+        </div>
+        <div class="article">
+          <div class="article_title1">特权说明</div>
+          <div class="article_content">每月18号发放会员礼包，礼包含有福利券或者实物奖品；等级越高，福利越丰富。</div>
+          <div class="article_title2">特权会员等级</div>
+          <table class="article_biaoge">
+            <thead>
+            <tr>
+              <td>会员等级</td>
+              <td>会员礼包</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SVIP1</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP2</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP3</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP4</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            <tr>
+              <td>SVIP5</td>
+              <td><div class="icon iconfont icon-iconxuanzhong"></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</ion-content>

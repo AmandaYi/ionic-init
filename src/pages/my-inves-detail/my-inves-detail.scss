@@ -1,0 +1,122 @@
+page-my-inves-detail {
+    .myInvesDetail{
+        background:#ededed;
+        width:100%;
+        height:100%;
+    }
+    .myInvesDetail .detail_box1{
+        padding:r(34px) r(30px)!important;
+        background:#fff;
+        margin-bottom:r(20px);
+        float:left;
+        width:100%;
+    }
+    .myInvesDetail .detail_box1 div{
+        height:r(44px);
+        line-height:r(44px);
+        font-size:r(22px);
+    }
+    .myInvesDetail .detail_box1 div:nth-child(2n+1){
+         color:#909090
+         ;float:left;
+         width:33.33333333%
+    }
+    .myInvesDetail .detail_box1 div:nth-child(2n){
+        color:#323232;
+        position:relative;
+        float:left;
+        width:66.66666667%;
+        text-align:right;
+    }
+    .myInvesDetail .detail_box2{
+        padding:r(34px) r(30px)!important;
+        position:relative;
+        float:left;
+        width:100%;
+        background:#fff;
+        margin-bottom:r(20px)
+    }
+    .myInvesDetail .detail_box2 div{
+       height:r(44px);
+       line-height:r(44px);
+       font-size:r(22px);
+    }
+    .myInvesDetail .detail_box2 div:nth-child(2n+1){
+        color:#909090;
+        float:left;
+        width:33.33333333%
+    }
+    .myInvesDetail .detail_box2 div:nth-child(2n){
+        position:relative;
+        float:left;
+        width:66.66666667%;
+        text-align:right;
+        color:#ff6f00;
+     }
+    .myInvesDetail .detail_box3{
+        padding:r(34px) r(30px)!important;
+        position:relative;
+        float:left;
+        width:100%;
+        background:#fff;
+        margin-bottom:r(80px)!important;
+    }
+    .myInvesDetail .detail_box3 .top{
+        color:#323232;
+        font-size:r(22px);
+    }
+    .myInvesDetail .detail_box3 .top span{
+        float:right
+    }
+    .myInvesDetail .detail_box3 .list div{
+        height:r(44px);
+        line-height:r(44px);
+        font-size:r(22px);
+        color:#909090;
+    }
+    .myInvesDetail .detail_box3 .list div:nth-child(2n+1){
+        position:relative;
+        float:left;
+        width:45%
+    }
+    .myInvesDetail .detail_box3 .list div:nth-child(2n){
+        position:relative;
+        float:left;
+        width:55%;
+        text-align:right;
+    }
+    .myInvesDetail .detail_box3 .list i{
+        left:r(150px);
+        top:r(14px);
+        z-index:99999;
+        width:r(94px);
+        height:r(28px);
+        display:block;
+        background:url(../img/payment.png) no-repeat;background-size:100%;
+        position:absolute;
+    }
+    .ht_btn{
+        width: 100%;
+        float: left;
+        position: fixed;
+        bottom: 0px;
+        height: r(80px);
+    }
+    .ht_btn a{
+        width: 100%;
+        height: r(80px);
+        background-color: #ff6600;
+        color: #fff;
+        font-size: r(36px);
+        text-align: center;
+        line-height: r(80px);
+        float: left;
+        text-decoration: none;
+    }
+    .ttc{
+        color: #909090;
+        font-size: r(32px);
+        ;margin-top: r(80px);
+        margin-bottom: r(480px)
+    }
+}

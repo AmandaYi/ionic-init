@@ -1,0 +1,44 @@
+page-more-bulletin {
+    ion-content {
+        //以下是调试下拉更新
+        .refresher-pulling-icon,
+        .refresher-refreshing-icon {
+            font-size: 0.7rem !important;
+        }
+        .refresher-pulling-text,
+        .refresher-refreshing-text {
+            font-size: r(24px)!important;
+        }
+        ion-spinner {
+            width: r(28px)!important;
+            height: r(28px)!important;
+        }
+        //上啦加载..
+        ion-infinite-scroll {
+            font-size: 20px!important;
+        }
+        .list {
+            padding: r(10px) r(30px) r(10px) r(30px);
+            border-top: r(2px) solid #ededed;
+            .list_title {
+                font-size: r(24px);
+                color: #323232;
+                text-align: justify;
+            }
+            .list_time {
+                font-size: r(20px);
+                color: #909090;
+                padding-top: r(20px);
+                bottom: 0;
+            }
+        }
+        .false {
+            padding: r(15px) r(30px) r(15px) r(30px);
+            font-size: 0.6rem;
+            color: #909090;
+            text-align: center;
+            height: r(150px);
+            background-color: #ededed;
+        }
+    }
+}

@@ -1,0 +1,165 @@
+page-withdrawal {
+    .tixian{
+        background:#ffffff;
+        ul{
+            width:100%;
+            padding:0 5% 0 5%;
+            li{
+                width:100%;
+                height:r(96px);
+                line-height:r(95px);
+                font-size:r(26px);
+                color:#323232;
+                span{
+                    display:block;
+                    font-size:r(26px);
+                    color:#323232;
+                    float:left;
+                }
+                p{
+                    float:right;
+                    font-size:r(26px);
+                    color:#323232;
+                }
+                input{
+                    border:0;
+                    display:block;
+                    float:left;
+                    width:70%;
+                    padding-left:5%;
+                }
+            }
+        }
+
+        .bank{
+            height:r(20px);
+            background:#ededed;
+        }
+        .xiugai{
+            font-size:r(26px);
+            color:#387ef5;
+            text-align:right;
+            padding:2% 5% 0 0; 
+        }
+
+        button{
+            width:90%;
+            margin:0 auto;
+            display:block;
+            height:r(88px);
+            line-height:r(88px);
+            text-align:center;
+            font-size:r(34px);
+            color:#ffffff;
+            border-radius:r(8px);
+            margin-top:r(60px);
+            background:#ff6f00;
+        }
+
+        .wenxin{
+            margin-top:r(100px);
+            font-size:r(20px);
+            color: #909090;
+            padding-left:5%;
+        }
+        .pingtai{
+            font-size:r(20px);
+            padding-left:5%;
+            padding-right:5%;
+            li{
+                color:#909090;
+            }
+        }
+
+        .biaoge{
+            width: 90%;
+            text-align: center;
+            margin: r(30px) auto 5%;
+
+            td{
+                border: 1px solid #ccc;
+                color: #323232;
+                height: r(90px);
+                vertical-align: middle;
+                font-size: r(20px);
+            }
+        }
+        .with_color{
+            background:#ff6f00;
+            td{
+                color:#ffffff!important;
+            }
+        }
+
+        .tis{
+            font-size: r(20px);
+            color: #e65100;
+            text-align:center;
+            margin-top:r(10px);
+        }
+        .ttp1{
+            font-size: r(20px);
+            color: #e65100;
+            padding-left:5%;
+            margin-top:r(10px);
+        }
+        .ttp2{
+             font-size: r(20px);
+            color: #e65100;
+            padding-left:5%;
+        }
+
+    
+        .clear{
+            clear:both;
+        }
+    }
+}
+
+//支付状态
+.zhifu_container{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    z-index:99999;
+    .zhifu_content{
+        position:absolute;
+        width:80%;
+        top:40%;
+        left:10%;
+        padding:8% 5%; 
+        text-align:center;
+        background:#fff;
+        border-radius:r(32px);
+         .zhifu_mima{
+            width:100%;
+            font-size:r(24px);
+        }
+        .zhifu_tixian{
+            width:45%;
+            height:r(80px);
+            line-height:r(80px);
+            float:left;
+            margin-top:8%;
+            background: #F1F3F7;
+            border-radius:8px;
+            margin-right:5%;
+            font-size:r(22px);
+            color:#323232;
+        }
+        .zhifu_xiugai{
+            width:45%;
+            height:r(80px);
+            line-height:r(80px);
+            float:left;
+            margin-top:8%;
+            background:#ff6f00;
+            border-radius:8px;
+            margin-left:5%;
+            font-size:r(22px);
+            color:#fff;
+        }
+    }
+
+}

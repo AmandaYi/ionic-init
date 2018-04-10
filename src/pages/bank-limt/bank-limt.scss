@@ -1,0 +1,12 @@
+page-bank-limt {
+        .bankLimt{padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}
+        .bankLimt .list{position:relative;min-height:1px;padding-right:0;padding-left:0;float:left;width:100%}
+        .bankLimt .list .list_box{position:relative;min-height:1px;padding-right:0;padding-left:0;float:left;width:100%;margin:0;height:r(96px)}
+        .bankLimt .list .list_box::after{width:100%;border-bottom:1px solid #ededed;display:block;text-align:left;text-align:-webkit-left;text-align:-moz-left;content:" ";transform:scaleY(.5);-webkit-transform:scaleY(.5);-moz-transform:scaleY(.5);-o-transform:scaleY(.5);-ms-transform:scaleY(.5)}.bankLimt .list .list_box:first-child{margin-top:r(10px)}
+        .bankLimt .list .list_box:last-child{margin-bottom:r(30px)}
+        .bankLimt .list .list_box .box1{float:left;width:16.66666667%;text-align:center;text-align:-webkit-center;text-align:-moz-center;height:r(96px);line-height:r(96px)}
+        .bankLimt .list .list_box .box1 svg{display:block;width:70%;height:70%;margin-top:15%;margin-bottom:15%;}
+        .bankLimt .list .list_box .box2{position:relative;min-height:1px;padding-right:0;padding-left:0;float:left;width:83.33333333%}
+        .bankLimt .list .list_box .box2 .box2_1{position:relative;min-height:1px;padding-right:0;padding-left:0;float:left;width:100%;color:#323232;font-size:r(26px);line-height:1;margin:8px 0}
+        .bankLimt .list .list_box .box2 .box2_2{position:relative;min-height:1px;padding-right:0;padding-left:0;float:left;width:100%;color:#909090;font-size:r(22px);line-height:1}
+}

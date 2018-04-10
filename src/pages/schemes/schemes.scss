@@ -1,0 +1,189 @@
+page-schemes {
+     .newspage{
+         background-color: #ededed;
+     }
+    .newspage .tab {
+        width: 100%;
+        /*height: 157.5px;*/
+        background: -moz-linear-gradient(top, #ff6f00, #ff9600);
+        background: -webkit-linear-gradient(top, #ff6f00, #ff9600);
+        text-align: center;
+        position: relative;
+    }
+
+    .newspage .tab .tab-top {
+        padding-top: r(70px);
+        display: inline-block;
+    }
+
+    .newspage .tab .tab-top .arrow-left {
+        width: r(60px);
+        height: r(40px);
+        float: left;
+        margin-top: r(10px);
+        text-decoration: none;
+        color: #fff;
+        font-size: r(40px);
+        line-height: r(36px);
+        text-align: center;
+        display: inline-block;
+        margin-right: r(20px);
+    }
+
+    .newspage .tab .tab-top h3 {
+        font-size: r(40px);
+        color: #fffefe;
+        float: left;
+        margin: 0 0 0 r(22px);
+        text-align: center;
+    }
+
+    .newspage .tab .tab-top .arrow-right {
+       width: r(60px);
+        height: r(40px);
+        float: right;
+        margin-top: r(10px);
+        text-decoration: none;
+        color: #fff;
+        font-size: r(40px);
+        line-height: r(36px);
+        text-align: center;
+        display: inline-block;
+        margin-left: r(20px);
+    }
+
+    .newspage .tab .tab-bottom ul {
+        margin-top: r(50px);
+        list-style-type: none;
+    }
+
+    .newspage .tab .tab-bottom ul li {
+        float: left;
+        width: 50%;
+    }
+
+    .newspage .tab .tab-bottom ul li p {
+        font-size: r(24px);
+        color: #ffe7cb;
+        text-align: center;
+    }
+
+    .newspage .tab .tab-bottom ul li h3 {
+        font-size: r(34px);
+        color: #fffefe;
+        text-align: center;
+        margin-top: r(20px);
+        margin-bottom:r(20px);
+    }
+
+    .newspage .tab .line {
+        width: r(1px);
+        height: r(60px);
+        background: white;
+        position: absolute;
+        top: r(220px);
+        left: 50%;
+        margin-left: -1px;
+    }
+
+
+    /*内容*/
+
+    .newspage .content {
+        width: 100%;
+        padding-top: r(20px);
+    }
+
+    .newspage .content .title {
+        height: r(60px);
+        text-align: center;
+        font-size: r(26px);
+        line-height: r(60px);
+        background: #ff6f00;
+        color: #ffffff;
+    }
+
+    .newspage .content ul {
+        width: 100%;
+    }
+
+    .newspage .content ul li {
+        list-style-type: none;
+        width: 100%;
+        height: r(176px);
+        background: #ffffff;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .newspage .content ul li .mark {
+        font-size: r(26px);
+        color: #666666;
+        padding: r(30px) 0 0 r(31px);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: r(360px);
+    }
+
+    .newspage .content ul li .backed {
+        margin-top: r(25px);
+    }
+
+    .newspage .content ul li .backed p {
+        float: left;
+        font-size: r(26px);
+        color: #666666;
+        margin: r(15px) 0 0 r(31px);
+        width: r(130px);
+    }
+
+    .newspage .content ul li .backed span {
+        float: left;
+        font-size: r(44px);
+        color: #ff6f00;
+        display: block;
+        margin: r(0px) 0 0 r(20px);
+    }
+
+    .newspage .content ul li .backed a {
+        float: right;
+        width: r(175px);
+        height: r(60px);
+        line-height: r(60px);
+        color: #ffffff;
+        font-size: r(26px);
+        text-align: center;
+        border-radius: r(50px) 0 0 r(50px);
+        background: #4fc3f7;
+        text-decoration: none;
+        display: block;
+    }
+
+    .newspage .content ul li .backed .onblue {
+        background: #4fc3f7;
+    }
+
+    .newspage .content ul li .backed .ongray {
+        background: #cccccc;
+    }
+
+    .newspage .footer-newpage {
+        width: 100%;
+        height: r(80px);
+    }
+
+    .newspage .footer-newpage p {
+        font-size: r(24px);
+        height: r(80px);
+        color: #909090;
+        background: #ededed;
+        text-align: center;
+        line-height:r(80px);
+        width: 100%;
+        float: left;
+    }
+
+    .newspage #clear {
+        clear: both;
+    }
+}

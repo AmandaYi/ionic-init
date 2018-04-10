@@ -1,0 +1,98 @@
+page-hytj {
+        .hytj_all{
+            background:#ededed;
+        }
+       .hytj_box {
+            width: 100%;
+            float: left;
+            /*height: 65px;*/
+            background-color: #fff;
+        }
+
+        .hytj_box li {
+            width: 49%;
+            float: left;
+        }
+
+        .hytj_box span {
+            width: 100%;
+            float: left;
+            text-align: center;
+            font-size: r(28px);
+            margin-top: r(24px);
+        }
+
+        .hytj_box p {
+            width: 100%;
+            float: left;
+            text-align: center;
+            font-size: r(36px);
+            color: #ff6600;
+            margin-bottom:r(24px);
+        }
+
+        .hytj_box dl {
+            width: 1px;
+            /*height: 30px;*/
+            margin: r(34px) 0;
+            background-color: #ededed;
+            float: left;
+        }
+
+        .hyti_list {
+            width: 100%;
+            float: left;
+            height: 100%;
+        }
+
+        .hyti_list ul {
+            width: 100%;
+            float: left;
+            background-color: #fff;
+            margin-top: r(30px);
+            padding-top: r(30px);
+        }
+
+        .hyti_list li,
+        dl {
+            width: 100%;
+            float: left;
+            margin-bottom: r(30px);
+        }
+
+        .hyti_list li {
+            margin-bottom: r(30px);
+        }
+
+        .hyti_list span {
+            width: 33.333%;
+            float: left;
+            text-align: center;
+            font-size: r(28px);
+        }
+
+        .hyti_list dl span {
+            width: 33.333%;
+            float: left;
+            text-align: center;
+            font-size: r(28px);
+            color: #909090;
+        }
+        .yitouzi{
+            color:#ff6f00;
+        }
+        .weitouzi{
+            color:#323232;
+        }
+        .dibu_data{
+            width: 100%;
+            float: left;
+            text-align: center;
+            padding-top:r(60px);
+            padding-bottom:r(20px);
+            color:#909090;
+            background:#fff;
+            font-size:r(26px);
+        }
+
+}

@@ -1,0 +1,52 @@
+<!--
+  Generated template for the MyInvesDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton>
+        <button (click)='return()'><i class="icon-fanhui iconfont"></i></button>
+        <ion-title>投资详情</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+        <div class="myInvesDetail">
+            <div class="detail_box1">
+                <div>项目名称</div>
+                <div>{{detailData1}}</div>
+                <div>投资金额</div>
+                <div>{{detailData2|number:'1.2-2'}}元</div>
+                <div>年化收益</div>
+                <div>{{detailData3*100|number:'1.2-2'}}%</div>
+                <div>投资期限</div>
+                <div>{{detailData4}}</div>
+                <div>还款方式</div>
+                <div>{{detailData5}}</div>
+                <div>担保机构</div>
+                <div>{{detailData6}}</div>
+            </div>
+            <div class="detail_box2">
+                <div>已收本息</div>
+                <div>{{detailData7|number:'1.2-2'}}元</div>
+                <div>待收本息</div>
+                <div>{{detailData8|number:'1.2-2'}}元</div>
+            </div>
+            <div class="detail_box3">
+                <div class="top">
+                    回款日期 <span>本金 + 收益</span>
+                </div>
+                <div class="list" *ngFor="let l of reserve;" style='float:left;width:100%;'>
+                    <div>{{l.hkTime}} &nbsp;{{l.bidType}}</div>
+                    <div>{{l.hsbj}} + {{l.lx}}</div>
+                </div>
+                <div *ngIf="reserveLength==0" class="ttc">满标放款后公布</div>
+            </div>
+          <div class="ht_btn"  (click)='contract_btn()'><a href="javascript:;">查看合同</a> </div>
+        </div>
+</ion-content>
+
